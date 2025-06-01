@@ -1,0 +1,95 @@
+name: List Metasploit Exploits CVEs
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  push:
+    branches:
+      - main # Or 'master' if that's your default branch
+    paths:
+      - '.github/workflows/list-metasploit-cves.yml' # Trigger only if the workflow file itself changes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grant write permission to the GITHUB_TOKEN for this job
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          # Use your repository's name and branch, not Metasploit's
+          repository: ${{ github.repository }}
+          ref: ${{ github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install PyYAML # Good practice, though not strictly required for CVE extraction
+
+      - name: Find and List CVEs from Metasploit Framework
+        id: find_cves
+        run: |
+          # Clone Metasploit Framework separately for CVE extraction
+          git clone --depth 1 https://github.com/rapid7/metasploit-framework.git metasploit-framework_temp
+
+          python <<EOF
+          import os
+          import re
+          import json
+          import datetime
+
+          cve_list = []
+          # Point to the temporary clone of Metasploit
+          exploits_dir = "metasploit-framework_temp/modules/exploits"
+
+          # Regex to find CVEs
+          cve_pattern = re.compile(r'CVE-\d{4}-\d{4,7}', re.IGNORECASE)
+
+          for root, _, files in os.walk(exploits_dir):
+              for file in files:
+                  if file.endswith(".rb"):
+                      filepath = os.path.join(root, file)
+                      try:
+                          with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                              content = f.read()
+                              found_cves = cve_pattern.findall(content)
+                              for cve in found_cves:
+                                  if cve not in cve_list:
+                                      cve_list.append(cve)
+                      except Exception as e:
+                          print(f"Error processing file {filepath}: {e}")
+
+          # Sort the CVEs for consistent output
+          cve_list.sort()
+
+          # Prepare data for JSON
+          output_data = {
+              "last_updated_utc": datetime.datetime.utcnow().isoformat(),
+              "total_exploits_with_cves": len(cve_list),
+              "cves": cve_list
+          }
+
+          # Write to JSON file in the main repository's workspace
+          output_filename = "metasploit_cves.json"
+          with open(output_filename, 'w') as f:
+              json.dump(output_data, f, indent=4)
+
+          print(f"Generated {output_filename} with {len(cve_list)} CVEs.")
+          EOF
+
+      - name: Commit and Push the CVE list
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add metasploit_cves.json
+          git commit -m "Update Metasploit CVE list (Automated)" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Uses the default GITHUB_TOKEN
+
