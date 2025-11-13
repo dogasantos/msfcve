@@ -1,6 +1,6 @@
 {
-    "last_updated_utc": "2025-11-12T00:15:08.976242",
-    "total_exploits_with_cves": 1004,
+    "last_updated_utc": "2025-11-13T00:15:02.734481",
+    "total_exploits_with_cves": 1005,
     "cves": [
         "CVE-2007-2447",
         "CVE-2007-3314",
@@ -1005,6 +1005,7 @@
         "cve-2025-52367",
         "cve-2025-53770",
         "cve-2025-57819",
+        "cve-2025-59287",
         "cve-2025-5946"
     ]
 }
