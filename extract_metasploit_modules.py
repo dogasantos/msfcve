@@ -97,7 +97,10 @@ def generate_usage_commands(module_path, metadata):
     # Basic usage
     commands.append(f"use {module_path}")
     commands.append("show options")
-    commands.append("show targets")
+    
+    # Only show targets for exploit modules
+    if module_path.startswith('exploit'):
+        commands.append("show targets")
     
     # Common options based on module type
     if '/http/' in module_path or '/https/' in module_path:
@@ -117,7 +120,7 @@ def generate_usage_commands(module_path, metadata):
         commands.append("set RHOSTS <target>")
     
     # Add LHOST for exploits (not for auxiliary or post modules)
-    if module_path.startswith('exploit/'):
+    if module_path.startswith('exploit'):
         commands.append("set LHOST <your_ip>")
         commands.append("set LPORT <your_port>")
         commands.append("set PAYLOAD <payload>")
@@ -127,7 +130,7 @@ def generate_usage_commands(module_path, metadata):
         commands.append("set TARGET <target_index>")
     
     # Execute
-    if module_path.startswith('exploit/'):
+    if module_path.startswith('exploit'):
         commands.append("exploit")
     else:
         commands.append("run")
@@ -181,11 +184,14 @@ def extract_module_info(module_path, msf_root):
 def main():
     """Main execution function."""
     msf_root = Path("metasploit-framework")
-    exploits_dir = msf_root / "modules" / "exploits"
+    modules_dir = msf_root / "modules"
     
-    if not exploits_dir.exists():
-        print(f"Error: {exploits_dir} not found. Make sure Metasploit Framework is cloned.")
+    if not modules_dir.exists():
+        print(f"Error: {modules_dir} not found. Make sure Metasploit Framework is cloned.")
         return 1
+    
+    # Scan these module types
+    module_types = ['exploits', 'auxiliary', 'post']
     
     cve_modules = {}
     total_modules = 0
@@ -193,26 +199,34 @@ def main():
     
     print("Scanning Metasploit modules...")
     
-    # Walk through exploits directory
-    for module_file in exploits_dir.rglob("*.rb"):
-        total_modules += 1
-        if total_modules % 100 == 0:
-            print(f"  Processed {total_modules} modules...")
+    # Walk through all module types
+    for module_type in module_types:
+        module_type_dir = modules_dir / module_type
+        if not module_type_dir.exists():
+            print(f"  Warning: {module_type_dir} not found, skipping...")
+            continue
         
-        result = extract_module_info(module_file, msf_root)
+        print(f"  Scanning {module_type} modules...")
         
-        if result:
-            modules_with_cves += 1
-            cves, module_info = result
+        for module_file in module_type_dir.rglob("*.rb"):
+            total_modules += 1
+            if total_modules % 100 == 0:
+                print(f"    Processed {total_modules} modules...")
             
-            for cve in cves:
-                if cve not in cve_modules:
-                    cve_modules[cve] = {"modules": []}
-                cve_modules[cve]["modules"].append(module_info)
+            result = extract_module_info(module_file, msf_root)
+            
+            if result:
+                modules_with_cves += 1
+                cves, module_info = result
+                
+                for cve in cves:
+                    if cve not in cve_modules:
+                        cve_modules[cve] = {"modules": []}
+                    cve_modules[cve]["modules"].append(module_info)
     
-    print(f"\n✓ Scanned {total_modules} total modules")
-    print(f"✓ Found {modules_with_cves} modules with CVE references")
-    print(f"✓ Identified {len(cve_modules)} unique CVEs")
+    print(f"\n+ Scanned {total_modules} total modules")
+    print(f"+ Found {modules_with_cves} modules with CVE references")
+    print(f"+ Identified {len(cve_modules)} unique CVEs")
     
     # Calculate total module-CVE mappings
     total_mappings = sum(len(data["modules"]) for data in cve_modules.values())
@@ -236,7 +250,7 @@ def main():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    print(f"\n✓ Successfully generated {output_file}")
+    print(f"\n+ Successfully generated {output_file}")
     print(f"  - Total CVEs: {len(cve_modules)}")
     print(f"  - Total module-CVE mappings: {total_mappings}")
     
