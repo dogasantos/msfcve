@@ -1,95 +1,193 @@
-name: List Metasploit Exploits CVEs
+name: Update Metasploit CVE Database
 
 on:
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch:  # Allows manual trigger
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
   push:
     branches:
-      - main # Or 'master' if that's your default branch
+      - main
     paths:
-      - '.github/workflows/list-metasploit-cves.yml' # Trigger only if the workflow file itself changes
+      - 'extract_metasploit_modules.py'
+      - '.github/workflows/update-metasploit-cves.yml'
 
 jobs:
-  build:
+  update-database:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Grant write permission to the GITHUB_TOKEN for this job
-
+      contents: write
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          # Use your repository's name and branch, not Metasploit's
-          repository: ${{ github.repository }}
-          ref: ${{ github.ref }}
-
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: pip install PyYAML # Good practice, though not strictly required for CVE extraction
-
-      - name: Find and List CVEs from Metasploit Framework
-        id: find_cves
+          python-version: '3.11'
+      
+      - name: Clone Metasploit Framework
         run: |
-          # Clone Metasploit Framework separately for CVE extraction
-          git clone --depth 1 https://github.com/rapid7/metasploit-framework.git metasploit-framework_temp
-
-          python <<EOF
-          import os
-          import re
-          import json
-          import datetime
-
-          cve_list = []
-          # Point to the temporary clone of Metasploit
-          exploits_dir = "metasploit-framework_temp/modules/exploits"
-
-          # Regex to find CVEs
-          cve_pattern = re.compile(r'CVE-\d{4}-\d{4,7}', re.IGNORECASE)
-
-          for root, _, files in os.walk(exploits_dir):
-              for file in files:
-                  if file.endswith(".rb"):
-                      filepath = os.path.join(root, file)
-                      try:
-                          with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-                              content = f.read()
-                              found_cves = cve_pattern.findall(content)
-                              for cve in found_cves:
-                                  if cve not in cve_list:
-                                      cve_list.append(cve)
-                      except Exception as e:
-                          print(f"Error processing file {filepath}: {e}")
-
-          # Sort the CVEs for consistent output
-          cve_list.sort()
-
-          # Prepare data for JSON
-          output_data = {
-              "last_updated_utc": datetime.datetime.utcnow().isoformat(),
-              "total_exploits_with_cves": len(cve_list),
-              "cves": cve_list
-          }
-
-          # Write to JSON file in the main repository's workspace
-          output_filename = "metasploit_cves.json"
-          with open(output_filename, 'w') as f:
-              json.dump(output_data, f, indent=4)
-
-          print(f"Generated {output_filename} with {len(cve_list)} CVEs.")
-          EOF
-
-      - name: Commit and Push the CVE list
+          echo "Cloning Metasploit Framework..."
+          git clone --depth 1 https://github.com/rapid7/metasploit-framework.git
+          echo "+ Clone complete"
+      
+      - name: Extract Module Information
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "github-actions@github.com"
+          echo "Running module extraction script..."
+          python extract_metasploit_modules.py
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
           git add metasploit_cves.json
-          git commit -m "Update Metasploit CVE list (Automated)" || echo "No changes to commit"
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+          fi
+      
+      - name: Get statistics
+        if: steps.check_changes.outputs.changed == 'true'
+        id: stats
+        run: |
+          TOTAL_CVES=$(python3 -c "import json; data=json.load(open('metasploit_cves.json')); print(data['metadata']['total_cves'])")
+          TOTAL_MODULES=$(python3 -c "import json; data=json.load(open('metasploit_cves.json')); print(data['metadata']['modules_with_cves'])")
+          TOTAL_MAPPINGS=$(python3 -c "import json; data=json.load(open('metasploit_cves.json')); print(data['metadata']['total_module_cve_mappings'])")
+          echo "total_cves=$TOTAL_CVES" >> $GITHUB_OUTPUT
+          echo "total_modules=$TOTAL_MODULES" >> $GITHUB_OUTPUT
+          echo "total_mappings=$TOTAL_MAPPINGS" >> $GITHUB_OUTPUT
+          echo "Total CVEs: $TOTAL_CVES"
+          echo "Total Modules: $TOTAL_MODULES"
+          echo "Total Mappings: $TOTAL_MAPPINGS"
+      
+      - name: Generate release tag
+        if: steps.check_changes.outputs.changed == 'true'
+        id: tag
+        run: |
+          TAG_NAME="v$(date -u +'%Y.%m.%d.%H%M')"
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+          echo "Generated tag: $TAG_NAME"
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Update Metasploit CVE database - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" \
+            -m "Total CVEs: ${{ steps.stats.outputs.total_cves }}" \
+            -m "Modules with CVEs: ${{ steps.stats.outputs.total_modules }}" \
+            -m "Total mappings: ${{ steps.stats.outputs.total_mappings }}"
           git push
+      
+      - name: Create Release
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag.outputs.tag_name }}
+          name: Metasploit CVE Database - ${{ steps.tag.outputs.tag_name }}
+          body: |
+            ##  Metasploit CVE Database Update
+            
+            **Generated:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+            
+            ### Statistics
+            - **Total CVEs:** ${{ steps.stats.outputs.total_cves }}
+            - **Modules with CVEs:** ${{ steps.stats.outputs.total_modules }}
+            - **Total Module-CVE Mappings:** ${{ steps.stats.outputs.total_mappings }}
+            
+            ### What's Included
+            
+            This database provides comprehensive Metasploit module information for each CVE:
+            
+            - **Module path** (for use in msfconsole)
+            - **Module metadata** (name, description, rank, platform, etc.)
+            - **Usage commands** (step-by-step instructions)
+            - **Direct links** to module source code
+            - **Authors and references**
+            
+            ### Download
+            
+            **Latest Release (Recommended):**
+            ```
+            https://github.com/${{ github.repository }}/releases/latest/download/metasploit_cves.json
+            ```
+            
+            **Main Branch (Always Latest):**
+            ```
+            https://raw.githubusercontent.com/${{ github.repository }}/main/metasploit_cves.json
+            ```
+            
+            ### JSON Structure
+            
+            ```json
+            {
+              "metadata": {
+                "generated_at": "2025-11-16T20:00:00Z",
+                "total_cves": 1200,
+                "modules_with_cves": 1500
+              },
+              "cves": {
+                "CVE-2021-44228": {
+                  "modules": [
+                    {
+                      "module_path": "exploit/multi/http/log4shell_header_injection",
+                      "name": "Apache Log4j2 JNDI Injection (Log4Shell)",
+                      "description": "This module exploits the Log4Shell vulnerability...",
+                      "rank": "Excellent",
+                      "platform": ["linux", "windows", "unix"],
+                      "usage_commands": [
+                        "use exploit/multi/http/log4shell_header_injection",
+                        "show options",
+                        "set RHOSTS <target>",
+                        "set LHOST <your_ip>",
+                        "exploit"
+                      ],
+                      "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/log4shell_header_injection.rb"
+                    }
+                  ]
+                }
+              }
+            }
+            ```
+            
+           
+            
+            ---
+            
+            **Source:** [Metasploit Framework](https://github.com/rapid7/metasploit-framework)  
+            **Automated by:** GitHub Actions  
+            **Script:** [extract_metasploit_modules.py](https://github.com/${{ github.repository }}/blob/main/extract_metasploit_modules.py)
+          files: |
+            metasploit_cves.json
+          draft: false
+          prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Uses the default GITHUB_TOKEN
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Summary
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          echo "##  Database Updated Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Tag:** ${{ steps.tag.outputs.tag_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Total CVEs:** ${{ steps.stats.outputs.total_cves }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Modules with CVEs:** ${{ steps.stats.outputs.total_modules }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Total Mappings:** ${{ steps.stats.outputs.total_mappings }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Release URL:** https://github.com/${{ github.repository }}/releases/tag/${{ steps.tag.outputs.tag_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Download URLs:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Latest Release: https://github.com/${{ github.repository }}/releases/latest/download/metasploit_cves.json" >> $GITHUB_STEP_SUMMARY
+          echo "- Main Branch: https://raw.githubusercontent.com/${{ github.repository }}/main/metasploit_cves.json" >> $GITHUB_STEP_SUMMARY
+      
+      - name: No changes summary
+        if: steps.check_changes.outputs.changed == 'false'
+        run: |
+          echo "##  No Changes Detected" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The Metasploit CVE database has not changed since the last update." >> $GITHUB_STEP_SUMMARY
