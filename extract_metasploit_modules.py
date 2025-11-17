@@ -31,32 +31,44 @@ def extract_module_metadata(content):
     else:
         metadata['description'] = ""
     
-    # Extract Author(s)
+    # Extract Author(s) - Fixed to handle tuples correctly
     authors = []
-    author_matches = re.findall(r"'Author'\s*=>\s*\[([^\]]+)\]", content, re.DOTALL)
-    if author_matches:
-        author_str = author_matches[0]
-        authors = [a.strip().strip("'\"") for a in re.findall(r"'([^']+)'|\"([^\"]+)\"", author_str)]
-        authors = [a[0] or a[1] for a in authors]
+    author_section = re.search(r"'Author'\s*=>\s*\[([^\]]+)\]", content, re.DOTALL)
+    if author_section:
+        author_str = author_section.group(1)
+        # Extract all quoted strings
+        author_matches = re.findall(r"'([^']+)'|\"([^\"]+)\"", author_str)
+        for match in author_matches:
+            # match is a tuple like ('value', '') or ('', 'value')
+            author = match[0] if match[0] else match[1]
+            if author.strip():
+                authors.append(author.strip())
     metadata['authors'] = authors
     
     # Extract Rank
     rank_match = re.search(r"'Rank'\s*=>\s*(\w+)", content)
     metadata['rank'] = rank_match.group(1) if rank_match else "Unknown"
     
-    # Extract Platform
+    # Extract Platform - Fixed to handle both array and string formats
+    platforms = []
     platform_match = re.search(r"'Platform'\s*=>\s*\[([^\]]+)\]|'Platform'\s*=>\s*'([^']+)'", content)
     if platform_match:
         platform_str = platform_match.group(1) or platform_match.group(2)
-        platforms = [p.strip().strip("'\"") for p in platform_str.split(',')]
-        metadata['platform'] = platforms
-    else:
-        metadata['platform'] = []
+        # Extract all quoted strings
+        platform_matches = re.findall(r"'([^']+)'|\"([^\"]+)\"", platform_str)
+        for match in platform_matches:
+            # match is a tuple like ('value', '') or ('', 'value')
+            platform = match[0] if match[0] else match[1]
+            if platform.strip():
+                platforms.append(platform.strip())
+    metadata['platform'] = platforms
     
     # Extract Targets
     targets = []
-    target_matches = re.findall(r"\[\s*'([^']+)',\s*\{[^}]*\}\s*\]", content)
-    if target_matches:
+    target_section = re.search(r"'Targets'\s*=>\s*\[(.*?)\]", content, re.DOTALL)
+    if target_section:
+        # Extract target names (first element of each target array)
+        target_matches = re.findall(r"\[\s*'([^']+)'", target_section.group(1))
         targets = target_matches[:5]  # Limit to first 5 targets
     metadata['targets'] = targets
     
@@ -104,7 +116,7 @@ def generate_usage_commands(module_path, metadata):
     else:
         commands.append("set RHOSTS <target>")
     
-    # Add LHOST for exploits
+    # Add LHOST for exploits (not for auxiliary or post modules)
     if module_path.startswith('exploit/'):
         commands.append("set LHOST <your_ip>")
         commands.append("set LPORT <your_port>")
@@ -237,6 +249,8 @@ def main():
             sample_module = cve_modules[sample_cve]['modules'][0]
             print(f"  Module: {sample_module['module_path']}")
             print(f"  Name: {sample_module['name']}")
+            print(f"  Authors: {', '.join(sample_module['authors'])}")
+            print(f"  Rank: {sample_module['rank']}")
     
     return 0
 
