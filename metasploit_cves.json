@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-01T00:18:25.511344Z",
+    "generated_at": "2025-12-02T00:15:32.993176Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
     "total_modules_scanned": 4316,
@@ -45,7 +45,7 @@
         }
       ]
     },
-    "CVE-2018-4162": {
+    "CVE-2016-4669": {
       "modules": [
         {
           "module_path": "exploits/apple_ios/browser/safari_jit",
@@ -80,7 +80,7 @@
         }
       ]
     },
-    "CVE-2016-4669": {
+    "CVE-2018-4162": {
       "modules": [
         {
           "module_path": "exploits/apple_ios/browser/safari_jit",
@@ -1159,42 +1159,6 @@
         }
       ]
     },
-    "CVE-2015-3043": {
-      "modules": [
-        {
-          "module_path": "exploits/multi/browser/adobe_flash_nellymoser_bof",
-          "name": "Adobe Flash Player Nellymoser Audio Decoding Buffer Overflow",
-          "description": "This module exploits a buffer overflow on Adobe Flash Player when handling nellymoser encoded audio inside a FLV video, as exploited in the wild on June 2015. This module has been tested successfully on: Windows 7 SP1 (32-bit), IE11 and Adobe Flash 18.0.0.160, Windows 7 SP1 (32-bit), Firefox 38.0.5 and Adobe Flash 18.0.0.160, Windows 8.1, Firefox 38.0.5 and Adobe Flash 18.0.0.160, Linux Mint \"Rebecca\" (32 bits), Firefox 33.0 and Adobe Flash 11.2.202.466, and Ubuntu 14.04.2 LTS, Firefox 35.01, and Adobe Flash 11.2.202.466. Note that this exploit is effective against both CVE-2015-3113 and the earlier CVE-2015-3043, since CVE-2015-3113 is effectively a regression to the same root cause as CVE-2015-3043.",
-          "authors": [
-            "Unknown",
-            "juan vazquez"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "win",
-            "linux"
-          ],
-          "targets": [
-            "Windows"
-          ],
-          "privileged": false,
-          "disclosure_date": "2015-06-23",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/browser/adobe_flash_nellymoser_bof.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/browser/adobe_flash_nellymoser_bof.rb",
-          "usage_commands": [
-            "use exploits/multi/browser/adobe_flash_nellymoser_bof",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2015-3113": {
       "modules": [
         {
@@ -1229,6 +1193,42 @@
             "exploit"
           ]
         },
+        {
+          "module_path": "exploits/multi/browser/adobe_flash_nellymoser_bof",
+          "name": "Adobe Flash Player Nellymoser Audio Decoding Buffer Overflow",
+          "description": "This module exploits a buffer overflow on Adobe Flash Player when handling nellymoser encoded audio inside a FLV video, as exploited in the wild on June 2015. This module has been tested successfully on: Windows 7 SP1 (32-bit), IE11 and Adobe Flash 18.0.0.160, Windows 7 SP1 (32-bit), Firefox 38.0.5 and Adobe Flash 18.0.0.160, Windows 8.1, Firefox 38.0.5 and Adobe Flash 18.0.0.160, Linux Mint \"Rebecca\" (32 bits), Firefox 33.0 and Adobe Flash 11.2.202.466, and Ubuntu 14.04.2 LTS, Firefox 35.01, and Adobe Flash 11.2.202.466. Note that this exploit is effective against both CVE-2015-3113 and the earlier CVE-2015-3043, since CVE-2015-3113 is effectively a regression to the same root cause as CVE-2015-3043.",
+          "authors": [
+            "Unknown",
+            "juan vazquez"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win",
+            "linux"
+          ],
+          "targets": [
+            "Windows"
+          ],
+          "privileged": false,
+          "disclosure_date": "2015-06-23",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/browser/adobe_flash_nellymoser_bof.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/browser/adobe_flash_nellymoser_bof.rb",
+          "usage_commands": [
+            "use exploits/multi/browser/adobe_flash_nellymoser_bof",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2015-3043": {
+      "modules": [
         {
           "module_path": "exploits/multi/browser/adobe_flash_nellymoser_bof",
           "name": "Adobe Flash Player Nellymoser Audio Decoding Buffer Overflow",
@@ -2616,7 +2616,7 @@
         }
       ]
     },
-    "CVE-2016-1543": {
+    "CVE-2016-1542": {
       "modules": [
         {
           "module_path": "exploits/multi/misc/bmc_server_automation_rscd_nsh_rce",
@@ -2649,7 +2649,7 @@
         }
       ]
     },
-    "CVE-2016-1542": {
+    "CVE-2016-1543": {
       "modules": [
         {
           "module_path": "exploits/multi/misc/bmc_server_automation_rscd_nsh_rce",
@@ -2921,6 +2921,41 @@
         }
       ]
     },
+    "CVE-2019-9851": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/fileformat/libreoffice_logo_exec",
+          "name": "LibreOffice Macro Python Code Execution",
+          "description": "LibreOffice comes bundled with sample macros written in Python and allows the ability to bind program events to them. LibreLogo is a macro that allows a program event to execute text as Python code, allowing RCE. This module generates an ODT file with a dom loaded event that, when triggered, will execute arbitrary python code and the metasploit payload.",
+          "authors": [
+            "Nils Emmerich",
+            "Shelby Pace",
+            "LoadLow",
+            "Gabriel Masei"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2019-07-16",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/fileformat/libreoffice_logo_exec.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/fileformat/libreoffice_logo_exec.rb",
+          "usage_commands": [
+            "use exploits/multi/fileformat/libreoffice_logo_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2019-9848": {
       "modules": [
         {
@@ -3075,41 +3110,6 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/fileformat/libreoffice_macro_exec.rb",
           "usage_commands": [
             "use exploits/multi/fileformat/libreoffice_macro_exec",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2019-9851": {
-      "modules": [
-        {
-          "module_path": "exploits/multi/fileformat/libreoffice_logo_exec",
-          "name": "LibreOffice Macro Python Code Execution",
-          "description": "LibreOffice comes bundled with sample macros written in Python and allows the ability to bind program events to them. LibreLogo is a macro that allows a program event to execute text as Python code, allowing RCE. This module generates an ODT file with a dom loaded event that, when triggered, will execute arbitrary python code and the metasploit payload.",
-          "authors": [
-            "Nils Emmerich",
-            "Shelby Pace",
-            "LoadLow",
-            "Gabriel Masei"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2019-07-16",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/fileformat/libreoffice_logo_exec.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/fileformat/libreoffice_logo_exec.rb",
-          "usage_commands": [
-            "use exploits/multi/fileformat/libreoffice_logo_exec",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -3301,45 +3301,8 @@
         }
       ]
     },
-    "CVE-2023-43208": {
+    "CVE-2023-37679": {
       "modules": [
-        {
-          "module_path": "exploits/multi/http/mirth_connect_cve_2023_43208",
-          "name": "Mirth Connect Deserialization RCE",
-          "description": "A vulnerability exists within Mirth Connect due to its mishandling of deserialized data. This vulnerability can be leveraged by an attacker using a crafted HTTP request to execute OS commands within the context of the target application. The original vulnerability was identified by IHTeam and assigned CVE-2023-37679. Later, researchers from Horizon3.ai determined the patch to be incomplete and published a gadget chain which bypassed the deny list that the original had implemented. This second vulnerability was assigned CVE-2023-43208 and was patched in Mirth Connect version 4.4.1. This module has been tested on versions 4.1.1, 4.3.0 and 4.4.0.",
-          "authors": [
-            "r00t",
-            "Naveen Sunkavally",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "unix",
-            "linux",
-            "win"
-          ],
-          "targets": [
-            "Unix Command",
-            "unix"
-          ],
-          "privileged": false,
-          "disclosure_date": "2023-10-25",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/mirth_connect_cve_2023_43208.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/mirth_connect_cve_2023_43208.rb",
-          "usage_commands": [
-            "use exploits/multi/http/mirth_connect_cve_2023_43208",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "set TARGET <target_index>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/multi/http/mirth_connect_cve_2023_43208",
           "name": "Mirth Connect Deserialization RCE",
@@ -3379,8 +3342,45 @@
         }
       ]
     },
-    "CVE-2023-37679": {
+    "CVE-2023-43208": {
       "modules": [
+        {
+          "module_path": "exploits/multi/http/mirth_connect_cve_2023_43208",
+          "name": "Mirth Connect Deserialization RCE",
+          "description": "A vulnerability exists within Mirth Connect due to its mishandling of deserialized data. This vulnerability can be leveraged by an attacker using a crafted HTTP request to execute OS commands within the context of the target application. The original vulnerability was identified by IHTeam and assigned CVE-2023-37679. Later, researchers from Horizon3.ai determined the patch to be incomplete and published a gadget chain which bypassed the deny list that the original had implemented. This second vulnerability was assigned CVE-2023-43208 and was patched in Mirth Connect version 4.4.1. This module has been tested on versions 4.1.1, 4.3.0 and 4.4.0.",
+          "authors": [
+            "r00t",
+            "Naveen Sunkavally",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux",
+            "win"
+          ],
+          "targets": [
+            "Unix Command",
+            "unix"
+          ],
+          "privileged": false,
+          "disclosure_date": "2023-10-25",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/mirth_connect_cve_2023_43208.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/mirth_connect_cve_2023_43208.rb",
+          "usage_commands": [
+            "use exploits/multi/http/mirth_connect_cve_2023_43208",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/multi/http/mirth_connect_cve_2023_43208",
           "name": "Mirth Connect Deserialization RCE",
@@ -3858,7 +3858,7 @@
         }
       ]
     },
-    "CVE-2019-1003000": {
+    "CVE-2018-1000408": {
       "modules": [
         {
           "module_path": "exploits/multi/http/jenkins_metaprogramming",
@@ -3897,7 +3897,7 @@
         }
       ]
     },
-    "CVE-2018-1000408": {
+    "CVE-2019-1003000": {
       "modules": [
         {
           "module_path": "exploits/multi/http/jenkins_metaprogramming",
@@ -4825,6 +4825,98 @@
         }
       ]
     },
+    "CVE-2014-6278": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/cups_bash_env_exec",
+          "name": "CUPS Filter Bash Environment Variable Code Injection (Shellshock)",
+          "description": "This module exploits the Shellshock vulnerability, a flaw in how the Bash shell handles external environment variables. This module targets CUPS filters through the PRINTER_INFO and PRINTER_LOCATION variables. A valid username and password is required to exploit this vulnerability through CUPS.",
+          "authors": [
+            "Stephane Chazelas",
+            "lcamtuf",
+            "bcoles"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic Targeting"
+          ],
+          "privileged": false,
+          "disclosure_date": "2014-09-24",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/cups_bash_env_exec.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/cups_bash_env_exec.rb",
+          "usage_commands": [
+            "use exploits/multi/http/cups_bash_env_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/multi/http/apache_mod_cgi_bash_env_exec",
+          "name": "Apache mod_cgi Bash Environment Variable Code Injection (Shellshock)",
+          "description": "This module exploits the Shellshock vulnerability, a flaw in how the Bash shell handles external environment variables. This module targets CGI scripts in the Apache web server by setting the HTTP_USER_AGENT environment variable to a malicious function definition.",
+          "authors": [
+            "Stephane Chazelas",
+            "wvu",
+            "juan vazquez",
+            "s module to get native sessions"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Linux x86"
+          ],
+          "privileged": false,
+          "disclosure_date": "2014-09-24",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/apache_mod_cgi_bash_env_exec.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/apache_mod_cgi_bash_env_exec.rb",
+          "usage_commands": [
+            "use exploits/multi/http/apache_mod_cgi_bash_env_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "auxiliary/scanner/http/apache_mod_cgi_bash_env",
+          "name": "Apache mod_cgi Bash Environment Variable Injection (Shellshock) Scanner",
+          "description": "This module scans for the Shellshock vulnerability, a flaw in how the Bash shell handles external environment variables. This module targets CGI scripts in the Apache web server by setting the HTTP_USER_AGENT environment variable to a malicious function definition. PROTIP: Use exploit/multi/handler with a PAYLOAD appropriate to your CMD, set ExitOnSession false, run -j, and then run this module to create sessions on vulnerable hosts. Note that this is not the recommended method for obtaining shells. If you require sessions, please use the apache_mod_cgi_bash_env_exec exploit module instead.",
+          "authors": [
+            "Stephane Chazelas",
+            "wvu",
+            "lcamtuf"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2014-09-24",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/apache_mod_cgi_bash_env.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/apache_mod_cgi_bash_env.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/apache_mod_cgi_bash_env",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
     "CVE-2014-6271": {
       "modules": [
         {
@@ -4937,98 +5029,6 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/ipfire_bashbug_exec.rb",
           "usage_commands": [
             "use exploits/linux/http/ipfire_bashbug_exec",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "auxiliary/scanner/http/apache_mod_cgi_bash_env",
-          "name": "Apache mod_cgi Bash Environment Variable Injection (Shellshock) Scanner",
-          "description": "This module scans for the Shellshock vulnerability, a flaw in how the Bash shell handles external environment variables. This module targets CGI scripts in the Apache web server by setting the HTTP_USER_AGENT environment variable to a malicious function definition. PROTIP: Use exploit/multi/handler with a PAYLOAD appropriate to your CMD, set ExitOnSession false, run -j, and then run this module to create sessions on vulnerable hosts. Note that this is not the recommended method for obtaining shells. If you require sessions, please use the apache_mod_cgi_bash_env_exec exploit module instead.",
-          "authors": [
-            "Stephane Chazelas",
-            "wvu",
-            "lcamtuf"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "2014-09-24",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/apache_mod_cgi_bash_env.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/apache_mod_cgi_bash_env.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/http/apache_mod_cgi_bash_env",
-            "show options",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "run"
-          ]
-        }
-      ]
-    },
-    "CVE-2014-6278": {
-      "modules": [
-        {
-          "module_path": "exploits/multi/http/cups_bash_env_exec",
-          "name": "CUPS Filter Bash Environment Variable Code Injection (Shellshock)",
-          "description": "This module exploits the Shellshock vulnerability, a flaw in how the Bash shell handles external environment variables. This module targets CUPS filters through the PRINTER_INFO and PRINTER_LOCATION variables. A valid username and password is required to exploit this vulnerability through CUPS.",
-          "authors": [
-            "Stephane Chazelas",
-            "lcamtuf",
-            "bcoles"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic Targeting"
-          ],
-          "privileged": false,
-          "disclosure_date": "2014-09-24",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/cups_bash_env_exec.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/cups_bash_env_exec.rb",
-          "usage_commands": [
-            "use exploits/multi/http/cups_bash_env_exec",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/multi/http/apache_mod_cgi_bash_env_exec",
-          "name": "Apache mod_cgi Bash Environment Variable Code Injection (Shellshock)",
-          "description": "This module exploits the Shellshock vulnerability, a flaw in how the Bash shell handles external environment variables. This module targets CGI scripts in the Apache web server by setting the HTTP_USER_AGENT environment variable to a malicious function definition.",
-          "authors": [
-            "Stephane Chazelas",
-            "wvu",
-            "juan vazquez",
-            "s module to get native sessions"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Linux x86"
-          ],
-          "privileged": false,
-          "disclosure_date": "2014-09-24",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/apache_mod_cgi_bash_env_exec.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/apache_mod_cgi_bash_env_exec.rb",
-          "usage_commands": [
-            "use exploits/multi/http/apache_mod_cgi_bash_env_exec",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -5716,7 +5716,7 @@
         }
       ]
     },
-    "CVE-2024-27198": {
+    "CVE-2024-27199": {
       "modules": [
         {
           "module_path": "exploits/multi/http/jetbrains_teamcity_rce_cve_2024_27198",
@@ -5749,7 +5749,7 @@
         }
       ]
     },
-    "CVE-2024-27199": {
+    "CVE-2024-27198": {
       "modules": [
         {
           "module_path": "exploits/multi/http/jetbrains_teamcity_rce_cve_2024_27198",
@@ -5850,7 +5850,7 @@
         }
       ]
     },
-    "CVE-2023-49084": {
+    "CVE-2023-49085": {
       "modules": [
         {
           "module_path": "exploits/multi/http/cacti_pollers_sqli_rce",
@@ -5888,7 +5888,7 @@
         }
       ]
     },
-    "CVE-2023-49085": {
+    "CVE-2023-49084": {
       "modules": [
         {
           "module_path": "exploits/multi/http/cacti_pollers_sqli_rce",
@@ -6105,6 +6105,43 @@
         }
       ]
     },
+    "CVE-2021-22205": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/gitlab_exif_rce",
+          "name": "GitLab Unauthenticated Remote ExifTool Command Injection",
+          "description": "This module exploits an unauthenticated file upload and command injection vulnerability in GitLab Community Edition (CE) and Enterprise Edition (EE). The patched versions are 13.10.3, 13.9.6, and 13.8.8. Exploitation will result in command execution as the git user.",
+          "authors": [
+            "William Bowling",
+            "jbaines-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2021-04-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/gitlab_exif_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/gitlab_exif_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/gitlab_exif_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2021-22204": {
       "modules": [
         {
@@ -6171,44 +6208,7 @@
         }
       ]
     },
-    "CVE-2021-22205": {
-      "modules": [
-        {
-          "module_path": "exploits/multi/http/gitlab_exif_rce",
-          "name": "GitLab Unauthenticated Remote ExifTool Command Injection",
-          "description": "This module exploits an unauthenticated file upload and command injection vulnerability in GitLab Community Edition (CE) and Enterprise Edition (EE). The patched versions are 13.10.3, 13.9.6, and 13.8.8. Exploitation will result in command execution as the git user.",
-          "authors": [
-            "William Bowling",
-            "jbaines-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "unix",
-            "linux"
-          ],
-          "targets": [
-            "Unix Command"
-          ],
-          "privileged": false,
-          "disclosure_date": "2021-04-14",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/gitlab_exif_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/gitlab_exif_rce.rb",
-          "usage_commands": [
-            "use exploits/multi/http/gitlab_exif_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2014-2269": {
+    "CVE-2014-2268": {
       "modules": [
         {
           "module_path": "exploits/multi/http/vtiger_install_rce",
@@ -6241,7 +6241,7 @@
         }
       ]
     },
-    "CVE-2014-2268": {
+    "CVE-2014-2269": {
       "modules": [
         {
           "module_path": "exploits/multi/http/vtiger_install_rce",
@@ -6376,42 +6376,6 @@
         }
       ]
     },
-    "CVE-2020-35847": {
-      "modules": [
-        {
-          "module_path": "exploits/multi/http/cockpit_cms_rce",
-          "name": "Cockpit CMS NoSQLi to RCE",
-          "description": "This module exploits two NoSQLi vulnerabilities to retrieve the user list, and password reset tokens from the system. Next, the USER is targetted to reset their password. Then a command injection vulnerability is used to execute the payload. While it is possible to upload a payload and execute it, the command injection provides a no disk write method which is more stealthy. Cockpit CMS 0.10.0 - 0.11.1, inclusive, contain all the necessary vulnerabilities for exploitation.",
-          "authors": [
-            "h00die",
-            "Nikita Petrov"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "php"
-          ],
-          "targets": [
-            "Automatic Target"
-          ],
-          "privileged": false,
-          "disclosure_date": "2021-04-13",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/cockpit_cms_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/cockpit_cms_rce.rb",
-          "usage_commands": [
-            "use exploits/multi/http/cockpit_cms_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2020-35846": {
       "modules": [
         {
@@ -6448,7 +6412,43 @@
         }
       ]
     },
-    "CVE-2023-34133": {
+    "CVE-2020-35847": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/cockpit_cms_rce",
+          "name": "Cockpit CMS NoSQLi to RCE",
+          "description": "This module exploits two NoSQLi vulnerabilities to retrieve the user list, and password reset tokens from the system. Next, the USER is targetted to reset their password. Then a command injection vulnerability is used to execute the payload. While it is possible to upload a payload and execute it, the command injection provides a no disk write method which is more stealthy. Cockpit CMS 0.10.0 - 0.11.1, inclusive, contain all the necessary vulnerabilities for exploitation.",
+          "authors": [
+            "h00die",
+            "Nikita Petrov"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "php"
+          ],
+          "targets": [
+            "Automatic Target"
+          ],
+          "privileged": false,
+          "disclosure_date": "2021-04-13",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/cockpit_cms_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/cockpit_cms_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/cockpit_cms_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2023-34124": {
       "modules": [
         {
           "module_path": "exploits/multi/http/sonicwall_shell_injection_cve_2023_34124",
@@ -6524,7 +6524,7 @@
         }
       ]
     },
-    "CVE-2023-34124": {
+    "CVE-2023-34133": {
       "modules": [
         {
           "module_path": "exploits/multi/http/sonicwall_shell_injection_cve_2023_34124",
@@ -6873,6 +6873,44 @@
         }
       ]
     },
+    "CVE-2025-4427": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428",
+          "name": "Ivanti EPMM Authentication Bypass for Expression Language Remote Code Execution",
+          "description": "This module exploits an unauthenticated remote code execution exploit chain for Ivanti EPMM, tracked as CVE-2025-4427 and CVE-2025-4428. An authentication flaw permits unauthenticated access to an administrator web API endpoint, which allows for code execution via expression language injection. This module executes in the context of the 'tomcat' user. This module should also work on many versions of MobileIron Core (rebranded as Ivanti EPMM).",
+          "authors": [
+            "CERT-EU",
+            "Sonny Macdonald",
+            "Piotr Bazydlo",
+            "remmons-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "python"
+          ],
+          "targets": [
+            "Default"
+          ],
+          "privileged": false,
+          "disclosure_date": "2025-05-13",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428.rb",
+          "usage_commands": [
+            "use exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2025-4428": {
       "modules": [
         {
@@ -6966,44 +7004,6 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/commvault_rce_cve_2025_57790_cve_2025_57791.rb",
           "usage_commands": [
             "use exploits/windows/http/commvault_rce_cve_2025_57790_cve_2025_57791",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2025-4427": {
-      "modules": [
-        {
-          "module_path": "exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428",
-          "name": "Ivanti EPMM Authentication Bypass for Expression Language Remote Code Execution",
-          "description": "This module exploits an unauthenticated remote code execution exploit chain for Ivanti EPMM, tracked as CVE-2025-4427 and CVE-2025-4428. An authentication flaw permits unauthenticated access to an administrator web API endpoint, which allows for code execution via expression language injection. This module executes in the context of the 'tomcat' user. This module should also work on many versions of MobileIron Core (rebranded as Ivanti EPMM).",
-          "authors": [
-            "CERT-EU",
-            "Sonny Macdonald",
-            "Piotr Bazydlo",
-            "remmons-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "python"
-          ],
-          "targets": [
-            "Default"
-          ],
-          "privileged": false,
-          "disclosure_date": "2025-05-13",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428.rb",
-          "usage_commands": [
-            "use exploits/multi/http/ivanti_epmm_rce_cve_2025_4427_4428",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -7161,7 +7161,7 @@
         }
       ]
     },
-    "CVE-2024-38856": {
+    "CVE-2024-32113": {
       "modules": [
         {
           "module_path": "exploits/multi/http/apache_ofbiz_forgot_password_directory_traversal",
@@ -7200,7 +7200,7 @@
         }
       ]
     },
-    "CVE-2024-32113": {
+    "CVE-2024-38856": {
       "modules": [
         {
           "module_path": "exploits/multi/http/apache_ofbiz_forgot_password_directory_traversal",
@@ -7700,7 +7700,7 @@
         }
       ]
     },
-    "CVE-2022-2297": {
+    "CVE-2025-3096": {
       "modules": [
         {
           "module_path": "exploits/multi/http/clinic_pms_sqli_to_rce",
@@ -7734,7 +7734,7 @@
         }
       ]
     },
-    "CVE-2025-3096": {
+    "CVE-2022-2297": {
       "modules": [
         {
           "module_path": "exploits/multi/http/clinic_pms_sqli_to_rce",
@@ -8625,7 +8625,7 @@
         }
       ]
     },
-    "CVE-2025-27007": {
+    "CVE-2025-3102": {
       "modules": [
         {
           "module_path": "exploits/multi/http/wp_suretriggers_auth_bypass",
@@ -8693,7 +8693,7 @@
         }
       ]
     },
-    "CVE-2025-3102": {
+    "CVE-2025-27007": {
       "modules": [
         {
           "module_path": "exploits/multi/http/wp_suretriggers_auth_bypass",
@@ -9010,7 +9010,7 @@
         }
       ]
     },
-    "CVE-2016-7552": {
+    "CVE-2016-7547": {
       "modules": [
         {
           "module_path": "exploits/multi/http/trendmicro_threat_discovery_admin_sys_time_cmdi",
@@ -9044,7 +9044,7 @@
         }
       ]
     },
-    "CVE-2016-7547": {
+    "CVE-2016-7552": {
       "modules": [
         {
           "module_path": "exploits/multi/http/trendmicro_threat_discovery_admin_sys_time_cmdi",
@@ -9704,46 +9704,8 @@
         }
       ]
     },
-    "CVE-2021-35587": {
+    "CVE-2020-2883": {
       "modules": [
-        {
-          "module_path": "exploits/multi/http/oracle_access_manager_rce_cve_2021_35587",
-          "name": "Oracle Access Manager unauthenticated Remote Code Execution",
-          "description": "This module exploits an unauthenticated deserialization of untrusted data vulnerability in the OpenSSO Agent component of the Oracle Access Manager (OAM) product. The affected product versions are 11.1.2.3.0, 12.2.1.3.0, and 12.2.1.4.0.",
-          "authors": [
-            "Jang",
-            "Peterjson",
-            "Y4er",
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux",
-            "unix",
-            "win"
-          ],
-          "targets": [
-            "Linux Command",
-            "linux"
-          ],
-          "privileged": false,
-          "disclosure_date": "2022-01-19",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/oracle_access_manager_rce_cve_2021_35587.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/oracle_access_manager_rce_cve_2021_35587.rb",
-          "usage_commands": [
-            "use exploits/multi/http/oracle_access_manager_rce_cve_2021_35587",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "set TARGET <target_index>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/multi/http/oracle_access_manager_rce_cve_2021_35587",
           "name": "Oracle Access Manager unauthenticated Remote Code Execution",
@@ -9784,8 +9746,46 @@
         }
       ]
     },
-    "CVE-2020-2883": {
+    "CVE-2021-35587": {
       "modules": [
+        {
+          "module_path": "exploits/multi/http/oracle_access_manager_rce_cve_2021_35587",
+          "name": "Oracle Access Manager unauthenticated Remote Code Execution",
+          "description": "This module exploits an unauthenticated deserialization of untrusted data vulnerability in the OpenSSO Agent component of the Oracle Access Manager (OAM) product. The affected product versions are 11.1.2.3.0, 12.2.1.3.0, and 12.2.1.4.0.",
+          "authors": [
+            "Jang",
+            "Peterjson",
+            "Y4er",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux",
+            "unix",
+            "win"
+          ],
+          "targets": [
+            "Linux Command",
+            "linux"
+          ],
+          "privileged": false,
+          "disclosure_date": "2022-01-19",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/oracle_access_manager_rce_cve_2021_35587.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/oracle_access_manager_rce_cve_2021_35587.rb",
+          "usage_commands": [
+            "use exploits/multi/http/oracle_access_manager_rce_cve_2021_35587",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/multi/http/oracle_access_manager_rce_cve_2021_35587",
           "name": "Oracle Access Manager unauthenticated Remote Code Execution",
@@ -10107,7 +10107,7 @@
         }
       ]
     },
-    "CVE-2011-3833": {
+    "CVE-2011-3829": {
       "modules": [
         {
           "module_path": "exploits/multi/http/sit_file_upload",
@@ -10141,7 +10141,7 @@
         }
       ]
     },
-    "CVE-2011-3829": {
+    "CVE-2011-3833": {
       "modules": [
         {
           "module_path": "exploits/multi/http/sit_file_upload",
@@ -12816,7 +12816,7 @@
         }
       ]
     },
-    "CVE-2021-34527": {
+    "CVE-2021-1675": {
       "modules": [
         {
           "module_path": "exploits/windows/dcerpc/cve_2021_1675_printnightmare",
@@ -12857,7 +12857,7 @@
         }
       ]
     },
-    "CVE-2021-1675": {
+    "CVE-2021-34527": {
       "modules": [
         {
           "module_path": "exploits/windows/dcerpc/cve_2021_1675_printnightmare",
@@ -13557,45 +13557,8 @@
         }
       ]
     },
-    "CVE-2021-1732": {
+    "CVE-2016-7255": {
       "modules": [
-        {
-          "module_path": "exploits/windows/local/cve_2022_21882_win32k",
-          "name": "Win32k ConsoleControl Offset Confusion",
-          "description": "A vulnerability exists within win32k that can be leveraged by an attacker to escalate privileges to those of NT AUTHORITY\\SYSTEM. The flaw exists in how the WndExtra field of a window can be manipulated into being treated as an offset despite being populated by an attacker-controlled value. This can be leveraged to achieve an out of bounds write operation, eventually leading to privilege escalation. This flaw was originally identified as CVE-2021-1732 and was patched by Microsoft on February 9th, 2021. In early 2022, a technique to bypass the patch was identified and assigned CVE-2022-21882. The root cause is is the same for both vulnerabilities. This exploit combines the patch bypass with the original exploit to function on a wider range of Windows 10 targets.",
-          "authors": [
-            "BITTER APT",
-            "JinQuan",
-            "MaDongZe",
-            "TuXiaoYi",
-            "LiHao",
-            "L4ys",
-            "KaLendsi",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Windows 10 v1803-21H2 x64"
-          ],
-          "privileged": false,
-          "disclosure_date": "2021-02-09",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/local/cve_2022_21882_win32k.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/local/cve_2022_21882_win32k.rb",
-          "usage_commands": [
-            "use exploits/windows/local/cve_2022_21882_win32k",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set SMBUser <username>",
-            "set SMBPass <password>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/windows/local/cve_2022_21882_win32k",
           "name": "Win32k ConsoleControl Offset Confusion",
@@ -13635,8 +13598,45 @@
         }
       ]
     },
-    "CVE-2016-7255": {
+    "CVE-2021-1732": {
       "modules": [
+        {
+          "module_path": "exploits/windows/local/cve_2022_21882_win32k",
+          "name": "Win32k ConsoleControl Offset Confusion",
+          "description": "A vulnerability exists within win32k that can be leveraged by an attacker to escalate privileges to those of NT AUTHORITY\\SYSTEM. The flaw exists in how the WndExtra field of a window can be manipulated into being treated as an offset despite being populated by an attacker-controlled value. This can be leveraged to achieve an out of bounds write operation, eventually leading to privilege escalation. This flaw was originally identified as CVE-2021-1732 and was patched by Microsoft on February 9th, 2021. In early 2022, a technique to bypass the patch was identified and assigned CVE-2022-21882. The root cause is is the same for both vulnerabilities. This exploit combines the patch bypass with the original exploit to function on a wider range of Windows 10 targets.",
+          "authors": [
+            "BITTER APT",
+            "JinQuan",
+            "MaDongZe",
+            "TuXiaoYi",
+            "LiHao",
+            "L4ys",
+            "KaLendsi",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Windows 10 v1803-21H2 x64"
+          ],
+          "privileged": false,
+          "disclosure_date": "2021-02-09",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/local/cve_2022_21882_win32k.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/local/cve_2022_21882_win32k.rb",
+          "usage_commands": [
+            "use exploits/windows/local/cve_2022_21882_win32k",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/windows/local/cve_2022_21882_win32k",
           "name": "Win32k ConsoleControl Offset Confusion",
@@ -14091,136 +14091,6 @@
         }
       ]
     },
-    "CVE-2015-0096": {
-      "modules": [
-        {
-          "module_path": "exploits/windows/local/cve_2017_8464_lnk_lpe",
-          "name": "LNK Code Execution Vulnerability",
-          "description": "This module exploits a vulnerability in the handling of Windows Shortcut files (.LNK) that contain a dynamic icon, loaded from a malicious DLL. This vulnerability is a variant of MS15-020 (CVE-2015-0096). The created LNK file is similar except an additional SpecialFolderDataBlock is included. The folder ID set in this SpecialFolderDataBlock is set to the Control Panel. This is enough to bypass the CPL whitelist. This bypass can be used to trick Windows into loading an arbitrary DLL file. The PATH option must be an absolute path to a writeable directory which is indexed for searching. If no PATH is specified, the module defaults to %USERPROFILE%.",
-          "authors": [
-            "Uncredited",
-            "Yorick Koster",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Windows x64"
-          ],
-          "privileged": false,
-          "disclosure_date": "2017-06-13",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/local/cve_2017_8464_lnk_lpe.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/local/cve_2017_8464_lnk_lpe.rb",
-          "usage_commands": [
-            "use exploits/windows/local/cve_2017_8464_lnk_lpe",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set SMBUser <username>",
-            "set SMBPass <password>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/windows/fileformat/cve_2017_8464_lnk_rce",
-          "name": "LNK Code Execution Vulnerability",
-          "description": "This module exploits a vulnerability in the handling of Windows Shortcut files (.LNK) that contain a dynamic icon, loaded from a malicious DLL. This vulnerability is a variant of MS15-020 (CVE-2015-0096). The created LNK file is similar except an additional SpecialFolderDataBlock is included. The folder ID set in this SpecialFolderDataBlock is set to the Control Panel. This is enough to bypass the CPL whitelist. This bypass can be used to trick Windows into loading an arbitrary DLL file. If no PATH is specified, the module will use drive letters D through Z so the files may be placed in the root path of a drive such as a shared VM folder or USB drive.",
-          "authors": [
-            "Uncredited",
-            "Yorick Koster",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2017-06-13",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb",
-          "usage_commands": [
-            "use exploits/windows/fileformat/cve_2017_8464_lnk_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set SMBUser <username>",
-            "set SMBPass <password>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader",
-          "name": "Microsoft Windows Shell LNK Code Execution",
-          "description": "This module exploits a vulnerability in the MS10-046 patch to abuse (again) the handling of Windows Shortcut files (.LNK) that contain an icon resource pointing to a malicious DLL. This module creates the required files to exploit the vulnerability. They must be uploaded to an UNC path accessible by the target. This module has been tested successfully on Windows 2003 SP2 with MS10-046 installed and Windows 2008 SP2 (32 bits) with MS14-027 installed.",
-          "authors": [
-            "Michael Heerklotz",
-            "juan vazquez"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2015-03-10",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader.rb",
-          "usage_commands": [
-            "use exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set SMBUser <username>",
-            "set SMBPass <password>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/windows/smb/ms15_020_shortcut_icon_dllloader",
-          "name": "Microsoft Windows Shell LNK Code Execution",
-          "description": "This module exploits a vulnerability in the MS10-046 patch to abuse (again) the handling of Windows Shortcut files (.LNK) that contain an icon resource pointing to a malicious DLL. This creates an SMB resource to provide the payload and the trigger, and generates a LNK file which must be sent to the target. This module has been tested successfully on Windows 2003 SP2 with MS10-046 installed and Windows 2008 SP2 (32 bits) with MS14-027 installed.",
-          "authors": [
-            "Michael Heerklotz",
-            "juan vazquez"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2015-03-10",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/smb/ms15_020_shortcut_icon_dllloader.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/smb/ms15_020_shortcut_icon_dllloader.rb",
-          "usage_commands": [
-            "use exploits/windows/smb/ms15_020_shortcut_icon_dllloader",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set SMBUser <username>",
-            "set SMBPass <password>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2017-8464": {
       "modules": [
         {
@@ -14340,6 +14210,136 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb",
           "usage_commands": [
             "use exploits/windows/fileformat/cve_2017_8464_lnk_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2015-0096": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/local/cve_2017_8464_lnk_lpe",
+          "name": "LNK Code Execution Vulnerability",
+          "description": "This module exploits a vulnerability in the handling of Windows Shortcut files (.LNK) that contain a dynamic icon, loaded from a malicious DLL. This vulnerability is a variant of MS15-020 (CVE-2015-0096). The created LNK file is similar except an additional SpecialFolderDataBlock is included. The folder ID set in this SpecialFolderDataBlock is set to the Control Panel. This is enough to bypass the CPL whitelist. This bypass can be used to trick Windows into loading an arbitrary DLL file. The PATH option must be an absolute path to a writeable directory which is indexed for searching. If no PATH is specified, the module defaults to %USERPROFILE%.",
+          "authors": [
+            "Uncredited",
+            "Yorick Koster",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Windows x64"
+          ],
+          "privileged": false,
+          "disclosure_date": "2017-06-13",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/local/cve_2017_8464_lnk_lpe.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/local/cve_2017_8464_lnk_lpe.rb",
+          "usage_commands": [
+            "use exploits/windows/local/cve_2017_8464_lnk_lpe",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/windows/fileformat/cve_2017_8464_lnk_rce",
+          "name": "LNK Code Execution Vulnerability",
+          "description": "This module exploits a vulnerability in the handling of Windows Shortcut files (.LNK) that contain a dynamic icon, loaded from a malicious DLL. This vulnerability is a variant of MS15-020 (CVE-2015-0096). The created LNK file is similar except an additional SpecialFolderDataBlock is included. The folder ID set in this SpecialFolderDataBlock is set to the Control Panel. This is enough to bypass the CPL whitelist. This bypass can be used to trick Windows into loading an arbitrary DLL file. If no PATH is specified, the module will use drive letters D through Z so the files may be placed in the root path of a drive such as a shared VM folder or USB drive.",
+          "authors": [
+            "Uncredited",
+            "Yorick Koster",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2017-06-13",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb",
+          "usage_commands": [
+            "use exploits/windows/fileformat/cve_2017_8464_lnk_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader",
+          "name": "Microsoft Windows Shell LNK Code Execution",
+          "description": "This module exploits a vulnerability in the MS10-046 patch to abuse (again) the handling of Windows Shortcut files (.LNK) that contain an icon resource pointing to a malicious DLL. This module creates the required files to exploit the vulnerability. They must be uploaded to an UNC path accessible by the target. This module has been tested successfully on Windows 2003 SP2 with MS10-046 installed and Windows 2008 SP2 (32 bits) with MS14-027 installed.",
+          "authors": [
+            "Michael Heerklotz",
+            "juan vazquez"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2015-03-10",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader.rb",
+          "usage_commands": [
+            "use exploits/windows/fileformat/ms15_020_shortcut_icon_dllloader",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/windows/smb/ms15_020_shortcut_icon_dllloader",
+          "name": "Microsoft Windows Shell LNK Code Execution",
+          "description": "This module exploits a vulnerability in the MS10-046 patch to abuse (again) the handling of Windows Shortcut files (.LNK) that contain an icon resource pointing to a malicious DLL. This creates an SMB resource to provide the payload and the trigger, and generates a LNK file which must be sent to the target. This module has been tested successfully on Windows 2003 SP2 with MS10-046 installed and Windows 2008 SP2 (32 bits) with MS14-027 installed.",
+          "authors": [
+            "Michael Heerklotz",
+            "juan vazquez"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2015-03-10",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/smb/ms15_020_shortcut_icon_dllloader.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/smb/ms15_020_shortcut_icon_dllloader.rb",
+          "usage_commands": [
+            "use exploits/windows/smb/ms15_020_shortcut_icon_dllloader",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -15104,7 +15104,7 @@
         }
       ]
     },
-    "CVE-2021-34484": {
+    "CVE-2022-21919": {
       "modules": [
         {
           "module_path": "exploits/windows/local/cve_2022_26904_superprofile",
@@ -15139,7 +15139,7 @@
         }
       ]
     },
-    "CVE-2022-21919": {
+    "CVE-2021-34484": {
       "modules": [
         {
           "module_path": "exploits/windows/local/cve_2022_26904_superprofile",
@@ -16173,7 +16173,7 @@
         }
       ]
     },
-    "CVE-2020-17136": {
+    "CVE-2020-1170": {
       "modules": [
         {
           "module_path": "exploits/windows/local/cve_2020_17136",
@@ -16210,7 +16210,7 @@
         }
       ]
     },
-    "CVE-2020-1170": {
+    "CVE-2020-17136": {
       "modules": [
         {
           "module_path": "exploits/windows/local/cve_2020_17136",
@@ -18184,6 +18184,110 @@
         }
       ]
     },
+    "CVE-2025-53770": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/http/sharepoint_toolpane_rce",
+          "name": "Microsoft SharePoint Server ToolPane Unauthenticated Remote Code Execution (aka ToolShell)",
+          "description": "This module exploits the authentication bypass vulnerabilities CVE-2025-49706 and CVE-2025-53771, and an unsafe deserialization vulnerability CVE-2025-49704, to achieve unauthenticated RCE against a vulnerable Microsoft SharePoint Server. The vulnerability CVE-2025-53770 was disclosed as being a patch bypass of CVE-2025-49704, and as described by the finders, CVE-2025-53770 targets a different endpoint within the /_vti_bin/ URI path. As this exploit module does not target the endpoint associated with CVE-2025-53770 (per the original finders), we believe this module is best described as exploiting CVE-2025-49704 and not CVE-2025-53770.",
+          "authors": [
+            "Viettel Cyber Security",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win"
+          ],
+          "targets": [
+            "Default"
+          ],
+          "privileged": false,
+          "disclosure_date": "2025-07-08",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
+          "usage_commands": [
+            "use exploits/windows/http/sharepoint_toolpane_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/windows/http/sharepoint_toolpane_rce",
+          "name": "Microsoft SharePoint Server ToolPane Unauthenticated Remote Code Execution (aka ToolShell)",
+          "description": "This module exploits the authentication bypass vulnerabilities CVE-2025-49706 and CVE-2025-53771, and an unsafe deserialization vulnerability CVE-2025-49704, to achieve unauthenticated RCE against a vulnerable Microsoft SharePoint Server. The vulnerability CVE-2025-53770 was disclosed as being a patch bypass of CVE-2025-49704, and as described by the finders, CVE-2025-53770 targets a different endpoint within the /_vti_bin/ URI path. As this exploit module does not target the endpoint associated with CVE-2025-53770 (per the original finders), we believe this module is best described as exploiting CVE-2025-49704 and not CVE-2025-53770.",
+          "authors": [
+            "Viettel Cyber Security",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win"
+          ],
+          "targets": [
+            "Default"
+          ],
+          "privileged": false,
+          "disclosure_date": "2025-07-08",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
+          "usage_commands": [
+            "use exploits/windows/http/sharepoint_toolpane_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2025-49704": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/http/sharepoint_toolpane_rce",
+          "name": "Microsoft SharePoint Server ToolPane Unauthenticated Remote Code Execution (aka ToolShell)",
+          "description": "This module exploits the authentication bypass vulnerabilities CVE-2025-49706 and CVE-2025-53771, and an unsafe deserialization vulnerability CVE-2025-49704, to achieve unauthenticated RCE against a vulnerable Microsoft SharePoint Server. The vulnerability CVE-2025-53770 was disclosed as being a patch bypass of CVE-2025-49704, and as described by the finders, CVE-2025-53770 targets a different endpoint within the /_vti_bin/ URI path. As this exploit module does not target the endpoint associated with CVE-2025-53770 (per the original finders), we believe this module is best described as exploiting CVE-2025-49704 and not CVE-2025-53770.",
+          "authors": [
+            "Viettel Cyber Security",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win"
+          ],
+          "targets": [
+            "Default"
+          ],
+          "privileged": false,
+          "disclosure_date": "2025-07-08",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
+          "usage_commands": [
+            "use exploits/windows/http/sharepoint_toolpane_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2025-53771": {
       "modules": [
         {
@@ -18256,111 +18360,7 @@
         }
       ]
     },
-    "CVE-2025-49704": {
-      "modules": [
-        {
-          "module_path": "exploits/windows/http/sharepoint_toolpane_rce",
-          "name": "Microsoft SharePoint Server ToolPane Unauthenticated Remote Code Execution (aka ToolShell)",
-          "description": "This module exploits the authentication bypass vulnerabilities CVE-2025-49706 and CVE-2025-53771, and an unsafe deserialization vulnerability CVE-2025-49704, to achieve unauthenticated RCE against a vulnerable Microsoft SharePoint Server. The vulnerability CVE-2025-53770 was disclosed as being a patch bypass of CVE-2025-49704, and as described by the finders, CVE-2025-53770 targets a different endpoint within the /_vti_bin/ URI path. As this exploit module does not target the endpoint associated with CVE-2025-53770 (per the original finders), we believe this module is best described as exploiting CVE-2025-49704 and not CVE-2025-53770.",
-          "authors": [
-            "Viettel Cyber Security",
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "win"
-          ],
-          "targets": [
-            "Default"
-          ],
-          "privileged": false,
-          "disclosure_date": "2025-07-08",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
-          "usage_commands": [
-            "use exploits/windows/http/sharepoint_toolpane_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2025-53770": {
-      "modules": [
-        {
-          "module_path": "exploits/windows/http/sharepoint_toolpane_rce",
-          "name": "Microsoft SharePoint Server ToolPane Unauthenticated Remote Code Execution (aka ToolShell)",
-          "description": "This module exploits the authentication bypass vulnerabilities CVE-2025-49706 and CVE-2025-53771, and an unsafe deserialization vulnerability CVE-2025-49704, to achieve unauthenticated RCE against a vulnerable Microsoft SharePoint Server. The vulnerability CVE-2025-53770 was disclosed as being a patch bypass of CVE-2025-49704, and as described by the finders, CVE-2025-53770 targets a different endpoint within the /_vti_bin/ URI path. As this exploit module does not target the endpoint associated with CVE-2025-53770 (per the original finders), we believe this module is best described as exploiting CVE-2025-49704 and not CVE-2025-53770.",
-          "authors": [
-            "Viettel Cyber Security",
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "win"
-          ],
-          "targets": [
-            "Default"
-          ],
-          "privileged": false,
-          "disclosure_date": "2025-07-08",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
-          "usage_commands": [
-            "use exploits/windows/http/sharepoint_toolpane_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/windows/http/sharepoint_toolpane_rce",
-          "name": "Microsoft SharePoint Server ToolPane Unauthenticated Remote Code Execution (aka ToolShell)",
-          "description": "This module exploits the authentication bypass vulnerabilities CVE-2025-49706 and CVE-2025-53771, and an unsafe deserialization vulnerability CVE-2025-49704, to achieve unauthenticated RCE against a vulnerable Microsoft SharePoint Server. The vulnerability CVE-2025-53770 was disclosed as being a patch bypass of CVE-2025-49704, and as described by the finders, CVE-2025-53770 targets a different endpoint within the /_vti_bin/ URI path. As this exploit module does not target the endpoint associated with CVE-2025-53770 (per the original finders), we believe this module is best described as exploiting CVE-2025-49704 and not CVE-2025-53770.",
-          "authors": [
-            "Viettel Cyber Security",
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "win"
-          ],
-          "targets": [
-            "Default"
-          ],
-          "privileged": false,
-          "disclosure_date": "2025-07-08",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/sharepoint_toolpane_rce.rb",
-          "usage_commands": [
-            "use exploits/windows/http/sharepoint_toolpane_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2025-57791": {
+    "CVE-2025-57788": {
       "modules": [
         {
           "module_path": "exploits/windows/http/commvault_rce_cve_2025_57790_cve_2025_57791",
@@ -18397,7 +18397,7 @@
         }
       ]
     },
-    "CVE-2025-57788": {
+    "CVE-2025-57791": {
       "modules": [
         {
           "module_path": "exploits/windows/http/commvault_rce_cve_2025_57790_cve_2025_57791",
@@ -18471,7 +18471,7 @@
         }
       ]
     },
-    "CVE-2022-1373": {
+    "CVE-2022-2334": {
       "modules": [
         {
           "module_path": "exploits/windows/http/softing_sis_rce",
@@ -18505,7 +18505,7 @@
         }
       ]
     },
-    "CVE-2022-2334": {
+    "CVE-2022-1373": {
       "modules": [
         {
           "module_path": "exploits/windows/http/softing_sis_rce",
@@ -19222,43 +19222,8 @@
         }
       ]
     },
-    "CVE-2019-18935": {
+    "CVE-2017-11317": {
       "modules": [
-        {
-          "module_path": "exploits/windows/http/telerik_rau_deserialization",
-          "name": "Telerik UI ASP.NET AJAX RadAsyncUpload Deserialization",
-          "description": "This module exploits the .NET deserialization vulnerability within the RadAsyncUpload (RAU) component of Telerik UI ASP.NET AJAX that is identified as CVE-2019-18935. In order to do so the module must upload a mixed mode .NET assembly DLL which is then loaded through the deserialization flaw. Uploading the file requires knowledge of the cryptographic keys used by RAU. The default values used by this module are related to CVE-2017-11317, which once patched randomizes these keys. It is also necessary to know the version of Telerik UI ASP.NET that is running. This version number is in the format YYYY.#(.###)? where YYYY is the year of the release (e.g. '2020.3.915').",
-          "authors": [
-            "Spencer McIntyre",
-            "Paul Taylor",
-            "Markus Wulftange",
-            "Caleb Gross",
-            "Alvaro Muñoz",
-            "Oleksandr Mirosh",
-            "straightblast"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Windows"
-          ],
-          "privileged": true,
-          "disclosure_date": "2019-12-09",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/telerik_rau_deserialization.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/telerik_rau_deserialization.rb",
-          "usage_commands": [
-            "use exploits/windows/http/telerik_rau_deserialization",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/windows/http/telerik_rau_deserialization",
           "name": "Telerik UI ASP.NET AJAX RadAsyncUpload Deserialization",
@@ -19296,8 +19261,43 @@
         }
       ]
     },
-    "CVE-2017-11317": {
+    "CVE-2019-18935": {
       "modules": [
+        {
+          "module_path": "exploits/windows/http/telerik_rau_deserialization",
+          "name": "Telerik UI ASP.NET AJAX RadAsyncUpload Deserialization",
+          "description": "This module exploits the .NET deserialization vulnerability within the RadAsyncUpload (RAU) component of Telerik UI ASP.NET AJAX that is identified as CVE-2019-18935. In order to do so the module must upload a mixed mode .NET assembly DLL which is then loaded through the deserialization flaw. Uploading the file requires knowledge of the cryptographic keys used by RAU. The default values used by this module are related to CVE-2017-11317, which once patched randomizes these keys. It is also necessary to know the version of Telerik UI ASP.NET that is running. This version number is in the format YYYY.#(.###)? where YYYY is the year of the release (e.g. '2020.3.915').",
+          "authors": [
+            "Spencer McIntyre",
+            "Paul Taylor",
+            "Markus Wulftange",
+            "Caleb Gross",
+            "Alvaro Muñoz",
+            "Oleksandr Mirosh",
+            "straightblast"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Windows"
+          ],
+          "privileged": true,
+          "disclosure_date": "2019-12-09",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/telerik_rau_deserialization.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/telerik_rau_deserialization.rb",
+          "usage_commands": [
+            "use exploits/windows/http/telerik_rau_deserialization",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/windows/http/telerik_rau_deserialization",
           "name": "Telerik UI ASP.NET AJAX RadAsyncUpload Deserialization",
@@ -19399,7 +19399,7 @@
         }
       ]
     },
-    "CVE-2023-38098": {
+    "CVE-2023-38096": {
       "modules": [
         {
           "module_path": "exploits/windows/http/netgear_nms_rce",
@@ -19432,7 +19432,7 @@
         }
       ]
     },
-    "CVE-2023-38096": {
+    "CVE-2023-38098": {
       "modules": [
         {
           "module_path": "exploits/windows/http/netgear_nms_rce",
@@ -19835,7 +19835,7 @@
         }
       ]
     },
-    "CVE-2022-23277": {
+    "CVE-2021-42321": {
       "modules": [
         {
           "module_path": "exploits/windows/http/exchange_chainedserializationbinder_rce",
@@ -19913,7 +19913,7 @@
         }
       ]
     },
-    "CVE-2021-42321": {
+    "CVE-2022-23277": {
       "modules": [
         {
           "module_path": "exploits/windows/http/exchange_chainedserializationbinder_rce",
@@ -20156,49 +20156,6 @@
         }
       ]
     },
-    "CVE-2021-31207": {
-      "modules": [
-        {
-          "module_path": "exploits/windows/http/exchange_proxyshell_rce",
-          "name": "Microsoft Exchange ProxyShell RCE",
-          "description": "This module exploits a vulnerability on Microsoft Exchange Server that allows an attacker to bypass the authentication (CVE-2021-31207), impersonate an arbitrary user (CVE-2021-34523) and write an arbitrary file (CVE-2021-34473) to achieve the RCE (Remote Code Execution). By taking advantage of this vulnerability, you can execute arbitrary commands on the remote Microsoft Exchange Server. This vulnerability affects Exchange 2013 CU23 < 15.0.1497.15, Exchange 2016 CU19 < 15.1.2176.12, Exchange 2016 CU20 < 15.1.2242.5, Exchange 2019 CU8 < 15.2.792.13, Exchange 2019 CU9 < 15.2.858.9. All components are vulnerable by default.",
-          "authors": [
-            "Orange Tsai",
-            "Jang (@testanull)",
-            "PeterJson",
-            "brandonshi123",
-            "mekhalleh (RAMELLA Sébastien)",
-            "Donny Maasland",
-            "Rich Warren",
-            "Spencer McIntyre",
-            "wvu"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "windows"
-          ],
-          "targets": [
-            "Windows Powershell"
-          ],
-          "privileged": true,
-          "disclosure_date": "2021-04-06",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/exchange_proxyshell_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/exchange_proxyshell_rce.rb",
-          "usage_commands": [
-            "use exploits/windows/http/exchange_proxyshell_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2021-34523": {
       "modules": [
         {
@@ -20243,6 +20200,49 @@
       ]
     },
     "CVE-2021-34473": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/http/exchange_proxyshell_rce",
+          "name": "Microsoft Exchange ProxyShell RCE",
+          "description": "This module exploits a vulnerability on Microsoft Exchange Server that allows an attacker to bypass the authentication (CVE-2021-31207), impersonate an arbitrary user (CVE-2021-34523) and write an arbitrary file (CVE-2021-34473) to achieve the RCE (Remote Code Execution). By taking advantage of this vulnerability, you can execute arbitrary commands on the remote Microsoft Exchange Server. This vulnerability affects Exchange 2013 CU23 < 15.0.1497.15, Exchange 2016 CU19 < 15.1.2176.12, Exchange 2016 CU20 < 15.1.2242.5, Exchange 2019 CU8 < 15.2.792.13, Exchange 2019 CU9 < 15.2.858.9. All components are vulnerable by default.",
+          "authors": [
+            "Orange Tsai",
+            "Jang (@testanull)",
+            "PeterJson",
+            "brandonshi123",
+            "mekhalleh (RAMELLA Sébastien)",
+            "Donny Maasland",
+            "Rich Warren",
+            "Spencer McIntyre",
+            "wvu"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "windows"
+          ],
+          "targets": [
+            "Windows Powershell"
+          ],
+          "privileged": true,
+          "disclosure_date": "2021-04-06",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/exchange_proxyshell_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/exchange_proxyshell_rce.rb",
+          "usage_commands": [
+            "use exploits/windows/http/exchange_proxyshell_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2021-31207": {
       "modules": [
         {
           "module_path": "exploits/windows/http/exchange_proxyshell_rce",
@@ -20552,7 +20552,7 @@
         }
       ]
     },
-    "CVE-1012-5358": {
+    "CVE-2012-5357": {
       "modules": [
         {
           "module_path": "exploits/windows/http/ektron_xslt_exec",
@@ -20587,7 +20587,7 @@
         }
       ]
     },
-    "CVE-2012-5357": {
+    "CVE-1012-5358": {
       "modules": [
         {
           "module_path": "exploits/windows/http/ektron_xslt_exec",
@@ -20764,98 +20764,6 @@
         }
       ]
     },
-    "CVE-2024-1800": {
-      "modules": [
-        {
-          "module_path": "exploits/windows/http/telerik_report_server_deserialization",
-          "name": "Telerik Report Server Auth Bypass and Deserialization RCE",
-          "description": "This module chains an authentication bypass vulnerability (CVE-2024-4358) with a deserialization vulnerability (CVE-2024-1800) to obtain remote code execution against Telerik Report Server version 10.0.24.130 and prior. The authentication bypass flaw allows an unauthenticated user to create a new user with administrative privileges. The USERNAME datastore option can be used to authenticate with an existing account to prevent the creation of a new one. The deserialization flaw works by uploading a specially crafted report that when loaded will execute an OS command as NT AUTHORITY\\SYSTEM. The module will automatically delete the created report but not the account because users are unable to delete themselves.",
-          "authors": [
-            "SinSinology",
-            "Soroush Dalili",
-            "Unknown",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2024-06-04",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
-          "usage_commands": [
-            "use exploits/windows/http/telerik_report_server_deserialization",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/windows/http/telerik_report_server_deserialization",
-          "name": "Telerik Report Server Auth Bypass and Deserialization RCE",
-          "description": "This module chains an authentication bypass vulnerability (CVE-2024-4358) with a deserialization vulnerability (CVE-2024-1800) to obtain remote code execution against Telerik Report Server version 10.0.24.130 and prior. The authentication bypass flaw allows an unauthenticated user to create a new user with administrative privileges. The USERNAME datastore option can be used to authenticate with an existing account to prevent the creation of a new one. The deserialization flaw works by uploading a specially crafted report that when loaded will execute an OS command as NT AUTHORITY\\SYSTEM. The module will automatically delete the created report but not the account because users are unable to delete themselves.",
-          "authors": [
-            "SinSinology",
-            "Soroush Dalili",
-            "Unknown",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2024-06-04",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
-          "usage_commands": [
-            "use exploits/windows/http/telerik_report_server_deserialization",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "auxiliary/scanner/http/telerik_report_server_auth_bypass",
-          "name": "Telerik Report Server Auth Bypass",
-          "description": "This module exploits an authentication bypass vulnerability in Telerik Report Server versions 10.0.24.305 and prior which allows an unauthenticated attacker to create a new account with administrative privileges. The vulnerability leverages the initial setup page which is still accessible once the setup process has completed. If either USERNAME or PASSWORD are not specified, then a random value will be selected. The module will fail if the specified USERNAME already exists.",
-          "authors": [
-            "SinSinology",
-            "Spencer McIntyre"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "2024-06-04",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/telerik_report_server_auth_bypass.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/telerik_report_server_auth_bypass.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/http/telerik_report_server_auth_bypass",
-            "show options",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "run"
-          ]
-        }
-      ]
-    },
     "CVE-2024-4358": {
       "modules": [
         {
@@ -20972,7 +20880,99 @@
         }
       ]
     },
-    "CVE-2023-29357": {
+    "CVE-2024-1800": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/http/telerik_report_server_deserialization",
+          "name": "Telerik Report Server Auth Bypass and Deserialization RCE",
+          "description": "This module chains an authentication bypass vulnerability (CVE-2024-4358) with a deserialization vulnerability (CVE-2024-1800) to obtain remote code execution against Telerik Report Server version 10.0.24.130 and prior. The authentication bypass flaw allows an unauthenticated user to create a new user with administrative privileges. The USERNAME datastore option can be used to authenticate with an existing account to prevent the creation of a new one. The deserialization flaw works by uploading a specially crafted report that when loaded will execute an OS command as NT AUTHORITY\\SYSTEM. The module will automatically delete the created report but not the account because users are unable to delete themselves.",
+          "authors": [
+            "SinSinology",
+            "Soroush Dalili",
+            "Unknown",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-06-04",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
+          "usage_commands": [
+            "use exploits/windows/http/telerik_report_server_deserialization",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/windows/http/telerik_report_server_deserialization",
+          "name": "Telerik Report Server Auth Bypass and Deserialization RCE",
+          "description": "This module chains an authentication bypass vulnerability (CVE-2024-4358) with a deserialization vulnerability (CVE-2024-1800) to obtain remote code execution against Telerik Report Server version 10.0.24.130 and prior. The authentication bypass flaw allows an unauthenticated user to create a new user with administrative privileges. The USERNAME datastore option can be used to authenticate with an existing account to prevent the creation of a new one. The deserialization flaw works by uploading a specially crafted report that when loaded will execute an OS command as NT AUTHORITY\\SYSTEM. The module will automatically delete the created report but not the account because users are unable to delete themselves.",
+          "authors": [
+            "SinSinology",
+            "Soroush Dalili",
+            "Unknown",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-06-04",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/telerik_report_server_deserialization.rb",
+          "usage_commands": [
+            "use exploits/windows/http/telerik_report_server_deserialization",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "auxiliary/scanner/http/telerik_report_server_auth_bypass",
+          "name": "Telerik Report Server Auth Bypass",
+          "description": "This module exploits an authentication bypass vulnerability in Telerik Report Server versions 10.0.24.305 and prior which allows an unauthenticated attacker to create a new account with administrative privileges. The vulnerability leverages the initial setup page which is still accessible once the setup process has completed. If either USERNAME or PASSWORD are not specified, then a random value will be selected. The module will fail if the specified USERNAME already exists.",
+          "authors": [
+            "SinSinology",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2024-06-04",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/telerik_report_server_auth_bypass.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/telerik_report_server_auth_bypass.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/telerik_report_server_auth_bypass",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2023-24955": {
       "modules": [
         {
           "module_path": "exploits/windows/http/sharepoint_dynamic_proxy_generator_auth_bypass_rce",
@@ -21040,7 +21040,7 @@
         }
       ]
     },
-    "CVE-2023-24955": {
+    "CVE-2023-29357": {
       "modules": [
         {
           "module_path": "exploits/windows/http/sharepoint_dynamic_proxy_generator_auth_bypass_rce",
@@ -21958,7 +21958,7 @@
         }
       ]
     },
-    "CVE-2025-32463": {
+    "CVE-2025-32462": {
       "modules": [
         {
           "module_path": "exploits/linux/local/sudo_chroot_cve_2025_32463",
@@ -21994,7 +21994,7 @@
         }
       ]
     },
-    "CVE-2025-32462": {
+    "CVE-2025-32463": {
       "modules": [
         {
           "module_path": "exploits/linux/local/sudo_chroot_cve_2025_32463",
@@ -22429,39 +22429,8 @@
         }
       ]
     },
-    "CVE-2015-1328": {
+    "CVE-2015-8660": {
       "modules": [
-        {
-          "module_path": "exploits/linux/local/overlayfs_priv_esc",
-          "name": "Overlayfs Privilege Escalation",
-          "description": "This module attempts to exploit two different CVEs related to overlayfs. CVE-2015-1328: Ubuntu specific -> 3.13.0-24 (14.04 default) < 3.13.0-55 3.16.0-25 (14.10 default) < 3.16.0-41 3.19.0-18 (15.04 default) < 3.19.0-21 CVE-2015-8660: Ubuntu: 3.19.0-18 < 3.19.0-43 4.2.0-18 < 4.2.0-23 (14.04.1, 15.10) Fedora: < 4.2.8 (vulnerable, un-tested) Red Hat: < 3.10.0-327 (rhel 6, vulnerable, un-tested)",
-          "authors": [
-            "h00die <mike@shorebreaksecurity.com>",
-            "rebel"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux"
-          ],
-          "targets": [
-            "CVE-2015-1328"
-          ],
-          "privileged": false,
-          "disclosure_date": "2015-06-16",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/overlayfs_priv_esc.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/overlayfs_priv_esc.rb",
-          "usage_commands": [
-            "use exploits/linux/local/overlayfs_priv_esc",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/linux/local/overlayfs_priv_esc",
           "name": "Overlayfs Privilege Escalation",
@@ -22495,8 +22464,39 @@
         }
       ]
     },
-    "CVE-2015-8660": {
+    "CVE-2015-1328": {
       "modules": [
+        {
+          "module_path": "exploits/linux/local/overlayfs_priv_esc",
+          "name": "Overlayfs Privilege Escalation",
+          "description": "This module attempts to exploit two different CVEs related to overlayfs. CVE-2015-1328: Ubuntu specific -> 3.13.0-24 (14.04 default) < 3.13.0-55 3.16.0-25 (14.10 default) < 3.16.0-41 3.19.0-18 (15.04 default) < 3.19.0-21 CVE-2015-8660: Ubuntu: 3.19.0-18 < 3.19.0-43 4.2.0-18 < 4.2.0-23 (14.04.1, 15.10) Fedora: < 4.2.8 (vulnerable, un-tested) Red Hat: < 3.10.0-327 (rhel 6, vulnerable, un-tested)",
+          "authors": [
+            "h00die <mike@shorebreaksecurity.com>",
+            "rebel"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux"
+          ],
+          "targets": [
+            "CVE-2015-1328"
+          ],
+          "privileged": false,
+          "disclosure_date": "2015-06-16",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/overlayfs_priv_esc.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/overlayfs_priv_esc.rb",
+          "usage_commands": [
+            "use exploits/linux/local/overlayfs_priv_esc",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/linux/local/overlayfs_priv_esc",
           "name": "Overlayfs Privilege Escalation",
@@ -23358,6 +23358,43 @@
         }
       ]
     },
+    "CVE-2021-38648": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/local/cve_2021_38648_omigod",
+          "name": "Microsoft OMI Management Interface Authentication Bypass",
+          "description": "By removing the authentication exchange, an attacker can issue requests to the local OMI management socket that will cause it to execute an operating system command as the root user. This vulnerability was patched in OMI version 1.6.8-1 (released September 8th 2021).",
+          "authors": [
+            "Nir Ohfeld",
+            "Shir Tamari",
+            "Spencer McIntyre"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux",
+            "unix"
+          ],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2021-09-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/cve_2021_38648_omigod.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2021_38648_omigod.rb",
+          "usage_commands": [
+            "use exploits/linux/local/cve_2021_38648_omigod",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2021-38647": {
       "modules": [
         {
@@ -23463,32 +23500,32 @@
         }
       ]
     },
-    "CVE-2021-38648": {
+    "CVE-2010-3856": {
       "modules": [
         {
-          "module_path": "exploits/linux/local/cve_2021_38648_omigod",
-          "name": "Microsoft OMI Management Interface Authentication Bypass",
-          "description": "By removing the authentication exchange, an attacker can issue requests to the local OMI management socket that will cause it to execute an operating system command as the root user. This vulnerability was patched in OMI version 1.6.8-1 (released September 8th 2021).",
+          "module_path": "exploits/linux/local/glibc_ld_audit_dso_load_priv_esc",
+          "name": "glibc LD_AUDIT Arbitrary DSO Load Privilege Escalation",
+          "description": "This module attempts to gain root privileges on Linux systems by abusing a vulnerability in the GNU C Library (glibc) dynamic linker. glibc ld.so in versions before 2.11.3, and 2.12.x before 2.12.2 does not properly restrict use of the LD_AUDIT environment variable when loading setuid executables. This allows loading arbitrary shared objects from the trusted library search path with the privileges of the suid user. This module uses LD_AUDIT to load the libpcprofile.so shared object, distributed with some versions of glibc, and leverages arbitrary file creation functionality in the library constructor to write a root-owned world-writable file to a system trusted search path (usually /lib). The file is then overwritten with a shared object then loaded with LD_AUDIT resulting in arbitrary code execution. This module has been tested successfully on glibc version 2.11.1 on Ubuntu 10.04 x86_64 and version 2.7 on Debian 5.0.4 i386. RHEL 5 is reportedly affected, but untested. Some glibc distributions do not contain the libpcprofile.so library required for successful exploitation.",
           "authors": [
-            "Nir Ohfeld",
-            "Shir Tamari",
-            "Spencer McIntyre"
+            "Tavis Ormandy",
+            "zx2c4",
+            "I Can't Read and I Won't Race You Either",
+            "Marco Ivaldi",
+            "Todor Donev",
+            "bcoles"
           ],
           "rank": "Unknown",
-          "platform": [
-            "linux",
-            "unix"
-          ],
+          "platform": [],
           "targets": [
-            "Unix Command"
+            "Automatic"
           ],
           "privileged": false,
-          "disclosure_date": "2021-09-14",
+          "disclosure_date": "2010-10-18",
           "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/cve_2021_38648_omigod.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2021_38648_omigod.rb",
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/glibc_ld_audit_dso_load_priv_esc.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/glibc_ld_audit_dso_load_priv_esc.rb",
           "usage_commands": [
-            "use exploits/linux/local/cve_2021_38648_omigod",
+            "use exploits/linux/local/glibc_ld_audit_dso_load_priv_esc",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -23555,43 +23592,6 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/glibc_origin_expansion_priv_esc.rb",
           "usage_commands": [
             "use exploits/linux/local/glibc_origin_expansion_priv_esc",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2010-3856": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/local/glibc_ld_audit_dso_load_priv_esc",
-          "name": "glibc LD_AUDIT Arbitrary DSO Load Privilege Escalation",
-          "description": "This module attempts to gain root privileges on Linux systems by abusing a vulnerability in the GNU C Library (glibc) dynamic linker. glibc ld.so in versions before 2.11.3, and 2.12.x before 2.12.2 does not properly restrict use of the LD_AUDIT environment variable when loading setuid executables. This allows loading arbitrary shared objects from the trusted library search path with the privileges of the suid user. This module uses LD_AUDIT to load the libpcprofile.so shared object, distributed with some versions of glibc, and leverages arbitrary file creation functionality in the library constructor to write a root-owned world-writable file to a system trusted search path (usually /lib). The file is then overwritten with a shared object then loaded with LD_AUDIT resulting in arbitrary code execution. This module has been tested successfully on glibc version 2.11.1 on Ubuntu 10.04 x86_64 and version 2.7 on Debian 5.0.4 i386. RHEL 5 is reportedly affected, but untested. Some glibc distributions do not contain the libpcprofile.so library required for successful exploitation.",
-          "authors": [
-            "Tavis Ormandy",
-            "zx2c4",
-            "I Can't Read and I Won't Race You Either",
-            "Marco Ivaldi",
-            "Todor Donev",
-            "bcoles"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": false,
-          "disclosure_date": "2010-10-18",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/glibc_ld_audit_dso_load_priv_esc.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/glibc_ld_audit_dso_load_priv_esc.rb",
-          "usage_commands": [
-            "use exploits/linux/local/glibc_ld_audit_dso_load_priv_esc",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -23987,40 +23987,8 @@
         }
       ]
     },
-    "CVE-2021-3490": {
+    "CVE-2020-8835": {
       "modules": [
-        {
-          "module_path": "exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe",
-          "name": "Linux eBPF ALU32 32-bit Invalid Bounds Tracking LPE",
-          "description": "Linux kernels from 5.7-rc1 prior to 5.13-rc4, 5.12.4, 5.11.21, and 5.10.37 are vulnerable to a bug in the eBPF verifier's verification of ALU32 operations in the scalar32_min_max_and function when performing AND operations, whereby under certain conditions the bounds of a 32 bit register would not be properly updated. This can be abused by attackers to conduct an out of bounds read and write in the Linux kernel and therefore achieve arbitrary code execution as the root user. The target system must be compiled with eBPF support and not have kernel.unprivileged_bpf_disabled set, which prevents unprivileged users from loading eBPF programs into the kernel. Note that if kernel.unprivileged_bpf_disabled is enabled this module can still be utilized to bypass protections such as SELinux, however the user must already be logged as a privileged user such as root.",
-          "authors": [
-            "Manfred Paul",
-            "chompie1337",
-            "Grant Willcox"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux"
-          ],
-          "targets": [
-            "Auto"
-          ],
-          "privileged": true,
-          "disclosure_date": "2021-05-11",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe.rb",
-          "usage_commands": [
-            "use exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe",
           "name": "Linux eBPF ALU32 32-bit Invalid Bounds Tracking LPE",
@@ -24055,8 +24023,40 @@
         }
       ]
     },
-    "CVE-2020-8835": {
+    "CVE-2021-3490": {
       "modules": [
+        {
+          "module_path": "exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe",
+          "name": "Linux eBPF ALU32 32-bit Invalid Bounds Tracking LPE",
+          "description": "Linux kernels from 5.7-rc1 prior to 5.13-rc4, 5.12.4, 5.11.21, and 5.10.37 are vulnerable to a bug in the eBPF verifier's verification of ALU32 operations in the scalar32_min_max_and function when performing AND operations, whereby under certain conditions the bounds of a 32 bit register would not be properly updated. This can be abused by attackers to conduct an out of bounds read and write in the Linux kernel and therefore achieve arbitrary code execution as the root user. The target system must be compiled with eBPF support and not have kernel.unprivileged_bpf_disabled set, which prevents unprivileged users from loading eBPF programs into the kernel. Note that if kernel.unprivileged_bpf_disabled is enabled this module can still be utilized to bypass protections such as SELinux, however the user must already be logged as a privileged user such as root.",
+          "authors": [
+            "Manfred Paul",
+            "chompie1337",
+            "Grant Willcox"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux"
+          ],
+          "targets": [
+            "Auto"
+          ],
+          "privileged": true,
+          "disclosure_date": "2021-05-11",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe.rb",
+          "usage_commands": [
+            "use exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe",
           "name": "Linux eBPF ALU32 32-bit Invalid Bounds Tracking LPE",
@@ -24126,6 +24126,44 @@
         }
       ]
     },
+    "CVE-2023-32629": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/local/gameoverlay_privesc",
+          "name": "GameOver(lay) Privilege Escalation and Container Escape",
+          "description": "This module exploits the use of unsafe functions in a number of Ubuntu kernels utilizing vunerable versions of overlayfs. To mitigate CVE-2021-3493 the Linux kernel added a call to vfs_setxattr during ovl_do_setxattr. Due to independent changes to the kernel by the Ubuntu development team __vfs_setxattr_noperm is called during ovl_do_setxattr without calling the intermediate safety function vfs_setxattr. Ultimatly this module allows for root access to be achieved by writing setuid capabilities to a file which are not sanitized after being unioned with the upper mounted directory.",
+          "authors": [
+            "g1vi",
+            "h00die",
+            "bwatters-r7",
+            "gardnerapp"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux",
+            "unix"
+          ],
+          "targets": [
+            "Linux_Binary"
+          ],
+          "privileged": false,
+          "disclosure_date": "2023-07-26",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/gameoverlay_privesc.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/gameoverlay_privesc.rb",
+          "usage_commands": [
+            "use exploits/linux/local/gameoverlay_privesc",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2021-3493": {
       "modules": [
         {
@@ -24184,44 +24222,6 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2021_3493_overlayfs.rb",
           "usage_commands": [
             "use exploits/linux/local/cve_2021_3493_overlayfs",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2023-32629": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/local/gameoverlay_privesc",
-          "name": "GameOver(lay) Privilege Escalation and Container Escape",
-          "description": "This module exploits the use of unsafe functions in a number of Ubuntu kernels utilizing vunerable versions of overlayfs. To mitigate CVE-2021-3493 the Linux kernel added a call to vfs_setxattr during ovl_do_setxattr. Due to independent changes to the kernel by the Ubuntu development team __vfs_setxattr_noperm is called during ovl_do_setxattr without calling the intermediate safety function vfs_setxattr. Ultimatly this module allows for root access to be achieved by writing setuid capabilities to a file which are not sanitized after being unioned with the upper mounted directory.",
-          "authors": [
-            "g1vi",
-            "h00die",
-            "bwatters-r7",
-            "gardnerapp"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux",
-            "unix"
-          ],
-          "targets": [
-            "Linux_Binary"
-          ],
-          "privileged": false,
-          "disclosure_date": "2023-07-26",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/gameoverlay_privesc.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/gameoverlay_privesc.rb",
-          "usage_commands": [
-            "use exploits/linux/local/gameoverlay_privesc",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -25189,39 +25189,8 @@
         }
       ]
     },
-    "CVE-2015-3315": {
+    "CVE-2015-1862": {
       "modules": [
-        {
-          "module_path": "exploits/linux/local/abrt_raceabrt_priv_esc",
-          "name": "ABRT raceabrt Privilege Escalation",
-          "description": "This module attempts to gain root privileges on Linux systems with a vulnerable version of Automatic Bug Reporting Tool (ABRT) configured as the crash handler. A race condition allows local users to change ownership of arbitrary files (CVE-2015-3315). This module uses a symlink attack on `/var/tmp/abrt/*/maps` to change the ownership of `/etc/passwd`, then adds a new user with UID=0 GID=0 to gain root privileges. Winning the race could take a few minutes. This module has been tested successfully on: abrt 2.1.11-12.el7 on RHEL 7.0 x86_64; abrt 2.1.5-1.fc19 on Fedora Desktop 19 x86_64; abrt 2.2.1-1.fc19 on Fedora Desktop 19 x86_64; abrt 2.2.2-2.fc20 on Fedora Desktop 20 x86_64; abrt 2.3.0-3.fc21 on Fedora Desktop 21 x86_64.",
-          "authors": [
-            "Tavis Ormandy",
-            "bcoles"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux"
-          ],
-          "targets": [
-            "Auto"
-          ],
-          "privileged": false,
-          "disclosure_date": "2015-04-14",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/abrt_raceabrt_priv_esc.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/abrt_raceabrt_priv_esc.rb",
-          "usage_commands": [
-            "use exploits/linux/local/abrt_raceabrt_priv_esc",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/linux/local/abrt_raceabrt_priv_esc",
           "name": "ABRT raceabrt Privilege Escalation",
@@ -25255,8 +25224,39 @@
         }
       ]
     },
-    "CVE-2015-1862": {
+    "CVE-2015-3315": {
       "modules": [
+        {
+          "module_path": "exploits/linux/local/abrt_raceabrt_priv_esc",
+          "name": "ABRT raceabrt Privilege Escalation",
+          "description": "This module attempts to gain root privileges on Linux systems with a vulnerable version of Automatic Bug Reporting Tool (ABRT) configured as the crash handler. A race condition allows local users to change ownership of arbitrary files (CVE-2015-3315). This module uses a symlink attack on `/var/tmp/abrt/*/maps` to change the ownership of `/etc/passwd`, then adds a new user with UID=0 GID=0 to gain root privileges. Winning the race could take a few minutes. This module has been tested successfully on: abrt 2.1.11-12.el7 on RHEL 7.0 x86_64; abrt 2.1.5-1.fc19 on Fedora Desktop 19 x86_64; abrt 2.2.1-1.fc19 on Fedora Desktop 19 x86_64; abrt 2.2.2-2.fc20 on Fedora Desktop 20 x86_64; abrt 2.3.0-3.fc21 on Fedora Desktop 21 x86_64.",
+          "authors": [
+            "Tavis Ormandy",
+            "bcoles"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux"
+          ],
+          "targets": [
+            "Auto"
+          ],
+          "privileged": false,
+          "disclosure_date": "2015-04-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/abrt_raceabrt_priv_esc.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/abrt_raceabrt_priv_esc.rb",
+          "usage_commands": [
+            "use exploits/linux/local/abrt_raceabrt_priv_esc",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/linux/local/abrt_raceabrt_priv_esc",
           "name": "ABRT raceabrt Privilege Escalation",
@@ -27009,7 +27009,7 @@
         }
       ]
     },
-    "CVE-2015-8279": {
+    "CVE-2017-16524": {
       "modules": [
         {
           "module_path": "exploits/linux/http/samsung_srv_1670d_upload_exec",
@@ -27044,7 +27044,7 @@
         }
       ]
     },
-    "CVE-2017-16524": {
+    "CVE-2015-8279": {
       "modules": [
         {
           "module_path": "exploits/linux/http/samsung_srv_1670d_upload_exec",
@@ -27243,7 +27243,7 @@
         }
       ]
     },
-    "CVE-2019-10662": {
+    "CVE-2020-5722": {
       "modules": [
         {
           "module_path": "exploits/linux/http/grandstream_ucm62xx_sendemail_rce",
@@ -27279,7 +27279,7 @@
         }
       ]
     },
-    "CVE-2020-5722": {
+    "CVE-2019-10662": {
       "modules": [
         {
           "module_path": "exploits/linux/http/grandstream_ucm62xx_sendemail_rce",
@@ -27888,7 +27888,7 @@
         }
       ]
     },
-    "CVE-2021-25298": {
+    "CVE-2021-25296": {
       "modules": [
         {
           "module_path": "exploits/linux/http/nagios_xi_configwizards_authenticated_rce",
@@ -27954,7 +27954,7 @@
         }
       ]
     },
-    "CVE-2021-25296": {
+    "CVE-2021-25298": {
       "modules": [
         {
           "module_path": "exploits/linux/http/nagios_xi_configwizards_authenticated_rce",
@@ -28124,40 +28124,6 @@
         }
       ]
     },
-    "CVE-2021-45841": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/http/terramaster_unauth_rce_cve_2021_45837",
-          "name": "TerraMaster TOS 4.2.15 or lower - RCE chain from unauthenticated to root via session crafting.",
-          "description": "Terramaster chained exploit that performs session crafting to achieve escalated privileges that allows an attacker to access vulnerable code execution flaws. TOS versions 4.2.15 and below are affected. CVE-2021-45839 is exploited to obtain the first administrator's hash set up on the system as well as other information such as MAC address, by performing a request to the `/module/api.php?mobile/webNasIPS` endpoint. This information is used to craft an unauthenticated admin session using CVE-2021-45841 where an attacker can self-sign session cookies by knowing the target MAC address and the user password hash. Guest users (disabled by default) can be abused using a null/empty hash and allow an unauthenticated attacker to login as guest. Finally, CVE-2021-45837 is exploited to execute arbitrary commands as root by sending a specifically crafted input to vulnerable endpoint `/tos/index.php?app/del`.",
-          "authors": [],
-          "rank": "Unknown",
-          "platform": [
-            "unix",
-            "linux"
-          ],
-          "targets": [
-            "Unix Command"
-          ],
-          "privileged": true,
-          "disclosure_date": "2021-12-24",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/terramaster_unauth_rce_cve_2021_45837.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/terramaster_unauth_rce_cve_2021_45837.rb",
-          "usage_commands": [
-            "use exploits/linux/http/terramaster_unauth_rce_cve_2021_45837",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2021-45839": {
       "modules": [
         {
@@ -28192,7 +28158,41 @@
         }
       ]
     },
-    "CVE-2022-41352": {
+    "CVE-2021-45841": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/terramaster_unauth_rce_cve_2021_45837",
+          "name": "TerraMaster TOS 4.2.15 or lower - RCE chain from unauthenticated to root via session crafting.",
+          "description": "Terramaster chained exploit that performs session crafting to achieve escalated privileges that allows an attacker to access vulnerable code execution flaws. TOS versions 4.2.15 and below are affected. CVE-2021-45839 is exploited to obtain the first administrator's hash set up on the system as well as other information such as MAC address, by performing a request to the `/module/api.php?mobile/webNasIPS` endpoint. This information is used to craft an unauthenticated admin session using CVE-2021-45841 where an attacker can self-sign session cookies by knowing the target MAC address and the user password hash. Guest users (disabled by default) can be abused using a null/empty hash and allow an unauthenticated attacker to login as guest. Finally, CVE-2021-45837 is exploited to execute arbitrary commands as root by sending a specifically crafted input to vulnerable endpoint `/tos/index.php?app/del`.",
+          "authors": [],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": true,
+          "disclosure_date": "2021-12-24",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/terramaster_unauth_rce_cve_2021_45837.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/terramaster_unauth_rce_cve_2021_45837.rb",
+          "usage_commands": [
+            "use exploits/linux/http/terramaster_unauth_rce_cve_2021_45837",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2015-1197": {
       "modules": [
         {
           "module_path": "exploits/linux/http/zimbra_cpio_cve_2022_41352",
@@ -28258,7 +28258,7 @@
         }
       ]
     },
-    "CVE-2015-1197": {
+    "CVE-2022-41352": {
       "modules": [
         {
           "module_path": "exploits/linux/http/zimbra_cpio_cve_2022_41352",
@@ -28783,45 +28783,7 @@
         }
       ]
     },
-    "CVE-2021-33551": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
-          "name": "Geutebruck Multiple Remote Command Execution",
-          "description": "This module bypasses the HTTP basic authentication used to access the /uapi-cgi/ folder and exploits multiple authenticated arbitrary command execution vulnerabilities within the parameters of various pages on Geutebruck G-Cam EEC-2xxx and G-Code EBC-21xx, EFD-22xx, ETHC-22xx, and EWPC-22xx devices running firmware versions <= 1.12.0.27 as well as firmware versions 1.12.13.2 and 1.12.14.5. Successful exploitation results in remote code execution as the root user.",
-          "authors": [
-            "Titouan Lazard",
-            "Ibrahim Ayadhi",
-            "Sébastien Charbonnier"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "unix",
-            "linux"
-          ],
-          "targets": [
-            "CVE-2021-33544 - certmngr.cgi"
-          ],
-          "privileged": true,
-          "disclosure_date": "2021-07-08",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
-          "usage_commands": [
-            "use exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2021-33550": {
+    "CVE-2021-33552": {
       "modules": [
         {
           "module_path": "exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
@@ -28935,44 +28897,6 @@
         }
       ]
     },
-    "CVE-2021-33554": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
-          "name": "Geutebruck Multiple Remote Command Execution",
-          "description": "This module bypasses the HTTP basic authentication used to access the /uapi-cgi/ folder and exploits multiple authenticated arbitrary command execution vulnerabilities within the parameters of various pages on Geutebruck G-Cam EEC-2xxx and G-Code EBC-21xx, EFD-22xx, ETHC-22xx, and EWPC-22xx devices running firmware versions <= 1.12.0.27 as well as firmware versions 1.12.13.2 and 1.12.14.5. Successful exploitation results in remote code execution as the root user.",
-          "authors": [
-            "Titouan Lazard",
-            "Ibrahim Ayadhi",
-            "Sébastien Charbonnier"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "unix",
-            "linux"
-          ],
-          "targets": [
-            "CVE-2021-33544 - certmngr.cgi"
-          ],
-          "privileged": true,
-          "disclosure_date": "2021-07-08",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
-          "usage_commands": [
-            "use exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2021-33548": {
       "modules": [
         {
@@ -29011,7 +28935,83 @@
         }
       ]
     },
-    "CVE-2021-33552": {
+    "CVE-2021-33550": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
+          "name": "Geutebruck Multiple Remote Command Execution",
+          "description": "This module bypasses the HTTP basic authentication used to access the /uapi-cgi/ folder and exploits multiple authenticated arbitrary command execution vulnerabilities within the parameters of various pages on Geutebruck G-Cam EEC-2xxx and G-Code EBC-21xx, EFD-22xx, ETHC-22xx, and EWPC-22xx devices running firmware versions <= 1.12.0.27 as well as firmware versions 1.12.13.2 and 1.12.14.5. Successful exploitation results in remote code execution as the root user.",
+          "authors": [
+            "Titouan Lazard",
+            "Ibrahim Ayadhi",
+            "Sébastien Charbonnier"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "CVE-2021-33544 - certmngr.cgi"
+          ],
+          "privileged": true,
+          "disclosure_date": "2021-07-08",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
+          "usage_commands": [
+            "use exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2021-33554": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
+          "name": "Geutebruck Multiple Remote Command Execution",
+          "description": "This module bypasses the HTTP basic authentication used to access the /uapi-cgi/ folder and exploits multiple authenticated arbitrary command execution vulnerabilities within the parameters of various pages on Geutebruck G-Cam EEC-2xxx and G-Code EBC-21xx, EFD-22xx, ETHC-22xx, and EWPC-22xx devices running firmware versions <= 1.12.0.27 as well as firmware versions 1.12.13.2 and 1.12.14.5. Successful exploitation results in remote code execution as the root user.",
+          "authors": [
+            "Titouan Lazard",
+            "Ibrahim Ayadhi",
+            "Sébastien Charbonnier"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "CVE-2021-33544 - certmngr.cgi"
+          ],
+          "privileged": true,
+          "disclosure_date": "2021-07-08",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx.rb",
+          "usage_commands": [
+            "use exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2021-33551": {
       "modules": [
         {
           "module_path": "exploits/linux/http/geutebruck_cmdinject_cve_2021_335xx",
@@ -29373,7 +29373,7 @@
         }
       ]
     },
-    "CVE-2022-20705": {
+    "CVE-2022-20707": {
       "modules": [
         {
           "module_path": "exploits/linux/http/cisco_rv340_lan",
@@ -29411,7 +29411,7 @@
         }
       ]
     },
-    "CVE-2022-20707": {
+    "CVE-2022-20705": {
       "modules": [
         {
           "module_path": "exploits/linux/http/cisco_rv340_lan",
@@ -29512,6 +29512,68 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/apache_ofbiz_deserialization_soap.rb",
           "usage_commands": [
             "use exploits/linux/http/apache_ofbiz_deserialization_soap",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2024-21893": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
+          "name": "Ivanti Connect Secure Unauthenticated Remote Code Execution",
+          "description": "This module chains a server side request forgery (SSRF) vulnerability (CVE-2024-21893) and a command injection vulnerability (CVE-2024-21887) to exploit vulnerable instances of either Ivanti Connect Secure or Ivanti Policy Secure, to achieve unauthenticated remote code execution. All currently supported versions 9.x and 22.x are vulnerable, prior to the vendor patch released on Feb 1, 2024. It is unknown if unsupported versions 8.x and below are also vulnerable.",
+          "authors": [
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": true,
+          "disclosure_date": "2024-01-31",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
+          "usage_commands": [
+            "use exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
+          "name": "Ivanti Connect Secure Unauthenticated Remote Code Execution",
+          "description": "This module chains a server side request forgery (SSRF) vulnerability (CVE-2024-21893) and a command injection vulnerability (CVE-2024-21887) to exploit vulnerable instances of either Ivanti Connect Secure or Ivanti Policy Secure, to achieve unauthenticated remote code execution. All currently supported versions 9.x and 22.x are vulnerable, prior to the vendor patch released on Feb 1, 2024. It is unknown if unsupported versions 8.x and below are also vulnerable.",
+          "authors": [
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": true,
+          "disclosure_date": "2024-01-31",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
+          "usage_commands": [
+            "use exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -29640,37 +29702,8 @@
         }
       ]
     },
-    "CVE-2024-21893": {
+    "CVE-2024-21888": {
       "modules": [
-        {
-          "module_path": "exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
-          "name": "Ivanti Connect Secure Unauthenticated Remote Code Execution",
-          "description": "This module chains a server side request forgery (SSRF) vulnerability (CVE-2024-21893) and a command injection vulnerability (CVE-2024-21887) to exploit vulnerable instances of either Ivanti Connect Secure or Ivanti Policy Secure, to achieve unauthenticated remote code execution. All currently supported versions 9.x and 22.x are vulnerable, prior to the vendor patch released on Feb 1, 2024. It is unknown if unsupported versions 8.x and below are also vulnerable.",
-          "authors": [
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": true,
-          "disclosure_date": "2024-01-31",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
-          "usage_commands": [
-            "use exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
           "name": "Ivanti Connect Secure Unauthenticated Remote Code Execution",
@@ -29703,39 +29736,6 @@
       ]
     },
     "CVE-2023-36661": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
-          "name": "Ivanti Connect Secure Unauthenticated Remote Code Execution",
-          "description": "This module chains a server side request forgery (SSRF) vulnerability (CVE-2024-21893) and a command injection vulnerability (CVE-2024-21887) to exploit vulnerable instances of either Ivanti Connect Secure or Ivanti Policy Secure, to achieve unauthenticated remote code execution. All currently supported versions 9.x and 22.x are vulnerable, prior to the vendor patch released on Feb 1, 2024. It is unknown if unsupported versions 8.x and below are also vulnerable.",
-          "authors": [
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Automatic"
-          ],
-          "privileged": true,
-          "disclosure_date": "2024-01-31",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893.rb",
-          "usage_commands": [
-            "use exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
-    "CVE-2024-21888": {
       "modules": [
         {
           "module_path": "exploits/linux/http/ivanti_connect_secure_rce_cve_2024_21893",
@@ -30200,7 +30200,7 @@
         }
       ]
     },
-    "CVE-2021-20039": {
+    "CVE-2021-20038": {
       "modules": [
         {
           "module_path": "exploits/linux/http/sonicwall_cve_2021_20039",
@@ -30235,7 +30235,7 @@
         }
       ]
     },
-    "CVE-2021-20038": {
+    "CVE-2021-20039": {
       "modules": [
         {
           "module_path": "exploits/linux/http/sonicwall_cve_2021_20039",
@@ -31074,76 +31074,6 @@
         }
       ]
     },
-    "CVE-2024-0012": {
-      "modules": [
-        {
-          "module_path": "exploits/linux/http/panos_management_unauth_rce",
-          "name": "Palo Alto Networks PAN-OS Management Interface Unauthenticated Remote Code Execution",
-          "description": "This module exploits an authentication bypass vulnerability (CVE-2024-0012) and a command injection vulnerability (CVE-2024-9474) in the PAN-OS management web interface. An unauthenticated attacker can execute arbitrary code with root privileges. The following versions are affected: * PAN-OS 11.2 (up to and including 11.2.4-h1) * PAN-OS 11.1 (up to and including 11.1.5-h1) * PAN-OS 11.0 (up to and including 11.0.6-h1) * PAN-OS 10.2 (up to and including 10.2.12-h2)",
-          "authors": [
-            "watchTowr",
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux",
-            "unix"
-          ],
-          "targets": [
-            "Default"
-          ],
-          "privileged": true,
-          "disclosure_date": "2024-11-18",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
-          "usage_commands": [
-            "use exploits/linux/http/panos_management_unauth_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/linux/http/panos_management_unauth_rce",
-          "name": "Palo Alto Networks PAN-OS Management Interface Unauthenticated Remote Code Execution",
-          "description": "This module exploits an authentication bypass vulnerability (CVE-2024-0012) and a command injection vulnerability (CVE-2024-9474) in the PAN-OS management web interface. An unauthenticated attacker can execute arbitrary code with root privileges. The following versions are affected: * PAN-OS 11.2 (up to and including 11.2.4-h1) * PAN-OS 11.1 (up to and including 11.1.5-h1) * PAN-OS 11.0 (up to and including 11.0.6-h1) * PAN-OS 10.2 (up to and including 10.2.12-h2)",
-          "authors": [
-            "watchTowr",
-            "sfewer-r7"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "linux",
-            "unix"
-          ],
-          "targets": [
-            "Default"
-          ],
-          "privileged": true,
-          "disclosure_date": "2024-11-18",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
-          "usage_commands": [
-            "use exploits/linux/http/panos_management_unauth_rce",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2024-9474": {
       "modules": [
         {
@@ -31214,29 +31144,31 @@
         }
       ]
     },
-    "CVE-2024-28254": {
+    "CVE-2024-0012": {
       "modules": [
         {
-          "module_path": "exploits/linux/http/openmetadata_auth_bypass_rce",
-          "name": "OpenMetadata authentication bypass and SpEL injection exploit chain",
-          "description": "OpenMetadata is a unified platform for discovery, observability, and governance powered by a central metadata repository, in-depth lineage, and seamless team collaboration. This module chains two vulnerabilities that exist in the OpenMetadata aplication. The first vulnerability, CVE-2024-28255, bypasses the API authentication using JWT tokens. It misuses the `JwtFilter` that checks the path of the url endpoint against a list of excluded endpoints that does not require authentication. Unfortunately, an attacker may use Path Parameters to make any path contain any arbitrary strings that will match the excluded endpoint condition and therefore will be processed with no JWT validation allowing an attacker to bypass the authentication mechanism and reach any arbitrary endpoint. By chaining this vulnerability with CVE-2024-28254, that allows for arbitrary SpEL injection at endpoint `/api/v1/events/subscriptions/validation/condition/<expression>`, attackers are able to run arbitrary commands using Java classes such as `java.lang.Runtime` without any authentication. OpenMetadata versions `1.2.3` and below are vulnerable.",
-          "authors": [],
+          "module_path": "exploits/linux/http/panos_management_unauth_rce",
+          "name": "Palo Alto Networks PAN-OS Management Interface Unauthenticated Remote Code Execution",
+          "description": "This module exploits an authentication bypass vulnerability (CVE-2024-0012) and a command injection vulnerability (CVE-2024-9474) in the PAN-OS management web interface. An unauthenticated attacker can execute arbitrary code with root privileges. The following versions are affected: * PAN-OS 11.2 (up to and including 11.2.4-h1) * PAN-OS 11.1 (up to and including 11.1.5-h1) * PAN-OS 11.0 (up to and including 11.0.6-h1) * PAN-OS 10.2 (up to and including 10.2.12-h2)",
+          "authors": [
+            "watchTowr",
+            "sfewer-r7"
+          ],
           "rank": "Unknown",
           "platform": [
-            "unix",
-            "linux"
-          ],
-          "targets": [
-            "Automatic",
+            "linux",
             "unix"
           ],
-          "privileged": false,
-          "disclosure_date": "2024-03-15",
+          "targets": [
+            "Default"
+          ],
+          "privileged": true,
+          "disclosure_date": "2024-11-18",
           "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/openmetadata_auth_bypass_rce.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/openmetadata_auth_bypass_rce.rb",
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
           "usage_commands": [
-            "use exploits/linux/http/openmetadata_auth_bypass_rce",
+            "use exploits/linux/http/panos_management_unauth_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -31244,7 +31176,39 @@
             "set LHOST <your_ip>",
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
-            "set TARGET <target_index>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/linux/http/panos_management_unauth_rce",
+          "name": "Palo Alto Networks PAN-OS Management Interface Unauthenticated Remote Code Execution",
+          "description": "This module exploits an authentication bypass vulnerability (CVE-2024-0012) and a command injection vulnerability (CVE-2024-9474) in the PAN-OS management web interface. An unauthenticated attacker can execute arbitrary code with root privileges. The following versions are affected: * PAN-OS 11.2 (up to and including 11.2.4-h1) * PAN-OS 11.1 (up to and including 11.1.5-h1) * PAN-OS 11.0 (up to and including 11.0.6-h1) * PAN-OS 10.2 (up to and including 10.2.12-h2)",
+          "authors": [
+            "watchTowr",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux",
+            "unix"
+          ],
+          "targets": [
+            "Default"
+          ],
+          "privileged": true,
+          "disclosure_date": "2024-11-18",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/panos_management_unauth_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
             "exploit"
           ]
         }
@@ -31318,6 +31282,42 @@
         }
       ]
     },
+    "CVE-2024-28254": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/openmetadata_auth_bypass_rce",
+          "name": "OpenMetadata authentication bypass and SpEL injection exploit chain",
+          "description": "OpenMetadata is a unified platform for discovery, observability, and governance powered by a central metadata repository, in-depth lineage, and seamless team collaboration. This module chains two vulnerabilities that exist in the OpenMetadata aplication. The first vulnerability, CVE-2024-28255, bypasses the API authentication using JWT tokens. It misuses the `JwtFilter` that checks the path of the url endpoint against a list of excluded endpoints that does not require authentication. Unfortunately, an attacker may use Path Parameters to make any path contain any arbitrary strings that will match the excluded endpoint condition and therefore will be processed with no JWT validation allowing an attacker to bypass the authentication mechanism and reach any arbitrary endpoint. By chaining this vulnerability with CVE-2024-28254, that allows for arbitrary SpEL injection at endpoint `/api/v1/events/subscriptions/validation/condition/<expression>`, attackers are able to run arbitrary commands using Java classes such as `java.lang.Runtime` without any authentication. OpenMetadata versions `1.2.3` and below are vulnerable.",
+          "authors": [],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Automatic",
+            "unix"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-03-15",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/openmetadata_auth_bypass_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/openmetadata_auth_bypass_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/openmetadata_auth_bypass_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2014-1635": {
       "modules": [
         {
@@ -31351,7 +31351,7 @@
         }
       ]
     },
-    "CVE-2020-9465": {
+    "CVE-2020-8656": {
       "modules": [
         {
           "module_path": "exploits/linux/http/eyesofnetwork_autodiscovery_rce",
@@ -31421,7 +31421,7 @@
         }
       ]
     },
-    "CVE-2020-8656": {
+    "CVE-2020-9465": {
       "modules": [
         {
           "module_path": "exploits/linux/http/eyesofnetwork_autodiscovery_rce",
@@ -31456,7 +31456,7 @@
         }
       ]
     },
-    "CVE-2023-26068": {
+    "CVE-2023-26067": {
       "modules": [
         {
           "module_path": "exploits/linux/http/lexmark_faxtrace_settings",
@@ -31495,7 +31495,7 @@
         }
       ]
     },
-    "CVE-2023-26067": {
+    "CVE-2023-26068": {
       "modules": [
         {
           "module_path": "exploits/linux/http/lexmark_faxtrace_settings",
@@ -32056,7 +32056,7 @@
         }
       ]
     },
-    "CVE-2024-9464": {
+    "CVE-2024-5910": {
       "modules": [
         {
           "module_path": "exploits/linux/http/paloalto_expedition_rce",
@@ -32124,7 +32124,7 @@
         }
       ]
     },
-    "CVE-2024-5910": {
+    "CVE-2024-9464": {
       "modules": [
         {
           "module_path": "exploits/linux/http/paloalto_expedition_rce",
@@ -32670,7 +32670,7 @@
         }
       ]
     },
-    "CVE-2024-48455": {
+    "CVE-2024-48457": {
       "modules": [
         {
           "module_path": "exploits/linux/http/netis_unauth_rce_cve_2024_48456_and_48457",
@@ -32802,7 +32802,7 @@
         }
       ]
     },
-    "CVE-2024-48457": {
+    "CVE-2024-48455": {
       "modules": [
         {
           "module_path": "exploits/linux/http/netis_unauth_rce_cve_2024_48456_and_48457",
@@ -34363,41 +34363,8 @@
         }
       ]
     },
-    "CVE-2024-55963": {
+    "CVE-2024-55964": {
       "modules": [
-        {
-          "module_path": "exploits/linux/http/appsmith_rce_cve_2024_55964",
-          "name": "Appsmith RCE",
-          "description": "An incorrectly configured PostgreSQL instance in the Appsmith image leads to remote command execution inside the Appsmith Docker container.",
-          "authors": [
-            "Whit Taylor (Rhino Security Labs)",
-            "Takahiro Yokoyama"
-          ],
-          "rank": "Unknown",
-          "platform": [
-            "unix",
-            "linux"
-          ],
-          "targets": [
-            "Linux Command"
-          ],
-          "privileged": false,
-          "disclosure_date": "2025-03-25",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb",
-          "usage_commands": [
-            "use exploits/linux/http/appsmith_rce_cve_2024_55964",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
         {
           "module_path": "exploits/linux/http/appsmith_rce_cve_2024_55964",
           "name": "Appsmith RCE",
@@ -34433,8 +34400,41 @@
         }
       ]
     },
-    "CVE-2024-55964": {
+    "CVE-2024-55963": {
       "modules": [
+        {
+          "module_path": "exploits/linux/http/appsmith_rce_cve_2024_55964",
+          "name": "Appsmith RCE",
+          "description": "An incorrectly configured PostgreSQL instance in the Appsmith image leads to remote command execution inside the Appsmith Docker container.",
+          "authors": [
+            "Whit Taylor (Rhino Security Labs)",
+            "Takahiro Yokoyama"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Linux Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2025-03-25",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb",
+          "usage_commands": [
+            "use exploits/linux/http/appsmith_rce_cve_2024_55964",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
         {
           "module_path": "exploits/linux/http/appsmith_rce_cve_2024_55964",
           "name": "Appsmith RCE",
@@ -34858,7 +34858,7 @@
         }
       ]
     },
-    "CVE-2024-24809": {
+    "CVE-2024-31214": {
       "modules": [
         {
           "module_path": "exploits/linux/http/traccar_rce_upload",
@@ -34895,7 +34895,7 @@
         }
       ]
     },
-    "CVE-2024-31214": {
+    "CVE-2024-24809": {
       "modules": [
         {
           "module_path": "exploits/linux/http/traccar_rce_upload",
@@ -35003,7 +35003,7 @@
         }
       ]
     },
-    "CVE-2023-50445": {
+    "CVE-2023-50919": {
       "modules": [
         {
           "module_path": "exploits/linux/http/glinet_unauth_rce_cve_2023_50445",
@@ -35067,7 +35067,7 @@
         }
       ]
     },
-    "CVE-2023-50919": {
+    "CVE-2023-50445": {
       "modules": [
         {
           "module_path": "exploits/linux/http/glinet_unauth_rce_cve_2023_50445",
@@ -35541,7 +35541,7 @@
         }
       ]
     },
-    "CVE-2025-22457": {
+    "CVE-2025-0282": {
       "modules": [
         {
           "module_path": "exploits/linux/http/ivanti_connect_secure_stack_overflow_rce_cve_2025_22457",
@@ -35605,7 +35605,7 @@
         }
       ]
     },
-    "CVE-2025-0282": {
+    "CVE-2025-22457": {
       "modules": [
         {
           "module_path": "exploits/linux/http/ivanti_connect_secure_stack_overflow_rce_cve_2025_22457",
@@ -35773,7 +35773,7 @@
         }
       ]
     },
-    "CVE-2019-20215": {
+    "CVE-2023-33625": {
       "modules": [
         {
           "module_path": "exploits/linux/upnp/dlink_upnp_msearch_exec",
@@ -35806,7 +35806,7 @@
         }
       ]
     },
-    "CVE-2023-33625": {
+    "CVE-2019-20215": {
       "modules": [
         {
           "module_path": "exploits/linux/upnp/dlink_upnp_msearch_exec",
@@ -35875,7 +35875,7 @@
         }
       ]
     },
-    "CVE-2020-9850": {
+    "CVE-2020-9801": {
       "modules": [
         {
           "module_path": "exploits/osx/browser/safari_in_operator_side_effect",
@@ -35943,7 +35943,7 @@
         }
       ]
     },
-    "CVE-2020-9801": {
+    "CVE-2020-9850": {
       "modules": [
         {
           "module_path": "exploits/osx/browser/safari_in_operator_side_effect",
@@ -35977,7 +35977,7 @@
         }
       ]
     },
-    "CVE-2021-30657": {
+    "CVE-2022-22616": {
       "modules": [
         {
           "module_path": "exploits/osx/browser/osx_gatekeeper_bypass",
@@ -36018,7 +36018,7 @@
         }
       ]
     },
-    "CVE-2022-22616": {
+    "CVE-2021-30657": {
       "modules": [
         {
           "module_path": "exploits/osx/browser/osx_gatekeeper_bypass",
@@ -36698,70 +36698,6 @@
         }
       ]
     },
-    "CVE-2024-51378": {
-      "modules": [
-        {
-          "module_path": "exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
-          "name": "CyberPanel Multi CVE Pre-auth RCE",
-          "description": "This module exploits three separate unauthenticated Remote Code Execution vulnerabilities in CyberPanel: - CVE-2024-51567: Command injection vulnerability in the \"upgrademysqlstatus\" endpoint. - CVE-2024-51568: Command Injection via the \"completePath\" parameter in the \"outputExecutioner\" sink. - CVE-2024-51378: Unauthenticated RCE in \"/ftp/getresetstatus\" and \"/dns/getresetstatus\". These vulnerabilities were exploited in ransomware campaigns affecting over 22,000 CyberPanel instances, with the PSAUX ransomware being the primary actor in these attacks.",
-          "authors": [
-            "DreyAnd",
-            "Valentin Lobstein",
-            "Luka Petrovic (refr4g)"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Unix/Linux Command Shell"
-          ],
-          "privileged": false,
-          "disclosure_date": "2024-10-27",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
-          "usage_commands": [
-            "use exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        },
-        {
-          "module_path": "exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
-          "name": "CyberPanel Multi CVE Pre-auth RCE",
-          "description": "This module exploits three separate unauthenticated Remote Code Execution vulnerabilities in CyberPanel: - CVE-2024-51567: Command injection vulnerability in the \"upgrademysqlstatus\" endpoint. - CVE-2024-51568: Command Injection via the \"completePath\" parameter in the \"outputExecutioner\" sink. - CVE-2024-51378: Unauthenticated RCE in \"/ftp/getresetstatus\" and \"/dns/getresetstatus\". These vulnerabilities were exploited in ransomware campaigns affecting over 22,000 CyberPanel instances, with the PSAUX ransomware being the primary actor in these attacks.",
-          "authors": [
-            "DreyAnd",
-            "Valentin Lobstein",
-            "Luka Petrovic (refr4g)"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [
-            "Unix/Linux Command Shell"
-          ],
-          "privileged": false,
-          "disclosure_date": "2024-10-27",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
-          "usage_commands": [
-            "use exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
-            "show options",
-            "show targets",
-            "set RHOSTS <target>",
-            "set LHOST <your_ip>",
-            "set LPORT <your_port>",
-            "set PAYLOAD <payload>",
-            "exploit"
-          ]
-        }
-      ]
-    },
     "CVE-2024-51567": {
       "modules": [
         {
@@ -36827,6 +36763,70 @@
       ]
     },
     "CVE-2024-51568": {
+      "modules": [
+        {
+          "module_path": "exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
+          "name": "CyberPanel Multi CVE Pre-auth RCE",
+          "description": "This module exploits three separate unauthenticated Remote Code Execution vulnerabilities in CyberPanel: - CVE-2024-51567: Command injection vulnerability in the \"upgrademysqlstatus\" endpoint. - CVE-2024-51568: Command Injection via the \"completePath\" parameter in the \"outputExecutioner\" sink. - CVE-2024-51378: Unauthenticated RCE in \"/ftp/getresetstatus\" and \"/dns/getresetstatus\". These vulnerabilities were exploited in ransomware campaigns affecting over 22,000 CyberPanel instances, with the PSAUX ransomware being the primary actor in these attacks.",
+          "authors": [
+            "DreyAnd",
+            "Valentin Lobstein",
+            "Luka Petrovic (refr4g)"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix/Linux Command Shell"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-10-27",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
+          "usage_commands": [
+            "use exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        },
+        {
+          "module_path": "exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
+          "name": "CyberPanel Multi CVE Pre-auth RCE",
+          "description": "This module exploits three separate unauthenticated Remote Code Execution vulnerabilities in CyberPanel: - CVE-2024-51567: Command injection vulnerability in the \"upgrademysqlstatus\" endpoint. - CVE-2024-51568: Command Injection via the \"completePath\" parameter in the \"outputExecutioner\" sink. - CVE-2024-51378: Unauthenticated RCE in \"/ftp/getresetstatus\" and \"/dns/getresetstatus\". These vulnerabilities were exploited in ransomware campaigns affecting over 22,000 CyberPanel instances, with the PSAUX ransomware being the primary actor in these attacks.",
+          "authors": [
+            "DreyAnd",
+            "Valentin Lobstein",
+            "Luka Petrovic (refr4g)"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix/Linux Command Shell"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-10-27",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve.rb",
+          "usage_commands": [
+            "use exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2024-51378": {
       "modules": [
         {
           "module_path": "exploits/unix/webapp/cyberpanel_preauth_rce_multi_cve",
@@ -37307,7 +37307,7 @@
         }
       ]
     },
-    "CVE-2024-45257": {
+    "CVE-2024-45256": {
       "modules": [
         {
           "module_path": "exploits/unix/webapp/byob_unauth_rce",
@@ -37340,7 +37340,7 @@
         }
       ]
     },
-    "CVE-2024-45256": {
+    "CVE-2024-45257": {
       "modules": [
         {
           "module_path": "exploits/unix/webapp/byob_unauth_rce",
@@ -37920,7 +37920,7 @@
         }
       ]
     },
-    "CVE-2018-15133": {
+    "CVE-2017-16894": {
       "modules": [
         {
           "module_path": "exploits/unix/http/laravel_token_unserialize_exec",
@@ -37954,7 +37954,7 @@
         }
       ]
     },
-    "CVE-2017-16894": {
+    "CVE-2018-15133": {
       "modules": [
         {
           "module_path": "exploits/unix/http/laravel_token_unserialize_exec",
@@ -38072,7 +38072,7 @@
         }
       ]
     },
-    "CVE-2018-2392": {
+    "CVE-2018-2393": {
       "modules": [
         {
           "module_path": "auxiliary/admin/sap/sap_igs_xmlchart_xxe",
@@ -38099,7 +38099,7 @@
         }
       ]
     },
-    "CVE-2018-2393": {
+    "CVE-2018-2392": {
       "modules": [
         {
           "module_path": "auxiliary/admin/sap/sap_igs_xmlchart_xxe",
@@ -38450,7 +38450,7 @@
         }
       ]
     },
-    "CVE-2025-24865": {
+    "CVE-2025-22896": {
       "modules": [
         {
           "module_path": "auxiliary/admin/scada/mypro_mgr_creds",
@@ -38478,7 +38478,7 @@
         }
       ]
     },
-    "CVE-2025-22896": {
+    "CVE-2025-24865": {
       "modules": [
         {
           "module_path": "auxiliary/admin/scada/mypro_mgr_creds",
@@ -38748,7 +38748,7 @@
         }
       ]
     },
-    "CVE-2015-2996": {
+    "CVE-2015-2997": {
       "modules": [
         {
           "module_path": "auxiliary/admin/http/sysaid_file_download",
@@ -38773,7 +38773,7 @@
         }
       ]
     },
-    "CVE-2015-2997": {
+    "CVE-2015-2996": {
       "modules": [
         {
           "module_path": "auxiliary/admin/http/sysaid_file_download",
@@ -39163,7 +39163,7 @@
         }
       ]
     },
-    "CVE-2021-31806": {
+    "CVE-2021-31807": {
       "modules": [
         {
           "module_path": "auxiliary/dos/http/squid_range_dos",
@@ -39190,7 +39190,7 @@
         }
       ]
     },
-    "CVE-2021-31807": {
+    "CVE-2021-31806": {
       "modules": [
         {
           "module_path": "auxiliary/dos/http/squid_range_dos",
@@ -39406,91 +39406,7 @@
         }
       ]
     },
-    "CVE-2013-2566": {
-      "modules": [
-        {
-          "module_path": "auxiliary/scanner/ssl/ssl_version",
-          "name": "SSL/TLS Version Detection",
-          "description": "Check if a server supports a given version of SSL/TLS and cipher suites. The certificate is stored in loot, and any known vulnerabilities against that SSL version and cipher suite combination are checked. These checks include POODLE, deprecated protocols, expired/not valid certs, low key strength, null cipher suites, certificates signed with MD5, DROWN, RC4 ciphers, exportable ciphers, LOGJAM, and BEAST.",
-          "authors": [
-            "todb",
-            "et",
-            "Chris John Riley"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "Oct 14 2014",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/ssl/ssl_version",
-            "show options",
-            "set RHOSTS <target>",
-            "run"
-          ]
-        }
-      ]
-    },
     "CVE-2014-3566": {
-      "modules": [
-        {
-          "module_path": "auxiliary/scanner/ssl/ssl_version",
-          "name": "SSL/TLS Version Detection",
-          "description": "Check if a server supports a given version of SSL/TLS and cipher suites. The certificate is stored in loot, and any known vulnerabilities against that SSL version and cipher suite combination are checked. These checks include POODLE, deprecated protocols, expired/not valid certs, low key strength, null cipher suites, certificates signed with MD5, DROWN, RC4 ciphers, exportable ciphers, LOGJAM, and BEAST.",
-          "authors": [
-            "todb",
-            "et",
-            "Chris John Riley"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "Oct 14 2014",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/ssl/ssl_version",
-            "show options",
-            "set RHOSTS <target>",
-            "run"
-          ]
-        }
-      ]
-    },
-    "CVE-2022-3358": {
-      "modules": [
-        {
-          "module_path": "auxiliary/scanner/ssl/ssl_version",
-          "name": "SSL/TLS Version Detection",
-          "description": "Check if a server supports a given version of SSL/TLS and cipher suites. The certificate is stored in loot, and any known vulnerabilities against that SSL version and cipher suite combination are checked. These checks include POODLE, deprecated protocols, expired/not valid certs, low key strength, null cipher suites, certificates signed with MD5, DROWN, RC4 ciphers, exportable ciphers, LOGJAM, and BEAST.",
-          "authors": [
-            "todb",
-            "et",
-            "Chris John Riley"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "Oct 14 2014",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/ssl/ssl_version",
-            "show options",
-            "set RHOSTS <target>",
-            "run"
-          ]
-        }
-      ]
-    },
-    "CVE-2011-3389": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/ssl/ssl_version",
@@ -39574,7 +39490,91 @@
         }
       ]
     },
-    "CVE-2014-4862": {
+    "CVE-2022-3358": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/ssl/ssl_version",
+          "name": "SSL/TLS Version Detection",
+          "description": "Check if a server supports a given version of SSL/TLS and cipher suites. The certificate is stored in loot, and any known vulnerabilities against that SSL version and cipher suite combination are checked. These checks include POODLE, deprecated protocols, expired/not valid certs, low key strength, null cipher suites, certificates signed with MD5, DROWN, RC4 ciphers, exportable ciphers, LOGJAM, and BEAST.",
+          "authors": [
+            "todb",
+            "et",
+            "Chris John Riley"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "Oct 14 2014",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/ssl/ssl_version",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2013-2566": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/ssl/ssl_version",
+          "name": "SSL/TLS Version Detection",
+          "description": "Check if a server supports a given version of SSL/TLS and cipher suites. The certificate is stored in loot, and any known vulnerabilities against that SSL version and cipher suite combination are checked. These checks include POODLE, deprecated protocols, expired/not valid certs, low key strength, null cipher suites, certificates signed with MD5, DROWN, RC4 ciphers, exportable ciphers, LOGJAM, and BEAST.",
+          "authors": [
+            "todb",
+            "et",
+            "Chris John Riley"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "Oct 14 2014",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/ssl/ssl_version",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2011-3389": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/ssl/ssl_version",
+          "name": "SSL/TLS Version Detection",
+          "description": "Check if a server supports a given version of SSL/TLS and cipher suites. The certificate is stored in loot, and any known vulnerabilities against that SSL version and cipher suite combination are checked. These checks include POODLE, deprecated protocols, expired/not valid certs, low key strength, null cipher suites, certificates signed with MD5, DROWN, RC4 ciphers, exportable ciphers, LOGJAM, and BEAST.",
+          "authors": [
+            "todb",
+            "et",
+            "Chris John Riley"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "Oct 14 2014",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/ssl/ssl_version.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/ssl/ssl_version",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2014-4863": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/snmp/arris_dg950",
@@ -39600,7 +39600,7 @@
         }
       ]
     },
-    "CVE-2014-4863": {
+    "CVE-2014-4862": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/snmp/arris_dg950",
@@ -40451,6 +40451,33 @@
         }
       ]
     },
+    "CVE-2013-5795": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/oracle_demantra_database_credentials_leak",
+          "name": "Oracle Demantra Database Credentials Leak",
+          "description": "This module exploits a database credentials leak found in Oracle Demantra 12.2.1 in combination with an authentication bypass. This way an unauthenticated user can retrieve the database name, username and password on any vulnerable machine.",
+          "authors": [
+            "Oliver Gruskovnjak"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2014-02-28",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/oracle_demantra_database_credentials_leak.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/oracle_demantra_database_credentials_leak.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/oracle_demantra_database_credentials_leak",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
     "CVE-2013-5880": {
       "modules": [
         {
@@ -40493,33 +40520,6 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/oracle_demantra_file_retrieval.rb",
           "usage_commands": [
             "use auxiliary/scanner/http/oracle_demantra_file_retrieval",
-            "show options",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "run"
-          ]
-        }
-      ]
-    },
-    "CVE-2013-5795": {
-      "modules": [
-        {
-          "module_path": "auxiliary/scanner/http/oracle_demantra_database_credentials_leak",
-          "name": "Oracle Demantra Database Credentials Leak",
-          "description": "This module exploits a database credentials leak found in Oracle Demantra 12.2.1 in combination with an authentication bypass. This way an unauthenticated user can retrieve the database name, username and password on any vulnerable machine.",
-          "authors": [
-            "Oliver Gruskovnjak"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "2014-02-28",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/oracle_demantra_database_credentials_leak.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/oracle_demantra_database_credentials_leak.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/http/oracle_demantra_database_credentials_leak",
             "show options",
             "set RHOSTS <target>",
             "set RPORT <port>",
@@ -40640,7 +40640,7 @@
         }
       ]
     },
-    "CVE-2013-3623": {
+    "CVE-2013-3621": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/http/smt_ipmi_cgi_scanner",
@@ -40668,7 +40668,7 @@
         }
       ]
     },
-    "CVE-2013-3621": {
+    "CVE-2013-3623": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/http/smt_ipmi_cgi_scanner",
@@ -40780,37 +40780,6 @@
         }
       ]
     },
-    "CVE-2020-11455": {
-      "modules": [
-        {
-          "module_path": "auxiliary/scanner/http/limesurvey_zip_traversals",
-          "name": "LimeSurvey Zip Path Traversals",
-          "description": "This module exploits an authenticated path traversal vulnerability found in LimeSurvey versions between 4.0 and 4.1.11 with CVE-2020-11455 or <= 3.15.9 with CVE-2019-9960, inclusive. In CVE-2020-11455 the getZipFile function within the filemanager functionality allows for arbitrary file download. The file retrieved may be deleted after viewing, which was confirmed in testing. In CVE-2019-9960 the szip function within the downloadZip functionality allows for arbitrary file download. Verified against 4.1.11-200316, 3.15.0-181008, 3.9.0-180604, 3.6.0-180328, 3.0.0-171222, and 2.70.0-170921.",
-          "authors": [
-            "h00die",
-            "Matthew Aberegg",
-            "Michael Burkey",
-            "Federico Fernandez",
-            "Alejandro Parodi"
-          ],
-          "rank": "Unknown",
-          "platform": [],
-          "targets": [],
-          "privileged": false,
-          "disclosure_date": "2020-04-02",
-          "references": [],
-          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/limesurvey_zip_traversals.rb",
-          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/limesurvey_zip_traversals.rb",
-          "usage_commands": [
-            "use auxiliary/scanner/http/limesurvey_zip_traversals",
-            "show options",
-            "set RHOSTS <target>",
-            "set RPORT <port>",
-            "run"
-          ]
-        }
-      ]
-    },
     "CVE-2019-9960": {
       "modules": [
         {
@@ -40840,6 +40809,37 @@
             "run"
           ]
         },
+        {
+          "module_path": "auxiliary/scanner/http/limesurvey_zip_traversals",
+          "name": "LimeSurvey Zip Path Traversals",
+          "description": "This module exploits an authenticated path traversal vulnerability found in LimeSurvey versions between 4.0 and 4.1.11 with CVE-2020-11455 or <= 3.15.9 with CVE-2019-9960, inclusive. In CVE-2020-11455 the getZipFile function within the filemanager functionality allows for arbitrary file download. The file retrieved may be deleted after viewing, which was confirmed in testing. In CVE-2019-9960 the szip function within the downloadZip functionality allows for arbitrary file download. Verified against 4.1.11-200316, 3.15.0-181008, 3.9.0-180604, 3.6.0-180328, 3.0.0-171222, and 2.70.0-170921.",
+          "authors": [
+            "h00die",
+            "Matthew Aberegg",
+            "Michael Burkey",
+            "Federico Fernandez",
+            "Alejandro Parodi"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2020-04-02",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/limesurvey_zip_traversals.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/limesurvey_zip_traversals.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/limesurvey_zip_traversals",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2020-11455": {
+      "modules": [
         {
           "module_path": "auxiliary/scanner/http/limesurvey_zip_traversals",
           "name": "LimeSurvey Zip Path Traversals",
@@ -41229,7 +41229,7 @@
         }
       ]
     },
-    "CVE-2024-8529": {
+    "CVE-2024-8522": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/http/wp_learnpress_c_fields_sqli",
@@ -41283,7 +41283,7 @@
         }
       ]
     },
-    "CVE-2024-8522": {
+    "CVE-2024-8529": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/http/wp_learnpress_c_fields_sqli",
@@ -41393,7 +41393,7 @@
         }
       ]
     },
-    "CVE-2012-5958": {
+    "CVE-2013-0230": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/upnp/ssdp_msearch",
@@ -41447,7 +41447,7 @@
         }
       ]
     },
-    "CVE-2013-0230": {
+    "CVE-2012-5959": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/upnp/ssdp_msearch",
@@ -41474,7 +41474,7 @@
         }
       ]
     },
-    "CVE-2012-5959": {
+    "CVE-2012-5958": {
       "modules": [
         {
           "module_path": "auxiliary/scanner/upnp/ssdp_msearch",
@@ -41923,7 +41923,7 @@
         }
       ]
     },
-    "CVE-2025-13316": {
+    "CVE-2025-13315": {
       "modules": [
         {
           "module_path": "auxiliary/gather/twonky_authbypass_logleak",
@@ -41971,7 +41971,7 @@
         }
       ]
     },
-    "CVE-2025-13315": {
+    "CVE-2025-13316": {
       "modules": [
         {
           "module_path": "auxiliary/gather/twonky_authbypass_logleak",
@@ -42186,7 +42186,7 @@
         }
       ]
     },
-    "CVE-2014-6039": {
+    "CVE-2014-6038": {
       "modules": [
         {
           "module_path": "auxiliary/gather/eventlog_cred_disclosure",
@@ -42210,7 +42210,7 @@
         }
       ]
     },
-    "CVE-2014-6038": {
+    "CVE-2014-6039": {
       "modules": [
         {
           "module_path": "auxiliary/gather/eventlog_cred_disclosure",
@@ -42288,7 +42288,7 @@
         }
       ]
     },
-    "CVE-2022-38120": {
+    "CVE-2022-38121": {
       "modules": [
         {
           "module_path": "auxiliary/gather/upsmon_traversal",
@@ -42314,7 +42314,7 @@
         }
       ]
     },
-    "CVE-2022-38121": {
+    "CVE-2022-38120": {
       "modules": [
         {
           "module_path": "auxiliary/gather/upsmon_traversal",
@@ -42775,7 +42775,7 @@
         }
       ]
     },
-    "CVE-2022-29845": {
+    "CVE-2022-29846": {
       "modules": [
         {
           "module_path": "post/windows/gather/credentials/whatsupgold_credential_dump",
@@ -42803,7 +42803,7 @@
         }
       ]
     },
-    "CVE-2022-29846": {
+    "CVE-2022-29845": {
       "modules": [
         {
           "module_path": "post/windows/gather/credentials/whatsupgold_credential_dump",
