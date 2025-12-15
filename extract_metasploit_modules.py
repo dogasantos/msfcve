@@ -137,15 +137,71 @@ def generate_usage_commands(module_path, metadata):
     
     return commands
 
+def extract_cves_from_references(content):
+    """Extract CVE IDs from the References array in module metadata."""
+    cves = set()
+    
+    # Extract References section - need to match the entire array, not just first element
+    # Look for 'References' => [ ... ] where ... can contain nested arrays
+    ref_patterns = [
+        r"'References'\s*=>\s*\[",  # Single quotes - start of array
+        r'"References"\s*=>\s*\[',  # Double quotes - start of array
+    ]
+    
+    for pattern in ref_patterns:
+        ref_match = re.search(pattern, content, re.IGNORECASE)
+        if ref_match:
+            # Find the matching closing bracket by counting brackets
+            start_pos = ref_match.end()
+            bracket_count = 1
+            pos = start_pos
+            
+            while pos < len(content) and bracket_count > 0:
+                if content[pos] == '[':
+                    bracket_count += 1
+                elif content[pos] == ']':
+                    bracket_count -= 1
+                pos += 1
+            
+            if bracket_count == 0:
+                # Extract the References array content
+                ref_content = content[start_pos:pos-1]
+                
+                # Find all CVE entries: ['CVE', '2025-55182'] or ["CVE", "2025-55182"]
+                # Handle both single and double quotes, and various whitespace
+                ref_matches = re.findall(
+                    r"\[\s*['\"]CVE['\"],\s*['\"]([^'\"]+)['\"]\s*\]",
+                    ref_content,
+                    re.IGNORECASE
+                )
+                for cve_value in ref_matches:
+                    # Prepend "CVE-" if not already present and normalize
+                    cve_id = cve_value.strip()
+                    if not cve_id.upper().startswith('CVE-'):
+                        cve_id = f"CVE-{cve_id}"
+                    cves.add(cve_id.upper())
+            break  # Only need to match one pattern
+    
+    return cves
+
 def extract_module_info(module_path, msf_root):
     """Extract complete information from a Metasploit module file."""
     try:
         with open(module_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
         
-        # Extract CVEs
-        cves = set(CVE_PATTERN.findall(content))
-        cves = [cve.upper() for cve in cves]
+        # Extract CVEs from multiple sources
+        cves = set()
+        
+        # 1. Extract from References array (explicit parsing)
+        cves.update(extract_cves_from_references(content))
+        
+        # 2. Extract from full file content using regex (fallback for CVEs in comments, descriptions, etc.)
+        regex_cves = CVE_PATTERN.findall(content)
+        cves.update([cve.upper() for cve in regex_cves])
+        
+        # Convert to sorted list
+        cves = sorted(list(cves))
         
         if not cves:
             return None
