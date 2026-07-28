@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-07-27T02:27:47.115896Z",
+    "generated_at": "2026-07-28T02:02:43.502008Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4431,
-    "modules_with_cves": 3069,
-    "total_cves": 3162,
-    "total_module_cve_mappings": 3551
+    "total_modules_scanned": 4432,
+    "modules_with_cves": 3070,
+    "total_cves": 3163,
+    "total_module_cve_mappings": 3552
   },
   "cves": {
     "CVE-1978-1234": {
@@ -19305,6 +19305,40 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/netgear_readynas_exec.rb",
           "usage_commands": [
             "use exploits/linux/http/netgear_readynas_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2025-49132": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/pterodactyl_locales_locale_json",
+          "name": "Pterodactyl Panel CVE-2025-49132 Remote Code Execution",
+          "description": "This module exploits a vulnerability in Pterodactyl Panel before version 1.11.11 that allows unauthenticated remote code execution through improper handling of locale file operations. The vulnerability exists in the locale.json endpoint which allows path traversal and arbitrary file creation. Code execution is in the context of the user running the webserver. The exploit leverages PEAR (PHP Extension and Application Repository) for command injection by creating a malicious payload file in the /tmp through path traversal, then executing it via PHP execution with pearcmd.",
+          "authors": [
+            "0xtensho",
+            "jheysel-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Command Payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2025-06-19",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/pterodactyl_locales_locale_json.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/pterodactyl_locales_locale_json.rb",
+          "usage_commands": [
+            "use exploits/linux/http/pterodactyl_locales_locale_json",
             "show options",
             "show targets",
             "set RHOSTS <target>",
