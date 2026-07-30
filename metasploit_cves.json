@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-07-29T02:05:59.063950Z",
+    "generated_at": "2026-07-30T01:55:45.388649Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4432,
-    "modules_with_cves": 3070,
-    "total_cves": 3163,
-    "total_module_cve_mappings": 3552
+    "total_modules_scanned": 4435,
+    "modules_with_cves": 3073,
+    "total_cves": 3166,
+    "total_module_cve_mappings": 3555
   },
   "cves": {
     "CVE-1978-1234": {
@@ -11406,6 +11406,42 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/sophos_wpa_clear_keys.rb",
           "usage_commands": [
             "use exploits/linux/local/sophos_wpa_clear_keys",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-46300": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/local/cve_2026_46300_fragnesia",
+          "name": "Fragnesia LPE (CVE-2026-46300)",
+          "description": "This module exploits CVE-2026-46300, a Linux kernel local privilege escalation vulnerability introduced in version 4.10. The flaw resides in the kernel's IPsec ESP-in-TCP handling: when an ESP-encapsulated TCP segment containing a shared fragment (SKBFL_SHARED_FRAG) is received and decrypted, the AES-GCM keystream is applied to page cache pages of the target file without enforcing write permissions. This allows an unprivileged attacker to overwrite arbitrary bytes of a read-only file backed by the page cache. Upstream fix is ported independently by different vendors, so there's release version from which each kernel is not vulnerable anymore.",
+          "authors": [
+            "William Bowling",
+            "msutovsky-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux",
+            "unix"
+          ],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-05-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/cve_2026_46300_fragnesia.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2026_46300_fragnesia.rb",
+          "usage_commands": [
+            "use exploits/linux/local/cve_2026_46300_fragnesia",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -26281,7 +26317,9 @@
           "module_path": "exploits/linux/http/seagate_nas_php_exec_noauth",
           "name": "Seagate Business NAS Unauthenticated Remote Command Execution",
           "description": "Some Seagate Business NAS devices are vulnerable to command execution via a local file include vulnerability hidden in the language parameter of the CodeIgniter session cookie. The vulnerability manifests in the way the language files are included in the code on the login page, and hence is open to attack from users without the need for authentication. The cookie can be easily decrypted using a known static encryption key and re-encrypted once the PHP object string has been modified. This module has been tested on the STBN300 device.",
-          "authors": [],
+          "authors": [
+            "OJ Reeves"
+          ],
           "rank": "Unknown",
           "platform": [],
           "targets": [
@@ -26312,7 +26350,9 @@
           "module_path": "exploits/linux/http/seagate_nas_php_exec_noauth",
           "name": "Seagate Business NAS Unauthenticated Remote Command Execution",
           "description": "Some Seagate Business NAS devices are vulnerable to command execution via a local file include vulnerability hidden in the language parameter of the CodeIgniter session cookie. The vulnerability manifests in the way the language files are included in the code on the login page, and hence is open to attack from users without the need for authentication. The cookie can be easily decrypted using a known static encryption key and re-encrypted once the PHP object string has been modified. This module has been tested on the STBN300 device.",
-          "authors": [],
+          "authors": [
+            "OJ Reeves"
+          ],
           "rank": "Unknown",
           "platform": [],
           "targets": [
@@ -26343,7 +26383,9 @@
           "module_path": "exploits/linux/http/seagate_nas_php_exec_noauth",
           "name": "Seagate Business NAS Unauthenticated Remote Command Execution",
           "description": "Some Seagate Business NAS devices are vulnerable to command execution via a local file include vulnerability hidden in the language parameter of the CodeIgniter session cookie. The vulnerability manifests in the way the language files are included in the code on the login page, and hence is open to attack from users without the need for authentication. The cookie can be easily decrypted using a known static encryption key and re-encrypted once the PHP object string has been modified. This module has been tested on the STBN300 device.",
-          "authors": [],
+          "authors": [
+            "OJ Reeves"
+          ],
           "rank": "Unknown",
           "platform": [],
           "targets": [
@@ -42407,7 +42449,7 @@
         {
           "module_path": "exploits/multi/http/vbulletin_getindexablecontent",
           "name": "vBulletin /ajax/api/content_infraction/getIndexableContent nodeid Parameter SQL Injection",
-          "description": "This module exploits a SQL injection vulnerability found in vBulletin 5.6.1 and earlier This module uses the getIndexableContent vulnerability to reset the administrators password, it then uses the administrators login information to achieve RCE on the target. This module has been tested successfully on VBulletin Version 5.6.1 on Ubuntu Linux distribution.",
+          "description": "This module exploits a SQL injection vulnerability found in vBulletin 5.6.1 and earlier This module uses the getIndexableContent vulnerability to reset the administrators password, it then uses the administrators login information to achieve RCE on the target. This module has been tested on VBulletin Version 5.6.1 on Ubuntu Linux distribution.",
           "authors": [],
           "rank": "Unknown",
           "platform": [],
@@ -46365,6 +46407,44 @@
             "set LHOST <your_ip>",
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-3891": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/wp_plugin_pix_unauth_rce_cve_2026_3891",
+          "name": "WordPress Unauthenticated RCE via Pix for WooCommerce plugin",
+          "description": "This Metasploit module exploits an Unauthenticated Arbitrary File Upload vulnerability in the Pix for WooCommerce plugin for WordPress. Attackers can leverage the missing capability check and insufficient file type validation in the 'lkn_pix_for_woocommerce_c6_save_settings' function to upload arbitrary files to the affected server, which may lead to remote code execution under the web server's privileges. The affected versions include all releases up to and including 1.5.0.",
+          "authors": [
+            "Maksim Rogov",
+            "Alexis Lafontaine"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "php"
+          ],
+          "targets": [
+            "Pix for WooCommerce <= 1.5.0 / Automatic",
+            "php"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-03-12",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/wp_plugin_pix_unauth_rce_cve_2026_3891.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/wp_plugin_pix_unauth_rce_cve_2026_3891.rb",
+          "usage_commands": [
+            "use exploits/multi/http/wp_plugin_pix_unauth_rce_cve_2026_3891",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
             "exploit"
           ]
         }
@@ -51978,6 +52058,43 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/oracle_reports_rce.rb",
           "usage_commands": [
             "use exploits/multi/http/oracle_reports_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-48907": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/joomla_com_jce_unauth_file_upload_rce",
+          "name": "Joomla Content Editor Unauthenticated File Upload RCE",
+          "description": "This module exploits an unauthenticated arbitrary profile creation vulnerability in the JCE (Joomla Content Editor) extension for Joomla! (CVE-2026-48907). The profiles.import task fails to enforce authentication, allowing the import of a crafted profile that is directly written to disk as a PHP web shell. This results in remote code execution, provided that the tmp/ directory is not explicitly restricted. JCE versions up to and including 2.9.99.4 are affected.",
+          "authors": [
+            "ispyispyispy",
+            "David Jardin",
+            "Uwe Flottemesch"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "php"
+          ],
+          "targets": [
+            "Joomla Content Editor (Joomla!)"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-06-05",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/joomla_com_jce_unauth_file_upload_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/joomla_com_jce_unauth_file_upload_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/joomla_com_jce_unauth_file_upload_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -91587,7 +91704,7 @@
           "authors": [
             "Sean Dillon <sean.dillon@risksense.com>",
             "Ryan Hanson",
-            "OJ Reeves <oj@beyondbinary.io>",
+            "OJ Reeves",
             "Brent Cook <bcook@rapid7.com>"
           ],
           "rank": "Unknown",
@@ -93330,7 +93447,7 @@
         {
           "module_path": "exploits/windows/misc/ahsay_backup_fileupload",
           "name": "Ahsay Backup v7.x-v8.1.1.50 (authenticated) file upload",
-          "description": "This module exploits an authenticated insecure file upload and code execution flaw in Ahsay Backup v7.x - v8.1.1.50. To succesfully execute the upload credentials are needed, default on Ahsay Backup trial accounts are enabled so an account can be created. It can be exploited in Windows and Linux environments to get remote code execution (usualy as SYSTEM). This module has been tested successfully on Ahsay Backup v8.1.1.50 with Windows 2003 SP2 Server. Because of this flaw all connected clients can be configured to execute a command before the backup starts. Allowing an attacker to takeover even more systems and make it rain shells! Setting the CREATEACCOUNT to true will create a new account, this is enabled by default. If credeantials are known enter these and run the exploit.",
+          "description": "This module exploits an authenticated insecure file upload and code execution flaw in Ahsay Backup v7.x - v8.1.1.50. To successfully execute the upload, credentials are needed; default Ahsay Backup trial accounts are enabled so an account can be created. It can be exploited in Windows and Linux environments to get remote code execution (usually as SYSTEM). This module has been tested on Ahsay Backup v8.1.1.50 with Windows 2003 SP2 Server. Because of this flaw all connected clients can be configured to execute a command before the backup starts. Allowing an attacker to takeover even more systems and make it rain shells! Setting the CREATEACCOUNT to true will create a new account, this is enabled by default. If credeantials are known enter these and run the exploit.",
           "authors": [
             "Wietse Boonstra"
           ],
