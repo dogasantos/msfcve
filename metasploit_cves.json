@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-08-10T01:18:13.404152Z",
+    "generated_at": "2026-08-11T01:16:11.608448Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4439,
-    "modules_with_cves": 3076,
-    "total_cves": 3171,
-    "total_module_cve_mappings": 3560
+    "total_modules_scanned": 4440,
+    "modules_with_cves": 3077,
+    "total_cves": 3173,
+    "total_module_cve_mappings": 3562
   },
   "cves": {
     "CVE-1978-1234": {
@@ -24421,6 +24421,76 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/imperva_securesphere_exec.rb",
           "usage_commands": [
             "use exploits/linux/http/imperva_securesphere_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-15409": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/sonicwall_sma1000_wsproxy_rce",
+          "name": "SonicWall SMA1000 WorkPlace wsproxy SSRF Remote Command Execution",
+          "description": "This module exploits a Server-Side Request Forgery (SSRF) vulnerability in the SonicWall SMA1000 WorkPlace wsproxy service to access the internal Erlang distribution service. After authenticating using the known Erlang distribution cookie, the module invokes os:cmd/1 through Erlang RPC to execute arbitrary Unix commands in the context of the vulnerable SMA service. The check method performs a benign Erlang node RPC rather than executing an operating system command.",
+          "authors": [
+            "Ryan Emmons",
+            "Deral Heiland",
+            "Rapid7 Vulnerability Research"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/sonicwall_sma1000_wsproxy_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/sonicwall_sma1000_wsproxy_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/sonicwall_sma1000_wsproxy_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-15410": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/sonicwall_sma1000_wsproxy_rce",
+          "name": "SonicWall SMA1000 WorkPlace wsproxy SSRF Remote Command Execution",
+          "description": "This module exploits a Server-Side Request Forgery (SSRF) vulnerability in the SonicWall SMA1000 WorkPlace wsproxy service to access the internal Erlang distribution service. After authenticating using the known Erlang distribution cookie, the module invokes os:cmd/1 through Erlang RPC to execute arbitrary Unix commands in the context of the vulnerable SMA service. The check method performs a benign Erlang node RPC rather than executing an operating system command.",
+          "authors": [
+            "Ryan Emmons",
+            "Deral Heiland",
+            "Rapid7 Vulnerability Research"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/sonicwall_sma1000_wsproxy_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/sonicwall_sma1000_wsproxy_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/sonicwall_sma1000_wsproxy_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
