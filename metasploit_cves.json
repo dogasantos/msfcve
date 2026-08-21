@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-08-20T00:55:22.818239Z",
+    "generated_at": "2026-08-21T00:59:00.477866Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4441,
-    "modules_with_cves": 3078,
-    "total_cves": 3174,
-    "total_module_cve_mappings": 3563
+    "total_modules_scanned": 4443,
+    "modules_with_cves": 3080,
+    "total_cves": 3176,
+    "total_module_cve_mappings": 3565
   },
   "cves": {
     "CVE-1978-1234": {
@@ -39909,6 +39909,40 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/sit_file_upload.rb",
           "usage_commands": [
             "use exploits/multi/http/sit_file_upload",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-56274": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/flowise_mcp_rce",
+          "name": "Flowise MCP Server Remote Code Execution",
+          "description": "Flowise versions from 2.2.7 prior to 3.1.2 are vulnerable to remote code execution through the Custom MCP (Model Context Protocol) node configuration. The vulnerability exists in the /api/v1/node-load-method/customMCP endpoint, which accepts arbitrary command and argument configurations for MCP server initialization. An authenticated attacker can abuse the npx --yes flag to fetch and execute a malicious npm package from an attacker-controlled HTTP server, achieving arbitrary command execution on the Flowise host. This module creates a malicious npm package tar archive in memory, serves it via Metasploit's built-in HTTP server, then triggers the vulnerable endpoint to download and execute the package via npx. To interact with the obtained shell, use the command: sessions -i <id> (for example: sessions -i 1).",
+          "authors": [
+            "cn-panda",
+            "ABDUL JAFAROV <https://github.com/jafarov007>"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-06-23",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/flowise_mcp_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/flowise_mcp_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/flowise_mcp_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -107366,6 +107400,33 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/adobe_xml_inject.rb",
           "usage_commands": [
             "use auxiliary/scanner/http/adobe_xml_inject",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-6826": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/concrete_cms_file_usage_disclosure",
+          "name": "Concrete CMS Unauthenticated File Usage Disclosure",
+          "description": "Concrete CMS (formerly concrete5) 9.x before 9.5.1 exposes the file usage dialog controller at /ccm/system/dialogs/file/usage/<fID> without a view permission check (CVE-2026-6826). An unauthenticated attacker can enumerate the numeric file ID space and, for every file registered in the file manager, learn where it is used: the referencing Page ID, page Version, file Handle, and the page Location (path). This discloses the site's internal page tree, unpublished and internal page paths, and file handles to anonymous callers. This module enumerates a range of file IDs and reports the disclosed usage records. It is read-only.",
+          "authors": [
+            "dividesbyzer0"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-05-21",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/concrete_cms_file_usage_disclosure.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/concrete_cms_file_usage_disclosure.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/concrete_cms_file_usage_disclosure",
             "show options",
             "set RHOSTS <target>",
             "set RPORT <port>",
