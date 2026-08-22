@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-08-21T00:59:00.477866Z",
+    "generated_at": "2026-08-22T00:55:33.709998Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4443,
-    "modules_with_cves": 3080,
-    "total_cves": 3176,
-    "total_module_cve_mappings": 3565
+    "total_modules_scanned": 4445,
+    "modules_with_cves": 3082,
+    "total_cves": 3178,
+    "total_module_cve_mappings": 3567
   },
   "cves": {
     "CVE-1978-1234": {
@@ -40912,6 +40912,39 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/spree_searchlogic_exec.rb",
           "usage_commands": [
             "use exploits/multi/http/spree_searchlogic_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-9198": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_unauth_rce_cve_2026_9198",
+          "name": "Langflow AI auto_login RCE",
+          "description": "Langflow versions 1.10.0 and below are susceptible to unauthenticated remote code execution. By chaining /api/v1/auto_login with /api/v1/validate/code, a remote unauthenticated attacker can send crafted HTTP requests to execute arbitrary code.",
+          "authors": [
+            "Richard Howe <rhowe425>"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-17",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_9198.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_9198.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_unauth_rce_cve_2026_9198",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -102012,6 +102045,33 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb",
           "usage_commands": [
             "use auxiliary/gather/solarwinds_webhelpdesk_backdoor",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-59774": {
+      "modules": [
+        {
+          "module_path": "auxiliary/gather/forgejo_orgmode_fileread_cve_2026_59774",
+          "name": "Forgejo Arbitrary File Read via Org-mode Include",
+          "description": "Forgejo versions 7.0 through 15.0.5 and 16.0.0 through 16.0.1 are vulnerable to an arbitrary file read via the markup rendering API endpoint. The go-org library's default ReadFile callback (ioutil.ReadFile) is not overridden, allowing the #+INCLUDE directive to read arbitrary files accessible to the service user. Valid credentials are required to access the API markup endpoint. Extracting sensitive files such as app.ini can expose INTERNAL_TOKEN and other secrets, potentially leading to remote code execution.",
+          "authors": [
+            "xbow-security",
+            "NightRang3r"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-07-30",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/gather/forgejo_orgmode_fileread_cve_2026_59774.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/gather/forgejo_orgmode_fileread_cve_2026_59774.rb",
+          "usage_commands": [
+            "use auxiliary/gather/forgejo_orgmode_fileread_cve_2026_59774",
             "show options",
             "set RHOSTS <target>",
             "run"
