@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-08-25T00:57:31.414230Z",
+    "generated_at": "2026-08-26T00:58:42.385144Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4446,
-    "modules_with_cves": 3083,
-    "total_cves": 3179,
-    "total_module_cve_mappings": 3568
+    "total_modules_scanned": 4453,
+    "modules_with_cves": 3088,
+    "total_cves": 3184,
+    "total_module_cve_mappings": 3575
   },
   "cves": {
     "CVE-1978-1234": {
@@ -27484,6 +27484,38 @@
         }
       ]
     },
+    "CVE-2026-16232": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/misc/checkpoint_smartconsole_cve_2026_16232_rce",
+          "name": "Check Point SmartConsole Authentication Bypass Run Script RCE",
+          "description": "This module exploits CVE-2026-16232, an authentication bypass in the Check Point SmartConsole login process affecting Security Management Server and Multi-Domain Security Management Server. A vulnerable management server accepts a client-supplied SIC distinguished name during an application certificate bind instead of binding the application identity to the authenticated peer certificate. The module uses the unauthenticated FWM/CPMI service to replay the management server's own SIC DN, mints a SmartConsole SSO ticket, and redeems it over the CPM SOAP service. The resulting administrative session is then used to submit a local one-time run-script command. Affected versions include R82.10 before Jumbo Hotfix Take 36, R82 before Jumbo Hotfix Take 118, and R81.20 before Jumbo Hotfix Take 158. Older supported release families are also affected according to the vendor advisory. Exploitation requires network access to the management server (Specifically the FWM/CPMI service port on TCP 18190, and the CPM/DLE service port on TCP 19009), and a Trusted Clients configuration that does not restrict GUI clients. This module has been successfully tested against vulnerable R82.10 and R81.20 targets.",
+          "authors": [
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python Payloads"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-07-22",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/misc/checkpoint_smartconsole_cve_2026_16232_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/misc/checkpoint_smartconsole_cve_2026_16232_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/misc/checkpoint_smartconsole_cve_2026_16232_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2025-34082": {
       "modules": [
         {
@@ -34904,6 +34936,90 @@
             "set LHOST <your_ip>",
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2025-24293": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/rails_activestorage_vips_rce",
+          "name": "Ruby on Rails Active Storage Vips Arbitrary File Read and Remote Code Execution",
+          "description": "This module exploits CVE-2026-66066 in Ruby on Rails Active Storage when the application uses the Vips variant processor and accepts untrusted image uploads. A crafted MATLAB v7.3/HDF5 image uses external storage to read text files accessible to the Rails worker through a PNG representation response. The module recovers secret_key_base from the process environment, Rails local secrets, encrypted credentials, or the legacy secrets.yml(.enc) files. It then forges a serializer-compatible variation whose ImageProcessing apply step reaches Kernel#spawn with a command payload, or Kernel#eval with a native Ruby payload when the Ruby target is selected. Neither path requires a Marshal object gadget. The Ruby target's initial code execution does not require a Unix shell or a fetch utility on the target. The file-read stage needs a genuine signed Active Storage variation key. It can use VARIATION_KEY directly, reuse a representation URL from the application, or create one through an application upload form. Supplying SECRET_KEY_BASE skips the arbitrary file-read stage and lets the module construct the standard representation route itself. The file-read stage affects Rails 6.0 and 6.1, Rails 7.0 through 7.2.3.1, Rails 8.0.0 through 8.0.5, and Rails 8.1.0 through 8.1.3. It is fixed in Rails 7.2.3.2, 8.0.5.1, and 8.1.3.1. The RCE stage combines an incomplete Vips-side fix for CVE-2025-24293 with ImageProcessing 1.x method dispatch; ImageProcessing 2.x blocks this chain.",
+          "authors": [
+            "0xacb",
+            "s3np41k1r1t0",
+            "castilho",
+            "RyotaK",
+            "Crypto-Cat"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Linux/Unix Command",
+            "unix"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-29",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/rails_activestorage_vips_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/rails_activestorage_vips_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/rails_activestorage_vips_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-66066": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/rails_activestorage_vips_rce",
+          "name": "Ruby on Rails Active Storage Vips Arbitrary File Read and Remote Code Execution",
+          "description": "This module exploits CVE-2026-66066 in Ruby on Rails Active Storage when the application uses the Vips variant processor and accepts untrusted image uploads. A crafted MATLAB v7.3/HDF5 image uses external storage to read text files accessible to the Rails worker through a PNG representation response. The module recovers secret_key_base from the process environment, Rails local secrets, encrypted credentials, or the legacy secrets.yml(.enc) files. It then forges a serializer-compatible variation whose ImageProcessing apply step reaches Kernel#spawn with a command payload, or Kernel#eval with a native Ruby payload when the Ruby target is selected. Neither path requires a Marshal object gadget. The Ruby target's initial code execution does not require a Unix shell or a fetch utility on the target. The file-read stage needs a genuine signed Active Storage variation key. It can use VARIATION_KEY directly, reuse a representation URL from the application, or create one through an application upload form. Supplying SECRET_KEY_BASE skips the arbitrary file-read stage and lets the module construct the standard representation route itself. The file-read stage affects Rails 6.0 and 6.1, Rails 7.0 through 7.2.3.1, Rails 8.0.0 through 8.0.5, and Rails 8.1.0 through 8.1.3. It is fixed in Rails 7.2.3.2, 8.0.5.1, and 8.1.3.1. The RCE stage combines an incomplete Vips-side fix for CVE-2025-24293 with ImageProcessing 1.x method dispatch; ImageProcessing 2.x blocks this chain.",
+          "authors": [
+            "0xacb",
+            "s3np41k1r1t0",
+            "castilho",
+            "RyotaK",
+            "Crypto-Cat"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Linux/Unix Command",
+            "unix"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-29",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/rails_activestorage_vips_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/rails_activestorage_vips_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/rails_activestorage_vips_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
             "exploit"
           ]
         }
@@ -44331,6 +44447,30 @@
             "set PAYLOAD <payload>",
             "exploit"
           ]
+        },
+        {
+          "module_path": "auxiliary/scanner/http/wordpress_wp2shell_sqli",
+          "name": "WordPress Core wp2shell Unauthenticated SQL Injection via REST Batch Route Confusion",
+          "description": "WordPress core 6.9.0 - 6.9.4 and 7.0.0 - 7.0.1 are affected by an unauthenticated SQL injection reachable through the REST API batch endpoint (/batch/v1). The batch controller builds parallel $matches (the matched handler per sub-request) and $validation (the validation result per sub-request) arrays, then indexes both by the same offset when dispatching. A sub-request whose path fails wp_parse_url() is appended to $validation but not to $matches, desynchronising the two arrays so a sub-request is dispatched under a different sub-request's handler (CVE-2026-63030). Nesting the primitive twice lets a GET on the single-post item route /wp/v2/posts/999999, carrying the collection-only parameter author_exclude, be dispatched under the posts collection get_items() handler, where author_exclude maps to the WP_Query author__not_in query var. The vulnerable builds interpolate that value into SQL as a string (CVE-2026-60137), producing a pre-authentication boolean- and time-based blind SQL injection in the post_author NOT IN (...) clause. This module confirms the route-confusion primitive with a benign marker probe, then uses a time-based blind injection to dump WordPress user logins and password hashes. It is read-only and does not create posts, users, or other content.",
+          "authors": [
+            "dividesbyzer0",
+            "Searchlight Cyber"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-07-17",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/wordpress_wp2shell_sqli.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/wordpress_wp2shell_sqli.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/wordpress_wp2shell_sqli",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
         }
       ]
     },
@@ -44367,6 +44507,30 @@
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
             "exploit"
+          ]
+        },
+        {
+          "module_path": "auxiliary/scanner/http/wordpress_wp2shell_sqli",
+          "name": "WordPress Core wp2shell Unauthenticated SQL Injection via REST Batch Route Confusion",
+          "description": "WordPress core 6.9.0 - 6.9.4 and 7.0.0 - 7.0.1 are affected by an unauthenticated SQL injection reachable through the REST API batch endpoint (/batch/v1). The batch controller builds parallel $matches (the matched handler per sub-request) and $validation (the validation result per sub-request) arrays, then indexes both by the same offset when dispatching. A sub-request whose path fails wp_parse_url() is appended to $validation but not to $matches, desynchronising the two arrays so a sub-request is dispatched under a different sub-request's handler (CVE-2026-63030). Nesting the primitive twice lets a GET on the single-post item route /wp/v2/posts/999999, carrying the collection-only parameter author_exclude, be dispatched under the posts collection get_items() handler, where author_exclude maps to the WP_Query author__not_in query var. The vulnerable builds interpolate that value into SQL as a string (CVE-2026-60137), producing a pre-authentication boolean- and time-based blind SQL injection in the post_author NOT IN (...) clause. This module confirms the route-confusion primitive with a benign marker probe, then uses a time-based blind injection to dump WordPress user logins and password hashes. It is read-only and does not create posts, users, or other content.",
+          "authors": [
+            "dividesbyzer0",
+            "Searchlight Cyber"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-07-17",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/wordpress_wp2shell_sqli.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/wordpress_wp2shell_sqli.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/wordpress_wp2shell_sqli",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
           ]
         }
       ]
@@ -105868,6 +106032,34 @@
         }
       ]
     },
+    "CVE-2026-0265": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/panos_cve_2026_0265",
+          "name": "PAN-OS GlobalProtect CAS CVE-2026-0265 Vulnerability Checker",
+          "description": "This module checks a PAN-OS GlobalProtect portal for CVE-2026-0265 using the Bishop Fox scanner decision flow. It performs anonymous GET requests to the GlobalProtect prelogin endpoint, retrying transient failures and HTTP 503 responses, then checks whether CAS authentication is enabled, decodes the embedded SAML/JWT token when present, extracts PanOSversion, and compares it against the advisory version matrix.",
+          "authors": [
+            "Bishop Fox Team X",
+            "Rapid7 Research / Deral Heiland adaptation"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-05-21",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/panos_cve_2026_0265.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/panos_cve_2026_0265.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/panos_cve_2026_0265",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
     "CVE-2020-9294": {
       "modules": [
         {
@@ -106967,6 +107159,33 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/sybase_easerver_traversal.rb",
           "usage_commands": [
             "use auxiliary/scanner/http/sybase_easerver_traversal",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-9082": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/drupal_pgsql_entityquery_sqli",
+          "name": "Drupal Core PostgreSQL EntityQuery SQL Injection",
+          "description": "This module detects CVE-2026-9082, an unauthenticated SQL injection in Drupal core's PostgreSQL EntityQuery condition handler. It uses a crafted JSON:API filter array key to confirm the vulnerability with time-based blind SQL injection. MySQL, MariaDB, and SQLite are not affected. The configured JSON:API resource must be anonymously readable and expose at least one entity with a case-insensitive string field.",
+          "authors": [
+            "Lukas Johannes Moeller"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-05-20",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/drupal_pgsql_entityquery_sqli.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/drupal_pgsql_entityquery_sqli.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/drupal_pgsql_entityquery_sqli",
             "show options",
             "set RHOSTS <target>",
             "set RPORT <port>",
