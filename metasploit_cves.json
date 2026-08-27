@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-08-26T00:58:42.385144Z",
+    "generated_at": "2026-08-27T06:52:00.640962Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4453,
-    "modules_with_cves": 3088,
-    "total_cves": 3184,
-    "total_module_cve_mappings": 3575
+    "total_modules_scanned": 4456,
+    "modules_with_cves": 3091,
+    "total_cves": 3187,
+    "total_module_cve_mappings": 3578
   },
   "cves": {
     "CVE-1978-1234": {
@@ -16450,6 +16450,41 @@
         }
       ]
     },
+    "CVE-2026-19626": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/tenable_sc_report_charting_rce_cve_2026_19626",
+          "name": "Tenable Security Center Report Charting RCE",
+          "description": "Tenable Security Center prior to 6.9.0 allows an authenticated, non-administrative user to achieve code execution as the web service account (tns) through report generation. A report definition's inline style is discarded at render (components rehydrate styles from the Style tables by styleID), so the payload is delivered through a label instead: a group created with the name `{=system('CMD')",
+          "authors": [
+            "h00die"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix"
+          ],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-08-13",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/tenable_sc_report_charting_rce_cve_2026_19626.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/tenable_sc_report_charting_rce_cve_2026_19626.rb",
+          "usage_commands": [
+            "use exploits/linux/http/tenable_sc_report_charting_rce_cve_2026_19626",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2026-28515": {
       "modules": [
         {
@@ -18157,6 +18192,41 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/panos_management_unauth_rce.rb",
           "usage_commands": [
             "use exploits/linux/http/panos_management_unauth_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-19681": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/tenable_sc_auditfile_cmdinject_cve_2026_19681",
+          "name": "Tenable Security Center SCAP Audit File Command Injection",
+          "description": "Tenable Security Center prior to 6.9.0 allows an authenticated user to achieve command execution as the web service account (tns) via the SCAP audit file upload flow. Filesystem::saveTmp() builds staged upload filenames from the raw client-supplied `context` form parameter (tempnam prefix), which is not charset-validated. Referencing that staged file in a POST /rest/auditFile (type=scapLinux, version=1.2) request reaches AuditFileLib::addSCAPTailoringFile(), where the zip repack command interpolates the derived path unescaped: exec(\"{$CommandZIP",
+          "authors": [
+            "h00die"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix"
+          ],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-08-13",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/tenable_sc_auditfile_cmdinject_cve_2026_19681.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/tenable_sc_auditfile_cmdinject_cve_2026_19681.rb",
+          "usage_commands": [
+            "use exploits/linux/http/tenable_sc_auditfile_cmdinject_cve_2026_19681",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -102910,6 +102980,33 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/gather/solarwinds_orion_sqli.rb",
           "usage_commands": [
             "use auxiliary/gather/solarwinds_orion_sqli",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-3576": {
+      "modules": [
+        {
+          "module_path": "auxiliary/gather/wp_planyo_lfi_cve_2026_3576",
+          "name": "Wordpress Planyo Online Reservation System Arbitrary File Read (CVE-2026-3576)",
+          "description": "This module exploits a Server Side Request Forgery (SSRF) vulnerability in Wordpress's Planyo Online Reservation System v3.0 or less. The plugin's AJAX proxy ulap.php does not require authentication and does not validate URL scheme supplied via ulap_url parameter. This allows unauthenticated attackers to supply file:// URLs to ulap.php and retrieve local files from the system.",
+          "authors": [
+            "sinn3r",
+            "s yaws_traversal exploit module as a skeleton"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-07-10",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/gather/wp_planyo_lfi_cve_2026_3576.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/gather/wp_planyo_lfi_cve_2026_3576.rb",
+          "usage_commands": [
+            "use auxiliary/gather/wp_planyo_lfi_cve_2026_3576",
             "show options",
             "set RHOSTS <target>",
             "run"
