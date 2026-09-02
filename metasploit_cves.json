@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-01T03:11:38.087724Z",
+    "generated_at": "2026-09-02T02:30:08.601363Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4459,
-    "modules_with_cves": 3092,
-    "total_cves": 3188,
-    "total_module_cve_mappings": 3579
+    "total_modules_scanned": 4460,
+    "modules_with_cves": 3093,
+    "total_cves": 3189,
+    "total_module_cve_mappings": 3580
   },
   "cves": {
     "CVE-1978-1234": {
@@ -30523,6 +30523,42 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/openfire_auth_bypass.rb",
           "usage_commands": [
             "use exploits/multi/http/openfire_auth_bypass",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-48558": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/simplehelp_oidc_auth_bypass_rce",
+          "name": "SimpleHelp OIDC Authentication Bypass Remote Code Execution",
+          "description": "This module exploits CVE-2026-48558 to forge an OpenID Connect identity token and obtain a SimpleHelp technician session. It then uses SimpleHelp's legitimate remote access WebSocket protocol to connect to an online managed machine and execute a payload through the remote terminal. An OIDC provider must be enabled for a technician group that permits group-authenticated logins. The group must be allowed to access the selected machine and run remote commands. The SimpleHelp server must have a valid session license, and at least one managed machine must be online. SimpleHelp 5.5.0 through 5.5.15 are affected. Some SimpleHelp 6.0 prerelease builds before 6.0 RC2 are also affected.",
+          "authors": [
+            "Zach Hanley",
+            "Horizon3.ai",
+            "Blackpoint Cyber",
+            "jheysel-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix/Linux/macOS Command"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-06-12",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/simplehelp_oidc_auth_bypass_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/simplehelp_oidc_auth_bypass_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/simplehelp_oidc_auth_bypass_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
