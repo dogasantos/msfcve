@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-09T02:42:22.156772Z",
+    "generated_at": "2026-09-10T02:44:25.953474Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4463,
-    "modules_with_cves": 3095,
-    "total_cves": 3192,
-    "total_module_cve_mappings": 3583
+    "total_modules_scanned": 4471,
+    "modules_with_cves": 3101,
+    "total_cves": 3200,
+    "total_module_cve_mappings": 3591
   },
   "cves": {
     "CVE-1978-1234": {
@@ -12658,6 +12658,44 @@
         }
       ]
     },
+    "CVE-2026-20079": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/cisco_fmc_auth_bypass_rce",
+          "name": "Cisco Secure Firewall Management Center Authentication Bypass RCE",
+          "description": "This module exploits CVE-2026-20079, an authentication bypass in the web interface of Cisco Secure Firewall Management Center (FMC). It upgrades a boot-created machine session, obtains its session-specific action token, writes a Makeself-compatible shell script, and executes the selected command payload as root. Exploitation requires the transient csm_processes startup session to still exist. Normal authenticated activity or session cleanup may remove that session, so an affected appliance may not be exploitable at the time of testing. The underlying request sequence and FIFO/netcat payload were tested against Cisco Secure FMC 10.0.1-1.",
+          "authors": [
+            "Brandon Sakai",
+            "Cale Black",
+            "Arian Eidizadeh"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Unix/Linux Command"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-03-04",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/cisco_fmc_auth_bypass_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/cisco_fmc_auth_bypass_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/cisco_fmc_auth_bypass_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2024-37404": {
       "modules": [
         {
@@ -17514,6 +17552,72 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/tp_link_sc2020n_authenticated_telnet_injection.rb",
           "usage_commands": [
             "use exploits/linux/http/tp_link_sc2020n_authenticated_telnet_injection",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-83548": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/sonicwall_sma1000_couchdb_rce",
+          "name": "SonicWall SMA1000 WorkPlace SSRF to Root Remote Code Execution",
+          "description": "This module chains three issues in SonicWall SMA1000 appliances. An unauthenticated, absolute-form OPTIONS request makes the WorkPlace listener act as an unintended forward proxy (CVE-2026-83548). The module uses this access and a vendor-installed CouchDB update handler to obtain read and write access to loopback CouchDB (SMA1000-9427), then enables CouchDB's native Erlang query server and executes one command as the couchdb service account. That command derives the appliance-local ctrl-service credential and invokes sysCtrl.execCmsSnmpTrap. A command injection in the SNMP trap script (CVE-2026-83549) executes the selected command as root. The module attempts to restore the original CouchDB logger configuration, remove its injected INI data, disable the Erlang query server, and delete its randomized CouchDB documents. SonicWall fixed the issues in platform hotfixes 12.4.3-03526 and 12.5.0-02952.",
+          "authors": [
+            "sfewer-r7",
+            "William Perry",
+            "Adam Babis"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": true,
+          "disclosure_date": "2026-09-01",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/sonicwall_sma1000_couchdb_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/sonicwall_sma1000_couchdb_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/sonicwall_sma1000_couchdb_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-83549": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/sonicwall_sma1000_couchdb_rce",
+          "name": "SonicWall SMA1000 WorkPlace SSRF to Root Remote Code Execution",
+          "description": "This module chains three issues in SonicWall SMA1000 appliances. An unauthenticated, absolute-form OPTIONS request makes the WorkPlace listener act as an unintended forward proxy (CVE-2026-83548). The module uses this access and a vendor-installed CouchDB update handler to obtain read and write access to loopback CouchDB (SMA1000-9427), then enables CouchDB's native Erlang query server and executes one command as the couchdb service account. That command derives the appliance-local ctrl-service credential and invokes sysCtrl.execCmsSnmpTrap. A command injection in the SNMP trap script (CVE-2026-83549) executes the selected command as root. The module attempts to restore the original CouchDB logger configuration, remove its injected INI data, disable the Erlang query server, and delete its randomized CouchDB documents. SonicWall fixed the issues in platform hotfixes 12.4.3-03526 and 12.5.0-02952.",
+          "authors": [
+            "sfewer-r7",
+            "William Perry",
+            "Adam Babis"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": true,
+          "disclosure_date": "2026-09-01",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/sonicwall_sma1000_couchdb_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/sonicwall_sma1000_couchdb_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/sonicwall_sma1000_couchdb_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -32923,6 +33027,45 @@
             "set LHOST <your_ip>",
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-75604": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/http/nextjs_unauth_rce_cve_2026_75604",
+          "name": "Next.js Unauthenticated RCE on Windows Servers",
+          "description": "This module exploits a Remote Code Execution (RCE) vulnerability in Next.js applications hosted on Windows servers. Specifically crafted requests can execute arbitrary code on the target server. The affected versions include releases from 13.4.0 up to 15.5.24, and 16.0.0 up to 16.3.3, utilizing both Pages and App Routers without Cache Components.",
+          "authors": [
+            "Maksim Rogov",
+            "Bogyeom Lee",
+            "Avishek Sarkar"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "windows"
+          ],
+          "targets": [
+            "Next.js >=13.4 <15.5.24, >=16.0 <16.3.3 / Windows payload",
+            "windows"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-08-26",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/nextjs_unauth_rce_cve_2026_75604.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/http/nextjs_unauth_rce_cve_2026_75604.rb",
+          "usage_commands": [
+            "use exploits/windows/http/nextjs_unauth_rce_cve_2026_75604",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
             "exploit"
           ]
         }
@@ -75903,6 +76046,39 @@
         }
       ]
     },
+    "CVE-2026-19295": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_auth_rce_cve_2026_19295",
+          "name": "Langflow AI authenticated RCE",
+          "description": "Langflow versions 1.11.1 and below are susceptible to authenticated remote code execution. By saving a flow where `data.type` is empty, an authenticated user can bypass the flow guard and execute arbitrary Python code.",
+          "authors": [
+            "Richard Howe <rhowe425>"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-08-28",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_auth_rce_cve_2026_19295.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_auth_rce_cve_2026_19295.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_auth_rce_cve_2026_19295",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2020-28653": {
       "modules": [
         {
@@ -100746,6 +100922,62 @@
         }
       ]
     },
+    "CVE-2025-54988": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/elasticsearch_tika_xfa_xxe",
+          "name": "Elasticsearch ingest-attachment Apache Tika XFA XXE Local File Read",
+          "description": "This module validates CVE-2025-54988 / CVE-2025-66516 through an Elasticsearch ingest pipeline using the attachment processor. It creates a temporary pipeline, submits an in-memory PDF containing crafted XFA data to the _simulate API, extracts a caller-selected local file, and removes the pipeline in an ensure block. The target must permit pipeline creation, simulation, and deletion. The default proof file is /etc/hostname. No index or document is created.",
+          "authors": [
+            "Jean-Marie Bourbon",
+            "Bourbon Offensive Security Services"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2025-08-20",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/elasticsearch_tika_xfa_xxe.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/elasticsearch_tika_xfa_xxe.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/elasticsearch_tika_xfa_xxe",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2025-66516": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/elasticsearch_tika_xfa_xxe",
+          "name": "Elasticsearch ingest-attachment Apache Tika XFA XXE Local File Read",
+          "description": "This module validates CVE-2025-54988 / CVE-2025-66516 through an Elasticsearch ingest pipeline using the attachment processor. It creates a temporary pipeline, submits an in-memory PDF containing crafted XFA data to the _simulate API, extracts a caller-selected local file, and removes the pipeline in an ensure block. The target must permit pipeline creation, simulation, and deletion. The default proof file is /etc/hostname. No index or document is created.",
+          "authors": [
+            "Jean-Marie Bourbon",
+            "Bourbon Offensive Security Services"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2025-08-20",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/elasticsearch_tika_xfa_xxe.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/elasticsearch_tika_xfa_xxe.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/elasticsearch_tika_xfa_xxe",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
     "CVE-2013-5877": {
       "modules": [
         {
@@ -111157,6 +111389,32 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/server/wget_symlink_file_write.rb",
           "usage_commands": [
             "use auxiliary/server/wget_symlink_file_write",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-20929": {
+      "modules": [
+        {
+          "module_path": "auxiliary/server/relay/esc8_kerberos",
+          "name": "ESC8 Relay: SMB to HTTP(S) via Kerberos",
+          "description": "This module creates an SMB server and relays the Kerberos AP-REQ passed to it (for example from a coerced host, CVE-2026-20929) to an AD CS Web Enrollment HTTP endpoint to gain an authenticated connection. Once that connection is established, the module makes an authenticated request for a certificate based on a given template. Unlike NTLM, a Kerberos AP-REQ is a complete, self-contained credential bound to the SPN the victim was coerced into requesting, so there is no challenge/response and the relay is a single request. The captured AP-REQ can only be relayed to the service matching that SPN.",
+          "authors": [
+            "Pushpender Rathore"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/server/relay/esc8_kerberos.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/server/relay/esc8_kerberos.rb",
+          "usage_commands": [
+            "use auxiliary/server/relay/esc8_kerberos",
             "show options",
             "set RHOSTS <target>",
             "run"
