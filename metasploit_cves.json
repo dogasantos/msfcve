@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-11T02:37:43.714801Z",
+    "generated_at": "2026-09-12T02:47:00.844194Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4471,
-    "modules_with_cves": 3101,
-    "total_cves": 3200,
-    "total_module_cve_mappings": 3591
+    "total_modules_scanned": 4472,
+    "modules_with_cves": 3102,
+    "total_cves": 3201,
+    "total_module_cve_mappings": 3592
   },
   "cves": {
     "CVE-1978-1234": {
@@ -79966,6 +79966,39 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/playsms_filename_exec.rb",
           "usage_commands": [
             "use exploits/multi/http/playsms_filename_exec",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-18729": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_auth_rce_cve_2026_18729",
+          "name": "Langflow AI Custom Component Authenticated RCE",
+          "description": "Langflow versions 1.0.0 through 1.11.1 are susceptible to authenticated remote code execution due to improper enforcement of security restrictions of code generation on the `/api/v1/custom_component` endpoint. The endpoint accepts attacker controlled code that is then passed to Python's `exec()` function that bypasses security checks enforced by other code paths.",
+          "authors": [
+            "Richard Howe <rhowe425>"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-08-28",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_auth_rce_cve_2026_18729.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_auth_rce_cve_2026_18729.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_auth_rce_cve_2026_18729",
             "show options",
             "show targets",
             "set RHOSTS <target>",
