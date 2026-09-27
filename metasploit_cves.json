@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-26T03:08:39.119715Z",
+    "generated_at": "2026-09-27T03:15:23.560491Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4477,
-    "modules_with_cves": 3105,
-    "total_cves": 3202,
-    "total_module_cve_mappings": 3595
+    "total_modules_scanned": 4478,
+    "modules_with_cves": 3106,
+    "total_cves": 3203,
+    "total_module_cve_mappings": 3596
   },
   "cves": {
     "CVE-1978-1234": {
@@ -100292,6 +100292,33 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/groupwise_agents_http_traversal.rb",
           "usage_commands": [
             "use auxiliary/scanner/http/groupwise_agents_http_traversal",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-22778": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/vllm_multimodal_info_leak",
+          "name": "vLLM Multimodal Heap-Address Information Leak Scanner",
+          "description": "This module detects vLLM OpenAI-compatible servers affected by CVE-2026-22778. When an invalid image is sent to a multimodal endpoint, Pillow (PIL) raises UnidentifiedImageError whose message includes the Python repr of the underlying BytesIO buffer (\"<_io.BytesIO object at 0x...>\"), exposing a live heap address. Vulnerable versions return that error message directly to the client, which weakens ASLR and forms the first stage of a chain that ends in a JPEG2000 heap overflow in the bundled FFmpeg/OpenCV video decoder. Affected versions are 0.8.3 through 0.14.0 (fixed in 0.14.1, which sanitizes the address out of the message). The module first reads the unauthenticated /version banner and compares it against the affected range. It then issues a single benign request to the chat completions endpoint containing a deliberately malformed base64 image. If the response leaks a \"0x\" heap address the target is reported vulnerable with high confidence; if the address is stripped the fix is present; if the server reports that the model has no image support the leak path is not reachable as deployed. The probe never sends a video URL and never reaches the heap-overflow code path.",
+          "authors": [
+            "Kenneth LaCroix"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-02-02",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/vllm_multimodal_info_leak.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/vllm_multimodal_info_leak.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/vllm_multimodal_info_leak",
             "show options",
             "set RHOSTS <target>",
             "set RPORT <port>",
