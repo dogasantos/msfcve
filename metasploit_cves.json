@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-28T03:12:18.226595Z",
+    "generated_at": "2026-09-29T03:50:17.988959Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4478,
-    "modules_with_cves": 3106,
-    "total_cves": 3203,
-    "total_module_cve_mappings": 3596
+    "total_modules_scanned": 4479,
+    "modules_with_cves": 3107,
+    "total_cves": 3205,
+    "total_module_cve_mappings": 3598
   },
   "cves": {
     "CVE-1978-1234": {
@@ -7765,6 +7765,72 @@
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
             "set TARGET <target_index>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-42271": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/litellm_mcp_test_cmd_injection",
+          "name": "BerriAI LiteLLM Proxy MCP Test Endpoint Command Execution",
+          "description": "This module exploits CVE-2026-42271, a command execution vulnerability in the BerriAI LiteLLM proxy. The MCP \"test\" REST endpoints (POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list), used by the admin UI to preview an MCP server before saving it, accept a full server configuration in the request body. When the supplied transport is \"stdio\", LiteLLM builds an MCP client that spawns the provided command with its args as a subprocess on the proxy host. On affected versions both endpoints are gated only by user_api_key_auth and the stdio command is unrestricted, so any caller holding a valid virtual key - including a low-privilege, non-admin key - can reach the spawn path and run arbitrary commands as the LiteLLM proxy process. LiteLLM 1.83.7 fixed this with two controls: it requires the PROXY_ADMIN role on both endpoints (a non-admin key now receives HTTP 403), and it restricts the stdio command to an allowlist of interpreters (deno, docker, node, npx, python, python3, uvx), so an arbitrary command such as /bin/sh is rejected with HTTP 422 regardless of role. Affected versions are 1.74.2 through 1.83.6 (fixed in 1.83.7). This module targets the privilege boundary the CVE describes and expects a non-admin APIKEY. When chained with the Starlette host-header authentication bypass (CVE-2026-48710) the same primitive becomes pre-authentication; that bypass is out of scope for this module, which requires a valid virtual key. The command runs blind: the spawned process is not an MCP server, so the endpoint reports a connection failure after the command has already executed. Use a payload that calls back (for example a reverse shell or a fetched stager) rather than one whose output is read from the response.",
+          "authors": [
+            "Kenneth LaCroix"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-04-21",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/litellm_mcp_test_cmd_injection.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/litellm_mcp_test_cmd_injection.rb",
+          "usage_commands": [
+            "use exploits/multi/http/litellm_mcp_test_cmd_injection",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-48710": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/litellm_mcp_test_cmd_injection",
+          "name": "BerriAI LiteLLM Proxy MCP Test Endpoint Command Execution",
+          "description": "This module exploits CVE-2026-42271, a command execution vulnerability in the BerriAI LiteLLM proxy. The MCP \"test\" REST endpoints (POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list), used by the admin UI to preview an MCP server before saving it, accept a full server configuration in the request body. When the supplied transport is \"stdio\", LiteLLM builds an MCP client that spawns the provided command with its args as a subprocess on the proxy host. On affected versions both endpoints are gated only by user_api_key_auth and the stdio command is unrestricted, so any caller holding a valid virtual key - including a low-privilege, non-admin key - can reach the spawn path and run arbitrary commands as the LiteLLM proxy process. LiteLLM 1.83.7 fixed this with two controls: it requires the PROXY_ADMIN role on both endpoints (a non-admin key now receives HTTP 403), and it restricts the stdio command to an allowlist of interpreters (deno, docker, node, npx, python, python3, uvx), so an arbitrary command such as /bin/sh is rejected with HTTP 422 regardless of role. Affected versions are 1.74.2 through 1.83.6 (fixed in 1.83.7). This module targets the privilege boundary the CVE describes and expects a non-admin APIKEY. When chained with the Starlette host-header authentication bypass (CVE-2026-48710) the same primitive becomes pre-authentication; that bypass is out of scope for this module, which requires a valid virtual key. The command runs blind: the spawned process is not an MCP server, so the endpoint reports a connection failure after the command has already executed. Use a payload that calls back (for example a reverse shell or a fetched stager) rather than one whose output is read from the response.",
+          "authors": [
+            "Kenneth LaCroix"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-04-21",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/litellm_mcp_test_cmd_injection.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/litellm_mcp_test_cmd_injection.rb",
+          "usage_commands": [
+            "use exploits/multi/http/litellm_mcp_test_cmd_injection",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
             "exploit"
           ]
         }
