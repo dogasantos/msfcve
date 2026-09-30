@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-29T03:50:17.988959Z",
+    "generated_at": "2026-09-30T03:38:34.809273Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4479,
-    "modules_with_cves": 3107,
-    "total_cves": 3205,
-    "total_module_cve_mappings": 3598
+    "total_modules_scanned": 4481,
+    "modules_with_cves": 3108,
+    "total_cves": 3207,
+    "total_module_cve_mappings": 3600
   },
   "cves": {
     "CVE-1978-1234": {
@@ -76247,6 +76247,80 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/persistence/linqpad_deserialization.rb",
           "usage_commands": [
             "use exploits/windows/persistence/linqpad_deserialization",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-42248": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/persistence/ollama_auto_update",
+          "name": "Ollama Windows Auto-Update Path Traversal Persistence",
+          "description": "Ollama for Windows versions 0.12.10 through 0.22.1 are vulnerable to a path traversal attack (CVE-2026-42249) in the auto-update download mechanism, combined with a completely absent signature verification function (CVE-2026-42248). Payloads are written to the startup folder and executed at next login.",
+          "authors": [
+            "Bartłomiej Dmitruk",
+            "h00die"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win"
+          ],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-04-29",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/persistence/ollama_auto_update.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/persistence/ollama_auto_update.rb",
+          "usage_commands": [
+            "use exploits/windows/persistence/ollama_auto_update",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set SMBUser <username>",
+            "set SMBPass <password>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-42249": {
+      "modules": [
+        {
+          "module_path": "exploits/windows/persistence/ollama_auto_update",
+          "name": "Ollama Windows Auto-Update Path Traversal Persistence",
+          "description": "Ollama for Windows versions 0.12.10 through 0.22.1 are vulnerable to a path traversal attack (CVE-2026-42249) in the auto-update download mechanism, combined with a completely absent signature verification function (CVE-2026-42248). Payloads are written to the startup folder and executed at next login.",
+          "authors": [
+            "Bartłomiej Dmitruk",
+            "h00die"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "win"
+          ],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-04-29",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/persistence/ollama_auto_update.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/windows/persistence/ollama_auto_update.rb",
+          "usage_commands": [
+            "use exploits/windows/persistence/ollama_auto_update",
             "show options",
             "show targets",
             "set RHOSTS <target>",
