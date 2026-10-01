@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-09-30T03:38:34.809273Z",
+    "generated_at": "2026-10-01T03:43:57.708594Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4481,
-    "modules_with_cves": 3108,
-    "total_cves": 3207,
-    "total_module_cve_mappings": 3600
+    "total_modules_scanned": 4482,
+    "modules_with_cves": 3109,
+    "total_cves": 3208,
+    "total_module_cve_mappings": 3601
   },
   "cves": {
     "CVE-1978-1234": {
@@ -45086,6 +45086,42 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/vmware_workspace_one_access_certproxy_lpe.rb",
           "usage_commands": [
             "use exploits/linux/local/vmware_workspace_one_access_certproxy_lpe",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-43503": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/local/dirtyclone_cve_2026_43503",
+          "name": "Sample Linux Priv Esc",
+          "description": "This exploit module illustrates how a vulnerability could be exploited in an linux command for priv esc.",
+          "authors": [
+            "Eddy Tsalolikhin",
+            "Or Peles",
+            "msutovsky-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux"
+          ],
+          "targets": [
+            "Auto"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-05-21",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/dirtyclone_cve_2026_43503.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/dirtyclone_cve_2026_43503.rb",
+          "usage_commands": [
+            "use exploits/linux/local/dirtyclone_cve_2026_43503",
             "show options",
             "show targets",
             "set RHOSTS <target>",
