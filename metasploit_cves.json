@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-01T03:43:57.708594Z",
+    "generated_at": "2026-10-02T03:42:55.654806Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4482,
-    "modules_with_cves": 3109,
-    "total_cves": 3208,
-    "total_module_cve_mappings": 3601
+    "total_modules_scanned": 4484,
+    "modules_with_cves": 3111,
+    "total_cves": 3210,
+    "total_module_cve_mappings": 3603
   },
   "cves": {
     "CVE-1978-1234": {
@@ -12611,6 +12611,40 @@
         }
       ]
     },
+    "CVE-2026-0770": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_rce_cve_2026_0770",
+          "name": "Langflow Unauthenticated RCE (validate endpoint)",
+          "description": "Langflow versions up to and including 1.7.3 contain a remote code execution vulnerability in the `validate` endpoint where unsanitized values in `exec_globals`/`code` allow an attacker to execute arbitrary Python code. This module abuses the `/api/v1/auto_login` (or `/api/v1/login`) and `/api/v1/validate/code` endpoints to execute an arbitrary Metasploit command payload.",
+          "authors": [
+            "Diamorphine",
+            "bhaskarbhar"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-05-23",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_rce_cve_2026_0770.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_rce_cve_2026_0770.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_rce_cve_2026_0770",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2013-0632": {
       "modules": [
         {
@@ -12768,6 +12802,45 @@
             "set LHOST <your_ip>",
             "set LPORT <your_port>",
             "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2024-58286": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/dizquetv_rce",
+          "name": "dizqueTV Unauthenticated Remote Code Execution",
+          "description": "dizqueTV, a Node.js-based IPTV streaming server, is vulnerable to unauthenticated remote code execution via the ffmpegPath configuration parameter. On Linux, an attacker can inject a command into the ffmpegPath value. On Windows, an attacker can upload a malicious batch script through the image upload endpoint and set the ffmpegPath setting to the uploaded file. Requesting the version API triggers execution on both platforms. The ffmpegPath value is used by Node's child process APIs without adequate validation, allowing arbitrary command execution as the Node.js process user.",
+          "authors": [
+            "Muhammad Sulthon Nurbahari",
+            "Ahmed Said Saud Al-Busaidi"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "Linux Command",
+            "unix"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-09-21",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/dizquetv_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/dizquetv_rce.rb",
+          "usage_commands": [
+            "use exploits/multi/http/dizquetv_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "set TARGET <target_index>",
             "exploit"
           ]
         }
