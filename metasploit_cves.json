@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-08T04:07:38.740899Z",
+    "generated_at": "2026-10-09T04:12:57.452873Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4486,
-    "modules_with_cves": 3112,
-    "total_cves": 3211,
-    "total_module_cve_mappings": 3604
+    "total_modules_scanned": 4492,
+    "modules_with_cves": 3118,
+    "total_cves": 3217,
+    "total_module_cve_mappings": 3610
   },
   "cves": {
     "CVE-1978-1234": {
@@ -6156,6 +6156,40 @@
         }
       ]
     },
+    "CVE-2026-7873": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_auth_rce_cve_2026_7873",
+          "name": "Langflow AI Code Validation Authenticated RCE",
+          "description": "Langflow versions 1.0.0 through 1.10.0 are susceptible to authenticated remote code execution due to improper validation of code in the `/api/v1/validate/code` endpoint. Arbitrary code is executed under the context of the backend Langflow process.",
+          "authors": [
+            "Richard Howe <rhowe425>",
+            "n0k0"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-06-30",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_auth_rce_cve_2026_7873.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_auth_rce_cve_2026_7873.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_auth_rce_cve_2026_7873",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2022-2992": {
       "modules": [
         {
@@ -8950,6 +8984,40 @@
         }
       ]
     },
+    "CVE-2026-0769": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_unauth_rce_cve_2026_0769",
+          "name": "Langflow AI Custom Component Eval Injection Unauth RCE",
+          "description": "Langflow version 1.3.2 is susceptible to unauthenticated remote code execution due to improper input validation in the eval_custom_component_code() function. Arbitrary code executes under the context of the backend Langflow process.",
+          "authors": [
+            "Richard Howe <rhowe425>",
+            "Peter Girnus"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-01-22",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_0769.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_0769.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_unauth_rce_cve_2026_0769",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2023-25194": {
       "modules": [
         {
@@ -10885,6 +10953,40 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/struts2_namespace_ognl.rb",
           "usage_commands": [
             "use exploits/multi/http/struts2_namespace_ognl",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-0768": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_unauth_rce_cve_2026_0768",
+          "name": "Langflow AI Validate Code Injection unauth RCE",
+          "description": "Langflow version 1.4.2 is susceptible to unauthenticated remote code execution due to improper handling of the code parameter provided to the `/validate` endpoint. Arbitrary code is executed under the context of the backend Langflow process.",
+          "authors": [
+            "Richard Howe <rhowe425>",
+            "Peter Girnus"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-09-02",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_0768.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_0768.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_unauth_rce_cve_2026_0768",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -34712,6 +34814,42 @@
         }
       ]
     },
+    "CVE-2026-86218": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/nable_ncentral_unauth_rce_cve_2026_86218",
+          "name": "N-able N-central Struts BeanUtils Unauthenticated RCE",
+          "description": "N-able N-central before 2026.3.1.14 uses a session-scoped Struts form on an unauthenticated action. Two concurrent multipart requests can race the form's multipart handler and expose Jetty's live configuration to Commons BeanUtils property population. This module changes a lazy N-central servlet holder into Jetty's bundled CGI servlet, configures it to invoke /bin/sh, and sends a command payload through the holder's existing URL mapping. By default, a second CGI request uses N-central's local JMX service and installed Java libraries to stop only the changed holder and restore its original servlet in memory.",
+          "authors": [
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "unix",
+            "linux"
+          ],
+          "targets": [
+            "unix"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-09-05",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/nable_ncentral_unauth_rce_cve_2026_86218.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/nable_ncentral_unauth_rce_cve_2026_86218.rb",
+          "usage_commands": [
+            "use exploits/linux/http/nable_ncentral_unauth_rce_cve_2026_86218",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
     "CVE-2013-3568": {
       "modules": [
         {
@@ -45693,6 +45831,41 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/ubuntu_needrestart_lpe.rb",
           "usage_commands": [
             "use exploits/linux/local/ubuntu_needrestart_lpe",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-3888": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/local/cve_2026_3888",
+          "name": "Local Privilege Escalation in snapd",
+          "description": "The `snap-confine` in some Ubuntu versions is vulnerable to race condition, when setting up snap sandbox and creating mimic of /usr/lib/x86_64-linux-gnu. The snapd package is vulnerable up to version 2.74.1+ubuntu26.04.3 - however, each minor version has its own patch. The time window between creating bind-mounted copies of real libraries and copying them into sandbox /usr/lib/x86_64-linux-gnu allows the attacker to take control of content of those libraries by recreating /tmp/.snap folder. This folder is owned by root, but it's auto-deleted after 30 days without activity (by default on Ubuntu 24.04+). The attacker can recreate this folder once it is deleted and take over the sandboxed libraries. After gaining root inside sandbox, it can escape the sandbox by copying setuid binary into host filesystem.",
+          "authors": [
+            "msutovsky-r7",
+            "Qualys Security Advisory Team"
+          ],
+          "rank": "Unknown",
+          "platform": [
+            "linux"
+          ],
+          "targets": [
+            "Auto"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-03-17",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/cve_2026_3888.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/cve_2026_3888.rb",
+          "usage_commands": [
+            "use exploits/linux/local/cve_2026_3888",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -113943,6 +114116,32 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/gather/opennms_xxe.rb",
           "usage_commands": [
             "use auxiliary/gather/opennms_xxe",
+            "show options",
+            "set RHOSTS <target>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-93680": {
+      "modules": [
+        {
+          "module_path": "auxiliary/gather/langflow_auth_bypass_cve_2026_93680",
+          "name": "Langflow AI Authentication Bypass",
+          "description": "Langflow versions 1.5.0 through 1.11.4 allow unauthenticated connections to the MCP SSE endpoint, allowing attackers to initialize MCP sessions and retrieve privileged MCP-related information. The MCP information collected from this module is stored in Metasploit loot as a JSON document.",
+          "authors": [
+            "Richard Howe <rhowe425>"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-09-22",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/gather/langflow_auth_bypass_cve_2026_93680.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/gather/langflow_auth_bypass_cve_2026_93680.rb",
+          "usage_commands": [
+            "use auxiliary/gather/langflow_auth_bypass_cve_2026_93680",
             "show options",
             "set RHOSTS <target>",
             "run"
