@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-14T03:13:04.932574Z",
+    "generated_at": "2026-10-15T02:51:48.042529Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4493,
-    "modules_with_cves": 3119,
-    "total_cves": 3218,
-    "total_module_cve_mappings": 3611
+    "total_modules_scanned": 4498,
+    "modules_with_cves": 3121,
+    "total_cves": 3221,
+    "total_module_cve_mappings": 3614
   },
   "cves": {
     "CVE-1978-1234": {
@@ -8905,6 +8905,37 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/struts2_code_exec_showcase.rb",
           "usage_commands": [
             "use exploits/multi/http/struts2_code_exec_showcase",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2024-9264": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/grafana_sql_expressions_rce_cve_2024_9264",
+          "name": "Grafana SQL Expressions DuckDB Command Injection",
+          "description": "This module exploits an authenticated command injection vulnerability in Grafana's experimental SQL Expressions feature. Affected Grafana releases are 11.0.0 through 11.0.6, 11.1.0 through 11.1.7, and 11.2.0 through 11.2.2. They pass attacker-controlled SQL expressions to DuckDB without sufficient sanitization. Successful command execution requires the duckdb binary to be available in the Grafana process PATH. This module uses DuckDB's shellfs community extension and Unix pipe syntax, so it is limited to Unix-like targets with shellfs available. The extension installation may download and cache files on the target.",
+          "authors": [],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-10-17",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/grafana_sql_expressions_rce_cve_2024_9264.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/grafana_sql_expressions_rce_cve_2024_9264.rb",
+          "usage_commands": [
+            "use exploits/multi/http/grafana_sql_expressions_rce_cve_2024_9264",
             "show options",
             "show targets",
             "set RHOSTS <target>",
@@ -36553,6 +36584,72 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/ray_agent_job_rce.rb",
           "usage_commands": [
             "use exploits/linux/http/ray_agent_job_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-27960": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/opencti_notifier_rce",
+          "name": "OpenCTI Authentication Bypass and Notifier EJS Remote Code Execution",
+          "description": "This module chains CVE-2026-27960 and CVE-2026-39980 to achieve unauthenticated remote command execution against vulnerable OpenCTI instances. CVE-2026-27960 allows an unauthenticated attacker to authenticate to the GraphQL API using the UUID of an existing user as a bearer token. By default, this module uses OpenCTI's deterministic default administrator UUID. A different user UUID can be supplied with USER_ID. After confirming the authentication bypass, the module locates the Platform mailer notification connector and exploits CVE-2026-39980, an EJS notifier template sanitizer bypass, to execute a Unix command in the OpenCTI Node.js process context. The full unauthenticated chain applies where the affected version ranges overlap: OpenCTI 6.6.0 through 6.9.4.",
+          "authors": [
+            "Jean-Marie Bourbon"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-05-04",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/opencti_notifier_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/opencti_notifier_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/opencti_notifier_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-39980": {
+      "modules": [
+        {
+          "module_path": "exploits/linux/http/opencti_notifier_rce",
+          "name": "OpenCTI Authentication Bypass and Notifier EJS Remote Code Execution",
+          "description": "This module chains CVE-2026-27960 and CVE-2026-39980 to achieve unauthenticated remote command execution against vulnerable OpenCTI instances. CVE-2026-27960 allows an unauthenticated attacker to authenticate to the GraphQL API using the UUID of an existing user as a bearer token. By default, this module uses OpenCTI's deterministic default administrator UUID. A different user UUID can be supplied with USER_ID. After confirming the authentication bypass, the module locates the Platform mailer notification connector and exploits CVE-2026-39980, an EJS notifier template sanitizer bypass, to execute a Unix command in the OpenCTI Node.js process context. The full unauthenticated chain applies where the affected version ranges overlap: OpenCTI 6.6.0 through 6.9.4.",
+          "authors": [
+            "Jean-Marie Bourbon"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Unix Command"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-05-04",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/opencti_notifier_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/http/opencti_notifier_rce.rb",
+          "usage_commands": [
+            "use exploits/linux/http/opencti_notifier_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
