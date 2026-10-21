@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-20T03:05:00.932666Z",
+    "generated_at": "2026-10-21T02:59:37.799745Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4499,
-    "modules_with_cves": 3122,
-    "total_cves": 3222,
-    "total_module_cve_mappings": 3615
+    "total_modules_scanned": 4501,
+    "modules_with_cves": 3123,
+    "total_cves": 3223,
+    "total_module_cve_mappings": 3616
   },
   "cves": {
     "CVE-1978-1234": {
@@ -58862,6 +58862,39 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/apache_jetspeed_file_upload.rb",
           "usage_commands": [
             "use exploits/multi/http/apache_jetspeed_file_upload",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-10134": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/langflow_unauth_rce_cve_2026_10134",
+          "name": "Langflow AI Public Flow Build Unauth RCE",
+          "description": "Langflow versions 1.0.0 through 1.9.3 are susceptible to unauthenticated remote code execution due to improper handling of a public flow's `tool_code` field and a lack of required authentication for the `/api/v1/build_public_tmp/<flow_id>/flow` endpoint. If a target instance exposes a public flow and its UUID, an unauthenticated remote attacker can supply malicious code payloads via parameters like tool_code targeting paths under /api/v1/ without needing any valid credentials. If no flow UUIDs are exposed, an authenticated attacker can create one in order to exploit this vulnerability. Arbitrary code is executed under the context of the Langflow backend process.",
+          "authors": [
+            "Richard Howe <rhowe425>"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python payload"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-07-17",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_10134.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/langflow_unauth_rce_cve_2026_10134.rb",
+          "usage_commands": [
+            "use exploits/multi/http/langflow_unauth_rce_cve_2026_10134",
             "show options",
             "show targets",
             "set RHOSTS <target>",
