@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-22T02:58:39.213506Z",
+    "generated_at": "2026-10-23T03:02:12.559732Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4501,
-    "modules_with_cves": 3123,
-    "total_cves": 3223,
-    "total_module_cve_mappings": 3616
+    "total_modules_scanned": 4502,
+    "modules_with_cves": 3124,
+    "total_cves": 3226,
+    "total_module_cve_mappings": 3619
   },
   "cves": {
     "CVE-1978-1234": {
@@ -90014,6 +90014,114 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/freebsd/http/citrix_formssso_target_rce.rb",
           "usage_commands": [
             "use exploits/freebsd/http/citrix_formssso_target_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-88771": {
+      "modules": [
+        {
+          "module_path": "exploits/freebsd/http/citrix_netscaler_cve_2026_88771",
+          "name": "Citrix NetScaler Unauthenticated Login Log Command Injection (CVE-2026-88771)",
+          "description": "NetScaler ADC and Gateway 13.1 before build 64.23 and 14.1 before build 73.37 copy an unauthenticated failed-login username into system logs. During a later diagnostic run, ns_monuploadd_err.pl mistakes a crafted login record for a packet-engine failure and inserts attacker-controlled text into a shell command as root. The diagnostic can run up to 24 hours later. On a NetScaler Gateway with DTLS, the optional CVE-2026-88772 trigger can restart the packet engine forcing the diagnostic run to occur much sooner (around five minutes on a 13.1.x target).",
+          "authors": [
+            "watchTowr",
+            "CERT-EU",
+            "Scyrix LLC",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Default"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-09-27",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb",
+          "usage_commands": [
+            "use exploits/freebsd/http/citrix_netscaler_cve_2026_88771",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-88772": {
+      "modules": [
+        {
+          "module_path": "exploits/freebsd/http/citrix_netscaler_cve_2026_88771",
+          "name": "Citrix NetScaler Unauthenticated Login Log Command Injection (CVE-2026-88771)",
+          "description": "NetScaler ADC and Gateway 13.1 before build 64.23 and 14.1 before build 73.37 copy an unauthenticated failed-login username into system logs. During a later diagnostic run, ns_monuploadd_err.pl mistakes a crafted login record for a packet-engine failure and inserts attacker-controlled text into a shell command as root. The diagnostic can run up to 24 hours later. On a NetScaler Gateway with DTLS, the optional CVE-2026-88772 trigger can restart the packet engine forcing the diagnostic run to occur much sooner (around five minutes on a 13.1.x target).",
+          "authors": [
+            "watchTowr",
+            "CERT-EU",
+            "Scyrix LLC",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Default"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-09-27",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb",
+          "usage_commands": [
+            "use exploits/freebsd/http/citrix_netscaler_cve_2026_88771",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-88773": {
+      "modules": [
+        {
+          "module_path": "exploits/freebsd/http/citrix_netscaler_cve_2026_88771",
+          "name": "Citrix NetScaler Unauthenticated Login Log Command Injection (CVE-2026-88771)",
+          "description": "NetScaler ADC and Gateway 13.1 before build 64.23 and 14.1 before build 73.37 copy an unauthenticated failed-login username into system logs. During a later diagnostic run, ns_monuploadd_err.pl mistakes a crafted login record for a packet-engine failure and inserts attacker-controlled text into a shell command as root. The diagnostic can run up to 24 hours later. On a NetScaler Gateway with DTLS, the optional CVE-2026-88772 trigger can restart the packet engine forcing the diagnostic run to occur much sooner (around five minutes on a 13.1.x target).",
+          "authors": [
+            "watchTowr",
+            "CERT-EU",
+            "Scyrix LLC",
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Default"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-09-27",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb",
+          "usage_commands": [
+            "use exploits/freebsd/http/citrix_netscaler_cve_2026_88771",
             "show options",
             "show targets",
             "set RHOSTS <target>",
