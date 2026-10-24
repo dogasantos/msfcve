@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generated_at": "2026-10-23T03:02:12.559732Z",
+    "generated_at": "2026-10-24T02:58:55.861326Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4502,
+    "total_modules_scanned": 4503,
     "modules_with_cves": 3124,
     "total_cves": 3226,
     "total_module_cve_mappings": 3619
