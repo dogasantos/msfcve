@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-27T03:24:04.226102Z",
+    "generated_at": "2026-10-28T03:40:29.526656Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4503,
-    "modules_with_cves": 3124,
-    "total_cves": 3226,
-    "total_module_cve_mappings": 3619
+    "total_modules_scanned": 4504,
+    "modules_with_cves": 3125,
+    "total_cves": 3228,
+    "total_module_cve_mappings": 3621
   },
   "cves": {
     "CVE-1978-1234": {
@@ -92630,6 +92630,70 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/dhcp/rhel_dhcp_client_command_injection.rb",
           "usage_commands": [
             "use exploits/unix/dhcp/rhel_dhcp_client_command_injection",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-76443": {
+      "modules": [
+        {
+          "module_path": "exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce",
+          "name": "Cisco Secure Email Gateway S/MIME SQL Injection RCE",
+          "description": "This module exploits an unauthenticated SQL injection in Cisco Secure Email Gateway S/MIME certificate harvesting. A sender-controlled email address in a signing certificate is used in a PostgreSQL query without escaping. The module sends one signed email whose certificate supplies enough addresses to flush the asynchronous database writer, stacks COPY TO PROGRAM, and runs a payload as root through AsyncOS runas and Python. The check identifies the product through Cisco SEG's hidden SMTP queue-status command. AsyncOS does not expose a version through a benign SMTP command, so the check can only identify the product but not if it is explicitly vulnerable. Public-key harvesting must be enabled on the inbound mail flow policy for the target to be exploitable. The Cisco advisory is vague so attributing this vulnerability to a specific CVE is not obvious, but this appears to be CVE-2026-76443 rather than CVE-2026-76461 based on the IOCs available for CVE-2026-76461.",
+          "authors": [
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python Payload"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-09-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce.rb",
+          "usage_commands": [
+            "use exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-76461": {
+      "modules": [
+        {
+          "module_path": "exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce",
+          "name": "Cisco Secure Email Gateway S/MIME SQL Injection RCE",
+          "description": "This module exploits an unauthenticated SQL injection in Cisco Secure Email Gateway S/MIME certificate harvesting. A sender-controlled email address in a signing certificate is used in a PostgreSQL query without escaping. The module sends one signed email whose certificate supplies enough addresses to flush the asynchronous database writer, stacks COPY TO PROGRAM, and runs a payload as root through AsyncOS runas and Python. The check identifies the product through Cisco SEG's hidden SMTP queue-status command. AsyncOS does not expose a version through a benign SMTP command, so the check can only identify the product but not if it is explicitly vulnerable. Public-key harvesting must be enabled on the inbound mail flow policy for the target to be exploitable. The Cisco advisory is vague so attributing this vulnerability to a specific CVE is not obvious, but this appears to be CVE-2026-76443 rather than CVE-2026-76461 based on the IOCs available for CVE-2026-76461.",
+          "authors": [
+            "sfewer-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Python Payload"
+          ],
+          "privileged": true,
+          "disclosure_date": "2026-09-14",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce.rb",
+          "usage_commands": [
+            "use exploits/unix/smtp/cisco_secure_email_gateway_smime_sqli_rce",
             "show options",
             "show targets",
             "set RHOSTS <target>",
