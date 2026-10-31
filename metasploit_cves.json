@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-10-30T04:01:24.195665Z",
+    "generated_at": "2026-10-31T03:45:53.760398Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4506,
-    "modules_with_cves": 3126,
-    "total_cves": 3229,
-    "total_module_cve_mappings": 3622
+    "total_modules_scanned": 4508,
+    "modules_with_cves": 3127,
+    "total_cves": 3230,
+    "total_module_cve_mappings": 3623
   },
   "cves": {
     "CVE-1978-1234": {
@@ -42981,6 +42981,41 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/atlassian_confluence_namespace_ognl_injection.rb",
           "usage_commands": [
             "use exploits/multi/http/atlassian_confluence_namespace_ognl_injection",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-97229": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/gitlab_cicd_regexp_rce_cve_2026_97229",
+          "name": "GitLab CI/CD RegExp Integer Overflow Remote Code Execution",
+          "description": "This module exploits an integer overflow in the Ruby regular expression compiler through GitLab's CI lint API. An attacker with credentials for a user who can push to a public project plants a crafted CI configuration and repository path. An unauthenticated CI lint request then compiles the expression and executes a command as the GitLab git account. The module selects the native pcode and libruby layout for affected official GitLab CE and EE Docker images on Linux amd64. Each attempt allocates slightly more than 2 GiB and crashes a Puma worker after execution. GitLab 19.2 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 are affected. The official 19.3.4 package already contains the Ruby overflow fix and is not supported. Rebuilt packages and source installations may require different native layouts.",
+          "authors": [
+            "joaxcar",
+            "Jonah Burgess",
+            "jheysel-r7"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Automatic"
+          ],
+          "privileged": false,
+          "disclosure_date": "2026-10-12",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/gitlab_cicd_regexp_rce_cve_2026_97229.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/gitlab_cicd_regexp_rce_cve_2026_97229.rb",
+          "usage_commands": [
+            "use exploits/multi/http/gitlab_cicd_regexp_rce_cve_2026_97229",
             "show options",
             "show targets",
             "set RHOSTS <target>",
