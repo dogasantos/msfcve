@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-11-09T04:14:22.082629Z",
+    "generated_at": "2026-11-10T05:41:54.787854Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4514,
-    "modules_with_cves": 3132,
-    "total_cves": 3235,
-    "total_module_cve_mappings": 3630
+    "total_modules_scanned": 4515,
+    "modules_with_cves": 3133,
+    "total_cves": 3237,
+    "total_module_cve_mappings": 3632
   },
   "cves": {
     "CVE-1978-1234": {
@@ -55423,6 +55423,74 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/magento_sessionreaper.rb",
           "usage_commands": [
             "use exploits/multi/http/magento_sessionreaper",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2024-25420": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420",
+          "name": "Openfire Deleted Administrator Account Authentication Bypass RCE",
+          "description": "Openfire versions before 4.8.1 did not remove a user's JID from the admin.authorizedJIDs property when the user was deleted. If an attacker knows the username of a deleted administrator and in-band registration is enabled, the attacker can recreate that account and inherit administrative access. An authenticated Openfire administrator can upload a management plugin containing a Java payload. Openfire 4.8.1 prevents new stale entries when a user is deleted, but it does not migrate entries created by an older version. An upgraded server can therefore remain exploitable until the recreated account is deleted while the fix is present. The ADMINUSERNAME option must identify a previously deleted administrator. The check method does not create accounts and cannot determine whether this target-specific state exists.",
+          "authors": [
+            "xRogue",
+            "Admin9961"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Java Universal"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-03-26",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420.rb",
+          "usage_commands": [
+            "use exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420",
+            "show options",
+            "show targets",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "set LHOST <your_ip>",
+            "set LPORT <your_port>",
+            "set PAYLOAD <payload>",
+            "exploit"
+          ]
+        }
+      ]
+    },
+    "CVE-2024-25421": {
+      "modules": [
+        {
+          "module_path": "exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420",
+          "name": "Openfire Deleted Administrator Account Authentication Bypass RCE",
+          "description": "Openfire versions before 4.8.1 did not remove a user's JID from the admin.authorizedJIDs property when the user was deleted. If an attacker knows the username of a deleted administrator and in-band registration is enabled, the attacker can recreate that account and inherit administrative access. An authenticated Openfire administrator can upload a management plugin containing a Java payload. Openfire 4.8.1 prevents new stale entries when a user is deleted, but it does not migrate entries created by an older version. An upgraded server can therefore remain exploitable until the recreated account is deleted while the fix is present. The ADMINUSERNAME option must identify a previously deleted administrator. The check method does not create accounts and cannot determine whether this target-specific state exists.",
+          "authors": [
+            "xRogue",
+            "Admin9961"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [
+            "Java Universal"
+          ],
+          "privileged": false,
+          "disclosure_date": "2024-03-26",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420.rb",
+          "usage_commands": [
+            "use exploits/multi/http/openfire_deleted_admin_rce_cve_2024_25420",
             "show options",
             "show targets",
             "set RHOSTS <target>",
