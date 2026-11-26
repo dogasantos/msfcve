@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generated_at": "2026-11-25T06:39:10.456205Z",
+    "generated_at": "2026-11-26T06:30:21.528695Z",
     "source": "Metasploit Framework",
     "source_url": "https://github.com/rapid7/metasploit-framework",
-    "total_modules_scanned": 4524,
-    "modules_with_cves": 3140,
-    "total_cves": 3244,
-    "total_module_cve_mappings": 3639
+    "total_modules_scanned": 4525,
+    "modules_with_cves": 3141,
+    "total_cves": 3245,
+    "total_module_cve_mappings": 3640
   },
   "cves": {
     "CVE-1978-1234": {
@@ -49823,6 +49823,7 @@
           "name": "Langflow AI auto_login RCE",
           "description": "Langflow versions 1.10.0 and below are susceptible to unauthenticated remote code execution. By chaining /api/v1/auto_login with /api/v1/validate/code, a remote unauthenticated attacker can send crafted HTTP requests to execute arbitrary code.",
           "authors": [
+            "Harish Kolla <Har1sh-k>",
             "Richard Howe <rhowe425>"
           ],
           "rank": "Unknown",
@@ -101944,6 +101945,33 @@
           "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/hp_imc_bims_downloadservlet_traversal.rb",
           "usage_commands": [
             "use auxiliary/scanner/http/hp_imc_bims_downloadservlet_traversal",
+            "show options",
+            "set RHOSTS <target>",
+            "set RPORT <port>",
+            "run"
+          ]
+        }
+      ]
+    },
+    "CVE-2026-119618": {
+      "modules": [
+        {
+          "module_path": "auxiliary/scanner/http/apache_mod_http2_cve_2026_119618",
+          "name": "Apache HTTP Server mod_http2 CVE-2026-119618 Version Scanner",
+          "description": "Detection-only scanner for CVE-2026-119618, a race condition in Apache httpd mod_http2 (versions 2.4.55 through 2.4.70) that leads to unauthenticated remote code execution on servers with HTTP/2 enabled (fixed in 2.4.71). This module reads the Server banner, checks whether the reported Apache version falls in the affected range, and reports whether HTTP/2 is advertised. It performs NO exploitation and sends only a benign GET request. Caveat: Linux distributions backport the fix WITHOUT changing the version string, so a banner in range is a LEAD TO VERIFY, not proof of exposure. mod_http2 can also be enabled without advertising h2 on a plaintext response; confirm HTTP/2 on TLS via ALPN.",
+          "authors": [
+            "Mayur Agnihotri (StraightArc)"
+          ],
+          "rank": "Unknown",
+          "platform": [],
+          "targets": [],
+          "privileged": false,
+          "disclosure_date": "2026-11-11",
+          "references": [],
+          "github_url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/http/apache_mod_http2_cve_2026_119618.rb",
+          "raw_url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/http/apache_mod_http2_cve_2026_119618.rb",
+          "usage_commands": [
+            "use auxiliary/scanner/http/apache_mod_http2_cve_2026_119618",
             "show options",
             "set RHOSTS <target>",
             "set RPORT <port>",
